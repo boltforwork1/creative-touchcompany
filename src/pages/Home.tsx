@@ -100,12 +100,12 @@ export function Home() {
             <motion.div className="mt-10" variants={fadeInUp}>
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] transition-all duration-500 ease-in-out hover:scale-105 hover:bg-[#C8A96E]/90"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
               >
                 Read More
                 <ArrowRight
                   size={18}
-                  className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
+                  className="transition-transform duration-500 ease-out group-hover:translate-x-1"
                 />
               </Link>
             </motion.div>
@@ -114,9 +114,9 @@ export function Home() {
           {/* Right: Visual placeholder */}
           <motion.div
             className="relative"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+            initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
           >
             <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
               <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
@@ -141,12 +141,14 @@ export function Home() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <div className="flex aspect-[5/4] w-full items-center justify-center rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
-              <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
-                <Layers size={56} strokeWidth={1} />
-                <span className="text-xs font-medium uppercase tracking-widest text-[#6B6580]/50">
-                  About Image
-                </span>
+            <div className="group overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
+              <div className="flex aspect-[5/4] w-full items-center justify-center transition-transform duration-700 ease-out group-hover:scale-105">
+                <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
+                  <Layers size={56} strokeWidth={1} />
+                  <span className="text-xs font-medium uppercase tracking-widest text-[#6B6580]/50">
+                    About Image
+                  </span>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -175,12 +177,12 @@ export function Home() {
             <div className="mt-8">
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-500 ease-in-out hover:bg-[#C8A96E] hover:text-[#1A1820]"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E] hover:text-[#1A1820] active:scale-[0.98]"
               >
                 Read More
                 <ArrowRight
                   size={18}
-                  className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
+                  className="transition-transform duration-500 ease-out group-hover:translate-x-1"
                 />
               </Link>
             </div>
@@ -237,10 +239,10 @@ export function Home() {
                 <motion.div
                   key={service.title}
                   variants={staggerItem}
-                  className="group rounded-2xl border border-black/[0.04] bg-white p-8 transition-all duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl"
+                  className="group rounded-2xl border border-black/[0.04] bg-white p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                 >
                   {/* Icon placeholder */}
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#C8A96E] transition-colors duration-500 ease-in-out group-hover:bg-[#C8A96E] group-hover:text-white">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-[#C8A96E] group-hover:text-white">
                     <Icon size={26} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
@@ -264,12 +266,12 @@ export function Home() {
           >
             <Link
               to="/services"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] transition-all duration-500 ease-in-out hover:scale-105 hover:bg-[#C8A96E]/90"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
             >
               View All Services
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
               />
             </Link>
           </motion.div>
@@ -316,12 +318,12 @@ export function Home() {
                 className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]"
               >
                 {/* Placeholder icon */}
-                <div className="flex h-full w-full items-center justify-center text-[#C8A96E]/30 transition-transform duration-500 ease-in-out group-hover:scale-105">
+                <div className="flex h-full w-full items-center justify-center text-[#C8A96E]/30 transition-transform duration-700 ease-out group-hover:scale-105">
                   <PenTool size={48} strokeWidth={1} />
                 </div>
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1A1820]/85 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1A1820]/85 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100">
                   <ArrowUpRight
                     size={28}
                     className="text-[#C8A96E]"
@@ -348,12 +350,12 @@ export function Home() {
           >
             <Link
               to="/projects"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-500 ease-in-out hover:bg-[#C8A96E] hover:text-[#1A1820]"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E] hover:text-[#1A1820] active:scale-[0.98]"
             >
               View All Projects
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
               />
             </Link>
           </motion.div>
@@ -378,12 +380,12 @@ export function Home() {
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] transition-all duration-500 ease-in-out hover:scale-105 hover:bg-white"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
             >
               Start Now
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
               />
             </Link>
           </motion.div>

@@ -118,9 +118,9 @@ export function About() {
                 <motion.div
                   key={pillar.title}
                   variants={staggerItem}
-                  className="flex flex-col items-center rounded-2xl border border-black/[0.04] bg-[#FDFBF7] p-10 text-center transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl"
+                  className="group flex flex-col items-center rounded-2xl border border-black/[0.04] bg-[#FDFBF7] p-10 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                 >
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E]">
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Icon size={28} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
@@ -147,12 +147,14 @@ export function About() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <div className="flex aspect-[5/4] w-full items-center justify-center rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
-              <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
-                <ImageIcon size={56} strokeWidth={1} />
-                <span className="text-xs font-medium uppercase tracking-widest text-[#6B6580]/50">
-                  Brand Promise
-                </span>
+            <div className="group overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
+              <div className="flex aspect-[5/4] w-full items-center justify-center transition-transform duration-700 ease-out group-hover:scale-105">
+                <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
+                  <ImageIcon size={56} strokeWidth={1} />
+                  <span className="text-xs font-medium uppercase tracking-widest text-[#6B6580]/50">
+                    Brand Promise
+                  </span>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -179,12 +181,12 @@ export function About() {
             <div className="mt-8">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] transition-all duration-500 ease-in-out hover:scale-105 hover:bg-[#C8A96E]/90"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
               >
                 Contact Us
                 <ArrowRight
                   size={18}
-                  className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
+                  className="transition-transform duration-500 ease-out group-hover:translate-x-1"
                 />
               </Link>
             </div>
@@ -226,9 +228,9 @@ export function About() {
             {/* Vision Card */}
             <motion.div
               variants={staggerItem}
-              className="rounded-2xl border border-black/[0.04] bg-white p-10 transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl"
+              className="group rounded-2xl border border-black/[0.04] bg-white p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
             >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E]">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Eye size={28} strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">Our Vision</h3>
@@ -241,9 +243,9 @@ export function About() {
             {/* Mission Card */}
             <motion.div
               variants={staggerItem}
-              className="rounded-2xl border border-black/[0.04] bg-white p-10 transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl"
+              className="group rounded-2xl border border-black/[0.04] bg-white p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
             >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E]">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Rocket size={28} strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">Our Mission</h3>
@@ -293,9 +295,9 @@ export function About() {
                 <motion.div
                   key={value.title}
                   variants={staggerItem}
-                  className="flex flex-col items-center rounded-2xl border border-black/[0.04] bg-white p-8 text-center transition-all duration-500 ease-in-out hover:-translate-y-1 hover:shadow-xl"
+                  className="group flex flex-col items-center rounded-2xl border border-black/[0.04] bg-white p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                 >
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E]">
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-bold tracking-tight text-[#1A1820]">
@@ -329,12 +331,12 @@ export function About() {
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] transition-all duration-500 ease-in-out hover:scale-105 hover:bg-white"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
             >
               Start Now
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
               />
             </Link>
           </motion.div>
