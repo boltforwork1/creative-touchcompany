@@ -44,7 +44,7 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="Creative Touch Logo"
-                className="h-12 w-auto max-w-[260px] object-contain"
+                className="h-20 w-auto max-w-[320px] object-contain"
               />
             </NavLink>
 

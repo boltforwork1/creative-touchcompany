@@ -21,7 +21,7 @@ export function Header() {
           <img
             src="/logo.png"
             alt="Creative Touch Logo"
-            className="h-10 w-auto max-w-[220px] object-contain"
+            className="h-20 w-auto max-w-[320px] object-contain py-1"
           />
         </NavLink>
 
