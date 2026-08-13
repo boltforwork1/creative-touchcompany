@@ -8,7 +8,6 @@ const navLinks = [
   { label: "About", to: "/about" },
   { label: "Services", to: "/services" },
   { label: "Projects", to: "/projects" },
-  { label: "Contact", to: "/contact" },
 ]
 
 export function Header() {
@@ -17,15 +16,19 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-white/95 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <NavLink to="/" className="group flex items-center" aria-label="Creative Touch home">
-          <img
-            src="/logo.png"
-            alt="Creative Touch Logo"
-            className="h-12 max-h-12 w-auto object-contain"
-          />
-        </NavLink>
+        {/* Left: Logo */}
+        <div className="flex flex-1 items-center justify-start">
+          <NavLink to="/" className="group flex items-center" aria-label="Creative Touch home">
+            <img
+              src="/logo.png"
+              alt="Creative Touch Logo"
+              className="h-[80px] w-auto object-contain"
+            />
+          </NavLink>
+        </div>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        {/* Center: Navigation */}
+        <nav className="hidden flex-none items-center justify-center gap-8 md:flex">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
@@ -46,6 +49,17 @@ export function Header() {
           ))}
         </nav>
 
+        {/* Right: CTA Button */}
+        <div className="hidden flex-1 items-center justify-end md:flex">
+          <NavLink
+            to="/contact"
+            className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-sm font-semibold text-[#1A1820] transition-all duration-200 hover:scale-105 hover:bg-[#C8A96E]/90"
+          >
+            Get in Touch
+          </NavLink>
+        </div>
+
+        {/* Mobile menu toggle */}
         <button
           className="flex items-center justify-center text-[#1A1820] transition-colors hover:text-[#C8A96E] md:hidden"
           onClick={() => setMobileOpen((v) => !v)}
@@ -74,6 +88,13 @@ export function Header() {
                 {link.label}
               </NavLink>
             ))}
+            <NavLink
+              to="/contact"
+              onClick={() => setMobileOpen(false)}
+              className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-center text-sm font-semibold text-[#1A1820] transition-all duration-200 hover:bg-[#C8A96E]/90"
+            >
+              Get in Touch
+            </NavLink>
           </nav>
         </div>
       )}
