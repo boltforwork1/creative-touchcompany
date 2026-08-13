@@ -16,12 +16,12 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-white/95 shadow-sm backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <NavLink to="/" className="group flex items-center" aria-label="Creative Touch home">
           <img
             src="/logo.png"
             alt="Creative Touch Logo"
-            className="h-20 w-auto max-w-[320px] object-contain py-1"
+            className="h-12 max-h-12 w-auto object-contain"
           />
         </NavLink>
 
