@@ -58,10 +58,7 @@ export function Footer() {
 
           {/* Navigation column */}
           <div>
-            <h4
-              className="mb-6 text-xs font-semibold tracking-[0.25em] text-[#C8A96E] uppercase"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
+            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase">
               Navigation
             </h4>
             <nav className="flex flex-col gap-3">
@@ -84,10 +81,7 @@ export function Footer() {
 
           {/* Contact column */}
           <div>
-            <h4
-              className="mb-6 text-xs font-semibold tracking-[0.25em] text-[#C8A96E] uppercase"
-              style={{ fontFamily: "var(--font-body)" }}
-            >
+            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase">
               Contact
             </h4>
             <ul className="flex flex-col gap-4">

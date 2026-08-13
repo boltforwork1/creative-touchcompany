@@ -65,13 +65,10 @@ export function Home() {
             <span className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
               Digital Marketing
             </span>
-            <h1
-              className="text-4xl font-semibold leading-[1.15] text-[#1A1820] sm:text-5xl lg:text-6xl"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
+            <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-[#1A1820] sm:text-5xl lg:text-6xl">
               Where creativity meets purpose.
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#6B6580]">
+            <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-[#6B6580]">
               From digital design to full brand identity and marketing solutions — Creative
               Touch brings your vision to life with creativity, precision, and purpose.
             </p>
@@ -123,13 +120,10 @@ export function Home() {
             <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
               About Us
             </span>
-            <h2
-              className="text-3xl font-semibold text-[#1A1820] sm:text-4xl lg:text-5xl"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl">
               Creative Touch
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[#6B6580]">
+            <p className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]">
               Creative Touch is a full-service creative agency specializing in digital design,
               branding, printing, and marketing solutions. We help businesses grow, stand out,
               and connect with their audience through innovative ideas and strong visuals. Our
@@ -160,13 +154,10 @@ export function Home() {
             <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
               Our Services
             </span>
-            <h2
-              className="text-3xl font-semibold text-[#1A1820] sm:text-4xl lg:text-5xl"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl">
               At Creative Touch
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-[#6B6580]">
+            <p className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]">
               We offer a comprehensive range of creative services designed to support brands at
               every stage — from initial concept to full-scale execution across digital and print.
             </p>
@@ -185,13 +176,10 @@ export function Home() {
                   <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#C8A96E] transition-colors duration-300 group-hover:bg-[#C8A96E] group-hover:text-white">
                     <Icon size={26} strokeWidth={1.5} />
                   </div>
-                  <h3
-                    className="text-xl font-semibold text-[#1A1820]"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
+                  <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-base leading-relaxed text-[#6B6580]">
+                  <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
                     {service.description}
                   </p>
                 </div>
@@ -223,10 +211,7 @@ export function Home() {
             <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
               Recent
             </span>
-            <h2
-              className="text-3xl font-semibold text-[#1A1820] sm:text-4xl lg:text-5xl"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl">
               Our Projects
             </h2>
           </div>
@@ -250,10 +235,7 @@ export function Home() {
                     className="text-[#C8A96E]"
                     strokeWidth={1.5}
                   />
-                  <h3
-                    className="text-xl font-semibold text-white"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
+                  <h3 className="text-xl font-bold tracking-tight text-white">
                     {project.title}
                   </h3>
                   <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#C8A96E]">
@@ -283,10 +265,7 @@ export function Home() {
       {/* ===== 5. CTA Banner ===== */}
       <section className="bg-[#1A1820] py-20">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 text-center">
-          <h2
-            className="text-3xl font-semibold text-white sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
+          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
             Ready to Start Your Project?
           </h2>
           <Link

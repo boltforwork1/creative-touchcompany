@@ -53,9 +53,9 @@
   --color-brand-text-muted: var(--brand-text-muted);
 
   /* Typography */
-  --font-display: "Cinzel", "Playfair Display", Georgia, serif;
-  --font-heading: "Playfair Display", Georgia, serif;
-  --font-body: "Outfit", "Inter", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
 :root {
@@ -160,5 +160,10 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1.2;
+  }
+  p {
+    line-height: 1.6;
   }
 }
