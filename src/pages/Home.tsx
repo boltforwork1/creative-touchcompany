@@ -11,6 +11,7 @@ import {
   Sparkles,
   Monitor,
 } from "lucide-react"
+import { StatsSection } from "@/components/StatsSection"
 
 const services = [
   {
@@ -145,6 +146,9 @@ export function Home() {
           </div>
         </div>
       </section>
+
+      {/* ===== 2.5 Stats & Metrics Section ===== */}
+      <StatsSection />
 
       {/* ===== 3. Services Overview Section ===== */}
       <section className="bg-[#F8F7FA] py-24">
