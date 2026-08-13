@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react"
+import { motion } from "framer-motion"
+import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations"
 
 type Stat = {
   value: number
@@ -46,7 +48,7 @@ function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
   const count = useCountUp(stat.value, active)
 
   return (
-    <div className="flex flex-col items-center text-center">
+    <motion.div variants={staggerItem} className="flex flex-col items-center text-center">
       <span className="text-5xl font-extrabold tracking-tight text-[#C8A96E] sm:text-6xl">
         {count}
         {stat.suffix}
@@ -54,7 +56,7 @@ function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
       <span className="mt-3 text-sm font-medium uppercase tracking-[0.2em] text-[#F2F0FF]/80 sm:text-base">
         {stat.label}
       </span>
-    </div>
+    </motion.div>
   )
 }
 
@@ -84,13 +86,31 @@ export function StatsSection() {
 
   return (
     <section ref={ref} className="bg-[#1A1820] py-20">
-      <div className="mx-auto max-w-7xl px-6">
+      <motion.div
+        className="mx-auto max-w-7xl px-6"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        <motion.div
+          className="mb-14 flex flex-col items-center text-center"
+          variants={fadeInUp}
+        >
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
+            Our Impact
+          </span>
+          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            Numbers That Speak
+          </h2>
+        </motion.div>
+
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {stats.map((stat) => (
             <StatItem key={stat.label} stat={stat} active={active} />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

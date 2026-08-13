@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 import {
   ArrowRight,
   ArrowUpRight,
@@ -12,6 +13,15 @@ import {
   Monitor,
 } from "lucide-react"
 import { StatsSection } from "@/components/StatsSection"
+import {
+  fadeInUp,
+  fadeInLeft,
+  fadeInRight,
+  staggerContainer,
+  staggerItem,
+  heroContainer,
+  viewportOnce,
+} from "@/lib/animations"
 
 const services = [
   {
@@ -62,33 +72,52 @@ export function Home() {
       <section className="relative flex min-h-[80vh] items-center overflow-hidden border-b border-black/[0.04] bg-white">
         <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:gap-16">
           {/* Left: Text */}
-          <div className="flex flex-col justify-center">
-            <span className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
+          <motion.div
+            className="flex flex-col justify-center"
+            variants={heroContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            <motion.span
+              className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              variants={fadeInUp}
+            >
               Digital Marketing
-            </span>
-            <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-[#1A1820] sm:text-5xl lg:text-6xl">
+            </motion.span>
+            <motion.h1
+              className="text-4xl font-extrabold leading-[1.1] tracking-tight text-[#1A1820] sm:text-5xl lg:text-6xl"
+              variants={fadeInUp}
+            >
               Where creativity meets purpose.
-            </h1>
-            <p className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-[#6B6580]">
+            </motion.h1>
+            <motion.p
+              className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-[#6B6580]"
+              variants={fadeInUp}
+            >
               From digital design to full brand identity and marketing solutions — Creative
               Touch brings your vision to life with creativity, precision, and purpose.
-            </p>
-            <div className="mt-10">
+            </motion.p>
+            <motion.div className="mt-10" variants={fadeInUp}>
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] transition-all duration-200 hover:scale-105 hover:bg-[#C8A96E]/90"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] transition-all duration-500 ease-in-out hover:scale-105 hover:bg-[#C8A96E]/90"
               >
                 Read More
                 <ArrowRight
                   size={18}
-                  className="transition-transform duration-200 group-hover:translate-x-1"
+                  className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
                 />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right: Visual placeholder */}
-          <div className="relative">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+          >
             <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
               <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
                 <Sparkles size={64} strokeWidth={1} />
@@ -97,7 +126,7 @@ export function Home() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -105,7 +134,13 @@ export function Home() {
       <section className="bg-white py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-2 lg:items-center lg:gap-20">
           {/* Left: Image placeholder */}
-          <div className="relative order-1">
+          <motion.div
+            className="relative order-1"
+            variants={fadeInLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
             <div className="flex aspect-[5/4] w-full items-center justify-center rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
               <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
                 <Layers size={56} strokeWidth={1} />
@@ -114,10 +149,16 @@ export function Home() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: Text */}
-          <div className="order-2 flex flex-col">
+          <motion.div
+            className="order-2 flex flex-col"
+            variants={fadeInRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
             <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
               About Us
             </span>
@@ -134,16 +175,16 @@ export function Home() {
             <div className="mt-8">
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-200 hover:bg-[#C8A96E] hover:text-[#1A1820]"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-500 ease-in-out hover:bg-[#C8A96E] hover:text-[#1A1820]"
               >
                 Read More
                 <ArrowRight
                   size={18}
-                  className="transition-transform duration-200 group-hover:translate-x-1"
+                  className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
                 />
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -154,30 +195,52 @@ export function Home() {
       <section className="bg-[#F8F7FA] py-24">
         <div className="mx-auto max-w-7xl px-6">
           {/* Intro */}
-          <div className="mx-auto mb-16 flex max-w-2xl flex-col items-center text-center">
-            <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
+          <motion.div
+            className="mx-auto mb-16 flex max-w-2xl flex-col items-center text-center"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
+            <motion.span
+              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              variants={fadeInUp}
+            >
               Our Services
-            </span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl">
+            </motion.span>
+            <motion.h2
+              className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
+              variants={fadeInUp}
+            >
               At Creative Touch
-            </h2>
-            <p className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]">
+            </motion.h2>
+            <motion.p
+              className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]"
+              variants={fadeInUp}
+            >
               We offer a comprehensive range of creative services designed to support brands at
               every stage — from initial concept to full-scale execution across digital and print.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           {/* Cards grid */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
             {services.map((service) => {
               const Icon = service.icon
               return (
-                <div
+                <motion.div
                   key={service.title}
-                  className="group rounded-2xl border border-black/[0.04] bg-white p-8 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_50px_-12px_rgba(26,24,32,0.12)]"
+                  variants={staggerItem}
+                  className="group rounded-2xl border border-black/[0.04] bg-white p-8 transition-all duration-500 ease-in-out hover:-translate-y-2 hover:shadow-xl"
                 >
                   {/* Icon placeholder */}
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#C8A96E] transition-colors duration-300 group-hover:bg-[#C8A96E] group-hover:text-white">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#C8A96E] transition-colors duration-500 ease-in-out group-hover:bg-[#C8A96E] group-hover:text-white">
                     <Icon size={26} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
@@ -186,24 +249,30 @@ export function Home() {
                   <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
                     {service.description}
                   </p>
-                </div>
+                </motion.div>
               )
             })}
-          </div>
+          </motion.div>
 
           {/* Section CTA */}
-          <div className="mt-14 flex justify-center">
+          <motion.div
+            className="mt-14 flex justify-center"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
             <Link
               to="/services"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] transition-all duration-200 hover:scale-105 hover:bg-[#C8A96E]/90"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] transition-all duration-500 ease-in-out hover:scale-105 hover:bg-[#C8A96E]/90"
             >
               View All Services
               <ArrowRight
                 size={18}
-                className="transition-transform duration-200 group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
               />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -211,29 +280,48 @@ export function Home() {
       <section className="bg-white py-24">
         <div className="mx-auto max-w-7xl px-6">
           {/* Header */}
-          <div className="mb-16 flex flex-col items-center text-center">
-            <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
+          <motion.div
+            className="mb-16 flex flex-col items-center text-center"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
+            <motion.span
+              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              variants={fadeInUp}
+            >
               Recent
-            </span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl">
+            </motion.span>
+            <motion.h2
+              className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
+              variants={fadeInUp}
+            >
               Our Projects
-            </h2>
-          </div>
+            </motion.h2>
+          </motion.div>
 
           {/* Grid 3x2 */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
             {projects.map((project) => (
-              <div
+              <motion.div
                 key={project.title}
+                variants={staggerItem}
                 className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]"
               >
                 {/* Placeholder icon */}
-                <div className="flex h-full w-full items-center justify-center text-[#C8A96E]/30">
+                <div className="flex h-full w-full items-center justify-center text-[#C8A96E]/30 transition-transform duration-500 ease-in-out group-hover:scale-105">
                   <PenTool size={48} strokeWidth={1} />
                 </div>
 
                 {/* Hover overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1A1820]/85 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1A1820]/85 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100">
                   <ArrowUpRight
                     size={28}
                     className="text-[#C8A96E]"
@@ -246,43 +334,60 @@ export function Home() {
                     {project.category}
                   </span>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Section CTA */}
-          <div className="mt-14 flex justify-center">
+          <motion.div
+            className="mt-14 flex justify-center"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewportOnce}
+          >
             <Link
               to="/projects"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-200 hover:bg-[#C8A96E] hover:text-[#1A1820]"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-500 ease-in-out hover:bg-[#C8A96E] hover:text-[#1A1820]"
             >
               View All Projects
               <ArrowRight
                 size={18}
-                className="transition-transform duration-200 group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
               />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* ===== 5. CTA Banner ===== */}
       <section className="bg-[#1A1820] py-20">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 text-center">
-          <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Ready to Start Your Project?
-          </h2>
-          <Link
-            to="/contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] transition-all duration-200 hover:scale-105 hover:bg-white"
+        <motion.div
+          className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 text-center"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOnce}
+        >
+          <motion.h2
+            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            variants={fadeInUp}
           >
-            Start Now
-            <ArrowRight
-              size={18}
-              className="transition-transform duration-200 group-hover:translate-x-1"
-            />
-          </Link>
-        </div>
+            Ready to Start Your Project?
+          </motion.h2>
+          <motion.div variants={fadeInUp}>
+            <Link
+              to="/contact"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] transition-all duration-500 ease-in-out hover:scale-105 hover:bg-white"
+            >
+              Start Now
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-500 ease-in-out group-hover:translate-x-1"
+              />
+            </Link>
+          </motion.div>
+        </motion.div>
       </section>
     </main>
   )
