@@ -95,7 +95,7 @@ export function HeroSlider() {
   }, [nextSlide])
 
   return (
-    <section className="relative h-[600px] w-full overflow-hidden bg-[#1A1820] sm:min-h-[80vh]">
+    <section className="relative h-[600px] w-full overflow-hidden bg-[#1A1820] sm:min-h-[80vh] lg:h-[calc(100vh-7rem)] lg:min-h-[calc(100vh-7rem)]">
       {/* Slides */}
       <AnimatePresence custom={direction} mode="popLayout">
         <motion.div
