@@ -83,7 +83,7 @@ export function Home() {
           >
             <div className="group overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
               <img
-                src="/home-about.jpg"
+                src="/our-promise.jpg"
                 alt="About Creative Touch"
                 className="aspect-[5/4] w-full rounded-2xl object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
