@@ -131,7 +131,7 @@ export function HeroSlider() {
       </AnimatePresence>
 
       {/* Text content */}
-      <div className="relative z-10 flex h-full items-center">
+      <div className="relative z-10 flex h-full items-center pb-24 md:pb-0">
         <div className="mx-auto w-full max-w-7xl px-6">
           <AnimatePresence mode="wait">
             <motion.div
@@ -187,14 +187,14 @@ export function HeroSlider() {
       <button
         onClick={prevSlide}
         aria-label="Previous slide"
-        className="group absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] sm:left-6"
+        className="group absolute bottom-8 left-4 top-auto z-20 flex h-11 w-11 translate-y-0 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] sm:left-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
       >
         <ChevronLeft size={20} strokeWidth={1.5} />
       </button>
       <button
         onClick={nextSlide}
         aria-label="Next slide"
-        className="group absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] sm:right-6"
+        className="group absolute bottom-8 right-4 top-auto z-20 flex h-11 w-11 translate-y-0 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] sm:right-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
       >
         <ChevronRight size={20} strokeWidth={1.5} />
       </button>
