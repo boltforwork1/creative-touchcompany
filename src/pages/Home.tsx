@@ -82,14 +82,11 @@ export function Home() {
             viewport={viewportOnce}
           >
             <div className="group overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
-              <div className="flex aspect-[5/4] w-full items-center justify-center transition-transform duration-700 ease-out group-hover:scale-105">
-                <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
-                  <Layers size={56} strokeWidth={1} />
-                  <span className="text-xs font-medium uppercase tracking-widest text-[#6B6580]/50">
-                    About Image
-                  </span>
-                </div>
-              </div>
+              <img
+                src="/home-about.jpg"
+                alt="About Creative Touch"
+                className="aspect-[5/4] w-full rounded-2xl object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
             </div>
           </motion.div>
 
