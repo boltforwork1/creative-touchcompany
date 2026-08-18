@@ -6,7 +6,6 @@ import {
   Mail,
   Clock,
   Send,
-  Map as MapIcon,
 } from "lucide-react"
 import {
   Select,
@@ -280,26 +279,6 @@ export function Contact() {
             </motion.div>
           </div>
         </div>
-      </section>
-
-      {/* ===== 3. Map Placeholder ===== */}
-      <section className="bg-white pb-24">
-        <motion.div
-          className="mx-auto max-w-7xl px-6"
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={viewportOnce}
-        >
-          <div className="flex h-96 w-full items-center justify-center overflow-hidden rounded-2xl bg-gray-100 ring-1 ring-black/[0.04]">
-            <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
-              <MapIcon size={56} strokeWidth={1} />
-              <span className="text-xs font-medium uppercase tracking-widest text-[#6B6580]/50">
-                Map Placeholder
-              </span>
-            </div>
-          </div>
-        </motion.div>
       </section>
     </main>
   )
