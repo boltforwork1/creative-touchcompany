@@ -9,17 +9,16 @@ import {
   ShoppingBag,
   Megaphone,
   Layers,
-  Sparkles,
   Monitor,
 } from "lucide-react"
 import { StatsSection } from "@/components/StatsSection"
+import { HeroSlider } from "@/components/HeroSlider"
 import {
   fadeInUp,
   fadeInLeft,
   fadeInRight,
   staggerContainer,
   staggerItem,
-  heroContainer,
   viewportOnce,
 } from "@/lib/animations"
 
@@ -68,67 +67,8 @@ const projects = [
 export function Home() {
   return (
     <main className="bg-white">
-      {/* ===== 1. Hero Section ===== */}
-      <section className="relative flex min-h-[80vh] items-center overflow-hidden border-b border-black/[0.04] bg-white">
-        <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-2 lg:items-center lg:gap-16">
-          {/* Left: Text */}
-          <motion.div
-            className="flex flex-col justify-center"
-            variants={heroContainer}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.span
-              className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
-              variants={fadeInUp}
-            >
-              Digital Marketing
-            </motion.span>
-            <motion.h1
-              className="text-4xl font-extrabold leading-[1.1] tracking-tight text-[#1A1820] sm:text-5xl lg:text-6xl"
-              variants={fadeInUp}
-            >
-              Where creativity meets purpose.
-            </motion.h1>
-            <motion.p
-              className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-[#6B6580]"
-              variants={fadeInUp}
-            >
-              From digital design to full brand identity and marketing solutions — Creative
-              Touch brings your vision to life with creativity, precision, and purpose.
-            </motion.p>
-            <motion.div className="mt-10" variants={fadeInUp}>
-              <Link
-                to="/about"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
-              >
-                Read More
-                <ArrowRight
-                  size={18}
-                  className="transition-transform duration-500 ease-out group-hover:translate-x-1"
-                />
-              </Link>
-            </motion.div>
-          </motion.div>
-
-          {/* Right: Visual placeholder */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-          >
-            <div className="flex aspect-[4/3] w-full items-center justify-center rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
-              <div className="flex flex-col items-center gap-4 text-[#C8A96E]/40">
-                <Sparkles size={64} strokeWidth={1} />
-                <span className="text-xs font-medium uppercase tracking-widest text-[#6B6580]/50">
-                  Hero Image
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      {/* ===== 1. Hero Slider ===== */}
+      <HeroSlider />
 
       {/* ===== 2. About Us Section ===== */}
       <section className="bg-white py-24">
