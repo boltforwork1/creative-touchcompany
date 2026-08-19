@@ -5,6 +5,8 @@ import {
   ArrowRight,
   ArrowUpRight,
   ExternalLink,
+  Maximize2,
+  X,
   Monitor,
   Palette,
   Printer,
@@ -47,11 +49,14 @@ type Project = {
 }
 
 const projects: Project[] = [
-  { title: "Aurora Brand System", category: "Brand Identity Design", icon: Palette },
+  { title: "Brand Project 1", category: "Brand Identity Design", icon: Palette, image: "/logos1.jpg", companyName: "Brand Company 1" },
+  { title: "Brand Project 2", category: "Brand Identity Design", icon: Palette, image: "/logos2.jpg", companyName: "Brand Company 2" },
+  { title: "Brand Project 3", category: "Brand Identity Design", icon: Palette, image: "/logos3.jpg", companyName: "Brand Company 3" },
+  { title: "Brand Project 4", category: "Brand Identity Design", icon: Palette, image: "/logos4.jpg", companyName: "Brand Company 4" },
+  { title: "Brand Project 5", category: "Brand Identity Design", icon: Palette, image: "/logos5.jpg", companyName: "Brand Company 5" },
   { title: "Lumen E-Commerce", category: "E-Commerce Stores", icon: ShoppingBag },
   { title: "Vertex Print Suite", category: "Corporate Printing", icon: Printer },
   { title: "Bloom Social Campaign", category: "Digital Marketing", icon: Megaphone },
-  { title: "Atlas Corporate Identity", category: "Brand Identity Design", icon: Palette },
   { title: "Nova Store Launch", category: "E-Commerce Stores", icon: ShoppingBag },
   { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://lamsat-alqsoor.com" },
   { title: "Website Project 2", category: "Website Design", icon: Monitor, image: "/web2.jpg", companyName: "Al Wthaq Group", liveLink: "https://alwethaqgroup.com" },
@@ -66,6 +71,7 @@ const projects: Project[] = [
 
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState<"All" | Category>("All")
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   const filtered =
     activeCategory === "All"
@@ -141,7 +147,55 @@ export function Projects() {
               {filtered.map((project) => {
                 const Icon = project.icon
 
-                // New image-based card for Website Design projects
+                // Image-based card for Brand Identity Design projects (with lightbox)
+                if (project.image && project.companyName && !project.liveLink) {
+                  return (
+                    <motion.div
+                      key={project.title}
+                      layout
+                      initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
+                    >
+                      {/* Image */}
+                      <div className="flex h-52 w-full items-center justify-center overflow-hidden bg-[#FDFBF7]">
+                        <img
+                          src={project.image}
+                          alt={project.companyName}
+                          className="h-full w-full object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                      </div>
+
+                      {/* Body */}
+                      <div className="flex flex-1 flex-col p-6">
+                        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E]">
+                          {project.category}
+                        </span>
+                        <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
+                          {project.companyName}
+                        </h3>
+
+                        <div className="mt-5">
+                          <button
+                            type="button"
+                            onClick={() => setSelectedImage(project.image!)}
+                            className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
+                          >
+                            View Full Screen
+                            <Maximize2
+                              size={16}
+                              className="transition-transform duration-500 ease-out group-hover/link:scale-110"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )
+                }
+
+                // Image-based card for Website Design projects
                 if (project.image && project.companyName && project.liveLink) {
                   return (
                     <motion.div
@@ -226,6 +280,39 @@ export function Projects() {
           </motion.div>
         </div>
       </section>
+
+      {/* ===== Full-Screen Image Lightbox ===== */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Close"
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820]"
+            >
+              <X size={22} strokeWidth={1.5} />
+            </button>
+            <motion.img
+              src={selectedImage}
+              alt="Full screen preview"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="max-h-[90vh] max-w-[90vw] rounded-xl object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ===== 3. Global CTA Banner ===== */}
       <section className="bg-[#1A1820] py-20">
