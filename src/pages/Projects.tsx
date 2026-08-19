@@ -160,11 +160,11 @@ export function Projects() {
                       className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                     >
                       {/* Image */}
-                      <div className="flex h-52 w-full items-center justify-center overflow-hidden bg-[#FDFBF7]">
+                      <div className="h-52 w-full overflow-hidden">
                         <img
                           src={project.image}
                           alt={project.companyName}
-                          className="h-full w-full object-contain p-4 transition-transform duration-700 ease-out group-hover:scale-105"
+                          className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                         />
                       </div>
 
