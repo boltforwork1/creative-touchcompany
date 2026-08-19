@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import {
   ArrowRight,
   ArrowUpRight,
+  ExternalLink,
   Monitor,
   Palette,
   Printer,
@@ -40,6 +41,9 @@ type Project = {
   title: string
   category: Category
   icon: typeof Monitor
+  image?: string
+  companyName?: string
+  liveLink?: string
 }
 
 const projects: Project[] = [
@@ -49,10 +53,13 @@ const projects: Project[] = [
   { title: "Bloom Social Campaign", category: "Digital Marketing", icon: Megaphone },
   { title: "Atlas Corporate Identity", category: "Brand Identity Design", icon: Palette },
   { title: "Nova Store Launch", category: "E-Commerce Stores", icon: ShoppingBag },
-  { title: "Meridian Website", category: "Website Design", icon: Monitor },
+  { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Company Name 1", liveLink: "https://example.com" },
+  { title: "Website Project 2", category: "Website Design", icon: Monitor, image: "/web2.jpg", companyName: "Company Name 2", liveLink: "https://example.com" },
+  { title: "Website Project 3", category: "Website Design", icon: Monitor, image: "/web3.jpg", companyName: "Company Name 3", liveLink: "https://example.com" },
+  { title: "Website Project 4", category: "Website Design", icon: Monitor, image: "/web4.jpg", companyName: "Company Name 4", liveLink: "https://example.com" },
+  { title: "Website Project 5", category: "Website Design", icon: Monitor, image: "/web5.jpg", companyName: "Company Name 5", liveLink: "https://example.com" },
   { title: "Pulse Fitness Uniforms", category: "Apparel & Merch Printing", icon: Shirt },
   { title: "Quartz Business Cards", category: "Corporate Printing", icon: Printer },
-  { title: "Zenith Landing Page", category: "Website Design", icon: Monitor },
   { title: "Solstice Tees Collection", category: "Apparel & Merch Printing", icon: Shirt },
   { title: "Echo Digital Ads", category: "Digital Marketing", icon: Megaphone },
 ]
@@ -133,6 +140,59 @@ export function Projects() {
             <AnimatePresence mode="popLayout">
               {filtered.map((project) => {
                 const Icon = project.icon
+
+                // New image-based card for Website Design projects
+                if (project.image && project.companyName && project.liveLink) {
+                  return (
+                    <motion.div
+                      key={project.title}
+                      layout
+                      initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
+                    >
+                      {/* Image */}
+                      <div className="overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.companyName}
+                          className="h-48 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        />
+                      </div>
+
+                      {/* Body */}
+                      <div className="flex flex-1 flex-col p-6">
+                        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E]">
+                          {project.category}
+                        </span>
+                        <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
+                          {project.companyName}
+                        </h3>
+                        <p className="mt-2 text-sm font-normal leading-relaxed text-[#6B6580]">
+                          A modern, responsive website crafted to engage visitors and drive results.
+                        </p>
+
+                        <div className="mt-6">
+                          <a
+                            href={project.liveLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
+                          >
+                            Open in Browser
+                            <ExternalLink
+                              size={16}
+                              className="transition-transform duration-500 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )
+                }
+
                 return (
                   <motion.div
                     key={project.title}
