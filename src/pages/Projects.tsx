@@ -135,7 +135,7 @@ export function Projects() {
           {/* Grid */}
           <motion.div
             layout
-            className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+            className={`grid grid-cols-1 gap-6 md:grid-cols-2 ${activeCategory === "Website Design" ? "lg:grid-cols-2" : "lg:grid-cols-3"}`}
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((project) => {
@@ -158,7 +158,7 @@ export function Projects() {
                         <img
                           src={project.image}
                           alt={project.companyName}
-                          className="h-48 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                          className="aspect-video w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         />
                       </div>
 
@@ -170,11 +170,8 @@ export function Projects() {
                         <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                           {project.companyName}
                         </h3>
-                        <p className="mt-2 text-sm font-normal leading-relaxed text-[#6B6580]">
-                          A modern, responsive website crafted to engage visitors and drive results.
-                        </p>
 
-                        <div className="mt-6">
+                        <div className="mt-5">
                           <a
                             href={project.liveLink}
                             target="_blank"
