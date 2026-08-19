@@ -53,7 +53,7 @@ const projects: Project[] = [
   { title: "Bloom Social Campaign", category: "Digital Marketing", icon: Megaphone },
   { title: "Atlas Corporate Identity", category: "Brand Identity Design", icon: Palette },
   { title: "Nova Store Launch", category: "E-Commerce Stores", icon: ShoppingBag },
-  { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://example.com" },
+  { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://lamsat-alqsoor.com" },
   { title: "Website Project 2", category: "Website Design", icon: Monitor, image: "/web2.jpg", companyName: "Company Name 2", liveLink: "https://example.com" },
   { title: "Website Project 3", category: "Website Design", icon: Monitor, image: "/web3.jpg", companyName: "Company Name 3", liveLink: "https://example.com" },
   { title: "Website Project 4", category: "Website Design", icon: Monitor, image: "/web4.jpg", companyName: "Company Name 4", liveLink: "https://example.com" },
