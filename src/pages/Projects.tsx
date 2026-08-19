@@ -135,7 +135,7 @@ export function Projects() {
           {/* Grid */}
           <motion.div
             layout
-            className={`grid grid-cols-1 gap-6 md:grid-cols-2 ${activeCategory === "Website Design" ? "lg:grid-cols-2" : "lg:grid-cols-3"}`}
+            className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
           >
             <AnimatePresence mode="popLayout">
               {filtered.map((project) => {
@@ -158,7 +158,7 @@ export function Projects() {
                         <img
                           src={project.image}
                           alt={project.companyName}
-                          className="aspect-video w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                          className="h-52 w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                         />
                       </div>
 
