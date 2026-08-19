@@ -49,7 +49,7 @@ type Project = {
 }
 
 const projects: Project[] = [
-  { title: "Brand Project 1", category: "Brand Identity Design", icon: Palette, image: "/logos1.jpg", companyName: "Brand Company 1" },
+  { title: "Brand Project 1", category: "Brand Identity Design", icon: Palette, image: "/logos1.jpg", companyName: "Lamsat Alqsor" },
   { title: "Brand Project 2", category: "Brand Identity Design", icon: Palette, image: "/logos2.jpg", companyName: "Brand Company 2" },
   { title: "Brand Project 3", category: "Brand Identity Design", icon: Palette, image: "/logos3.jpg", companyName: "Brand Company 3" },
   { title: "Brand Project 4", category: "Brand Identity Design", icon: Palette, image: "/logos4.jpg", companyName: "Brand Company 4" },
