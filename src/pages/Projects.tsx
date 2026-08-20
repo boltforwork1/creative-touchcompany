@@ -66,7 +66,7 @@ const projects: Project[] = [
   { title: "Website Project 6", category: "Website Design", icon: Monitor, image: "/web6.jpg", companyName: "MKM KARA", liveLink: "https://mkm-kara.com" },
   { title: "Website Project 7", category: "Website Design", icon: Monitor, image: "/web7.jpg", companyName: "MOCC", liveLink: "https://mocc-ksa.com" },
   { title: "Website Project 8", category: "Website Design", icon: Monitor, image: "/web8.jpg", companyName: "Wejhat Al Ebtkar", liveLink: "https://wejhatalebtkar.com" },
-  { title: "Website Project 9", category: "Website Design", icon: Monitor, image: "/web9.jpg", companyName: "Company Name 9", liveLink: "https://example.com" },
+  { title: "Website Project 9", category: "Website Design", icon: Monitor, image: "/web9.jpg", companyName: "Mizan Al Nokhbah Accounting", liveLink: "https://mizanuae.com" },
   { title: "Website Project 10", category: "Website Design", icon: Monitor, image: "/web10.jpg", companyName: "Company Name 10", liveLink: "https://example.com" },
   { title: "Website Project 11", category: "Website Design", icon: Monitor, image: "/web11.jpg", companyName: "Company Name 11", liveLink: "https://example.com" },
   { title: "Website Project 12", category: "Website Design", icon: Monitor, image: "/web12.jpg", companyName: "Company Name 12", liveLink: "https://example.com" },
