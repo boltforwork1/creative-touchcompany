@@ -63,6 +63,7 @@ const projects: Project[] = [
   { title: "Website Project 3", category: "Website Design", icon: Monitor, image: "/web3.jpg", companyName: "Al Reyada Al Motaqadima", liveLink: "https://alreyada-almotaqdima.ae" },
   { title: "Website Project 4", category: "Website Design", icon: Monitor, image: "/web4.jpg", companyName: "Company Name 4", liveLink: "https://example.com" },
   { title: "Website Project 5", category: "Website Design", icon: Monitor, image: "/web5.jpg", companyName: "Company Name 5", liveLink: "https://example.com" },
+  { title: "Website Project 6", category: "Website Design", icon: Monitor, image: "/web6.jpg", companyName: "Company Name 6", liveLink: "https://example.com" },
   { title: "Pulse Fitness Uniforms", category: "Apparel & Merch Printing", icon: Shirt },
   { title: "Quartz Business Cards", category: "Corporate Printing", icon: Printer },
   { title: "Solstice Tees Collection", category: "Apparel & Merch Printing", icon: Shirt },
