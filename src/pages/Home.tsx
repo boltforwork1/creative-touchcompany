@@ -1,10 +1,12 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   ArrowRight,
-  ArrowUpRight,
+  ExternalLink,
+  Maximize2,
+  X,
   Palette,
-  PenTool,
   Printer,
   ShoppingBag,
   Megaphone,
@@ -55,16 +57,25 @@ const services = [
   },
 ] as const
 
-const projects = [
-  { title: "Aurora Brand System", category: "Branding" },
-  { title: "Lumen E-Commerce", category: "Web Design" },
-  { title: "Vertex Print Suite", category: "Print" },
-  { title: "Bloom Social Campaign", category: "Marketing" },
-  { title: "Atlas Corporate Identity", category: "Branding" },
-  { title: "Nova Store Launch", category: "E-Commerce" },
+type FeaturedProject = {
+  category: string
+  name: string
+  image: string
+  liveLink?: string
+}
+
+const featuredProjects: FeaturedProject[] = [
+  { category: "Website Design", name: "Al Wthaq Group", image: "/web1.jpg", liveLink: "https://alwethaqgroup.com" },
+  { category: "Website Design", name: "Lamsat Alqsor", image: "/web2.jpg", liveLink: "https://lamsat-alqsoor.com" },
+  { category: "Brand Identity Design", name: "Brand Company 1", image: "/logos1.jpg" },
+  { category: "Corporate Printing", name: "Corporate Client 1", image: "/print1.jpg" },
+  { category: "E-Commerce Stores", name: "Store Name 1", image: "/store1.jpg", liveLink: "https://halalifeed.com" },
+  { category: "Apparel & Merch Printing", name: "EMES Decoration", image: "/bag1.jpg" },
 ]
 
 export function Home() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
   return (
     <main className="bg-white">
       {/* ===== 1. Hero Slider ===== */}
@@ -248,30 +259,58 @@ export function Home() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            {projects.map((project) => (
+            {featuredProjects.map((project) => (
               <motion.div
-                key={project.title}
+                key={project.name}
                 variants={staggerItem}
-                className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]"
+                className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
               >
-                {/* Placeholder icon */}
-                <div className="flex h-full w-full items-center justify-center text-[#C8A96E]/30 transition-transform duration-700 ease-out group-hover:scale-105">
-                  <PenTool size={48} strokeWidth={1} />
+                {/* Image */}
+                <div className="h-52 w-full overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
                 </div>
 
-                {/* Hover overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1A1820]/85 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100">
-                  <ArrowUpRight
-                    size={28}
-                    className="text-[#C8A96E]"
-                    strokeWidth={1.5}
-                  />
-                  <h3 className="text-xl font-bold tracking-tight text-white">
-                    {project.title}
-                  </h3>
-                  <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#C8A96E]">
+                {/* Body */}
+                <div className="flex flex-1 flex-col p-6">
+                  <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E]">
                     {project.category}
                   </span>
+                  <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
+                    {project.name}
+                  </h3>
+
+                  <div className="mt-5">
+                    {project.liveLink ? (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
+                      >
+                        Open in Browser
+                        <ExternalLink
+                          size={16}
+                          className="transition-transform duration-500 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                        />
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={() => setSelectedImage(project.image)}
+                        className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
+                      >
+                        View Full Screen
+                        <Maximize2
+                          size={16}
+                          className="transition-transform duration-500 ease-out group-hover/link:scale-110"
+                        />
+                      </button>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -298,6 +337,39 @@ export function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* ===== Full-Screen Image Lightbox ===== */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedImage(null)}
+              aria-label="Close"
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820]"
+            >
+              <X size={22} strokeWidth={1.5} />
+            </button>
+            <motion.img
+              src={selectedImage}
+              alt="Full screen preview"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="max-h-[90vh] max-w-[90vw] rounded-xl object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ===== 5. CTA Banner ===== */}
       <section className="bg-[#1A1820] py-20">
