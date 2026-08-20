@@ -54,10 +54,10 @@ const projects: Project[] = [
   { title: "Brand Project 3", category: "Brand Identity Design", icon: Palette, image: "/logos3.jpg", companyName: "Brand Company 3" },
   { title: "Brand Project 4", category: "Brand Identity Design", icon: Palette, image: "/logos4.jpg", companyName: "Brand Company 4" },
   { title: "Brand Project 5", category: "Brand Identity Design", icon: Palette, image: "/logos5.jpg", companyName: "Brand Company 5" },
-  { title: "Lumen E-Commerce", category: "E-Commerce Stores", icon: ShoppingBag },
+  { title: "Store Project 1", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store1.jpg", companyName: "Company Name 1", liveLink: "https://example.com" },
+  { title: "Store Project 2", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store2.jpg", companyName: "Company Name 2", liveLink: "https://example.com" },
   { title: "Vertex Print Suite", category: "Corporate Printing", icon: Printer },
   { title: "Bloom Social Campaign", category: "Digital Marketing", icon: Megaphone },
-  { title: "Nova Store Launch", category: "E-Commerce Stores", icon: ShoppingBag },
   { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://lamsat-alqsoor.com" },
   { title: "Website Project 2", category: "Website Design", icon: Monitor, image: "/web2.jpg", companyName: "Al Wthaq Group", liveLink: "https://alwethaqgroup.com" },
   { title: "Website Project 3", category: "Website Design", icon: Monitor, image: "/web3.jpg", companyName: "Al Reyada Al Motaqadima", liveLink: "https://alreyada-almotaqdima.ae" },
@@ -139,11 +139,8 @@ export function Projects() {
           </motion.div>
 
           {/* Grid */}
-          <motion.div
-            layout
-            className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
-          >
-            <AnimatePresence mode="popLayout">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <AnimatePresence mode="wait">
               {filtered.map((project) => {
                 const Icon = project.icon
 
@@ -152,11 +149,10 @@ export function Projects() {
                   return (
                     <motion.div
                       key={project.title}
-                      layout
-                      initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                      exit={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
                       className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                     >
                       {/* Image */}
@@ -195,16 +191,15 @@ export function Projects() {
                   )
                 }
 
-                // Image-based card for Website Design projects
+                // Image-based card for Website Design & E-Commerce projects
                 if (project.image && project.companyName && project.liveLink) {
                   return (
                     <motion.div
                       key={project.title}
-                      layout
-                      initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                      exit={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
                       className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                     >
                       {/* Image */}
@@ -247,11 +242,10 @@ export function Projects() {
                 return (
                   <motion.div
                     key={project.title}
-                    layout
-                    initial={{ opacity: 0, y: 40, filter: "blur(10px)" }}
-                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    exit={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
                     className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]"
                   >
                     {/* Placeholder */}
@@ -277,7 +271,7 @@ export function Projects() {
                 )
               })}
             </AnimatePresence>
-          </motion.div>
+          </div>
         </div>
       </section>
 
