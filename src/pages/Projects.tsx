@@ -53,7 +53,12 @@ const projects: Project[] = [
   { title: "Brand Project 5", category: "Brand Identity Design", icon: Palette, image: "/logos5.jpg", companyName: "Brand Company 5" },
   { title: "Store Project 1", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store1.jpg", companyName: "Halali for Feed", liveLink: "https://halalifeed.com" },
   { title: "Store Project 2", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store2.jpg", companyName: "Bradosti General Trading", liveLink: "https://bradosti-trading.com" },
-  { title: "Vertex Print Suite", category: "Corporate Printing", icon: Printer },
+  { title: "Print Project 1", category: "Corporate Printing", icon: Printer, image: "/print1.jpg", companyName: "Corporate Client 1" },
+  { title: "Print Project 2", category: "Corporate Printing", icon: Printer, image: "/print2.jpg", companyName: "Corporate Client 2" },
+  { title: "Print Project 3", category: "Corporate Printing", icon: Printer, image: "/print3.jpg", companyName: "Corporate Client 3" },
+  { title: "Print Project 4", category: "Corporate Printing", icon: Printer, image: "/print4.jpg", companyName: "Corporate Client 4" },
+  { title: "Print Project 5", category: "Corporate Printing", icon: Printer, image: "/print5.jpg", companyName: "Corporate Client 5" },
+  { title: "Print Project 6", category: "Corporate Printing", icon: Printer, image: "/print6.jpg", companyName: "Corporate Client 6" },
   { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://lamsat-alqsoor.com" },
   { title: "Website Project 2", category: "Website Design", icon: Monitor, image: "/web2.jpg", companyName: "Al Wthaq Group", liveLink: "https://alwethaqgroup.com" },
   { title: "Website Project 3", category: "Website Design", icon: Monitor, image: "/web3.jpg", companyName: "Al Reyada Al Motaqadima", liveLink: "https://alreyada-almotaqdima.ae" },
@@ -67,7 +72,6 @@ const projects: Project[] = [
   { title: "Website Project 11", category: "Website Design", icon: Monitor, image: "/web11.jpg", companyName: "Magic Mid", liveLink: "https://magic-mid.com" },
   { title: "Website Project 12", category: "Website Design", icon: Monitor, image: "/web12.jpg", companyName: "Elite Home", liveLink: "https://elitehome-uae.com" },
   { title: "Apparel Project 1", category: "Apparel & Merch Printing", icon: Shirt, image: "/bag1.jpg", companyName: "EMES Decoration" },
-  { title: "Quartz Business Cards", category: "Corporate Printing", icon: Printer },
 ]
 
 export function Projects() {
