@@ -57,7 +57,7 @@ const projects: Project[] = [
   { title: "Print Project 2", category: "Corporate Printing", icon: Printer, image: "/print2.jpg", companyName: "Alomraa" },
   { title: "Print Project 3", category: "Corporate Printing", icon: Printer, image: "/print3.jpg", companyName: "NARC" },
   { title: "Print Project 4", category: "Corporate Printing", icon: Printer, image: "/print4.jpg", companyName: "GTS" },
-  { title: "Print Project 5", category: "Corporate Printing", icon: Printer, image: "/print5.jpg", companyName: "Corporate Client 5" },
+  { title: "Print Project 5", category: "Corporate Printing", icon: Printer, image: "/print5.jpg", companyName: "Zed group" },
   { title: "Print Project 6", category: "Corporate Printing", icon: Printer, image: "/print6.jpg", companyName: "Corporate Client 6" },
   { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://lamsat-alqsoor.com" },
   { title: "Website Project 2", category: "Website Design", icon: Monitor, image: "/web2.jpg", companyName: "Al Wthaq Group", liveLink: "https://alwethaqgroup.com" },
