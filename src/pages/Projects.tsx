@@ -54,7 +54,7 @@ const projects: Project[] = [
   { title: "Brand Project 3", category: "Brand Identity Design", icon: Palette, image: "/logos3.jpg", companyName: "Brand Company 3" },
   { title: "Brand Project 4", category: "Brand Identity Design", icon: Palette, image: "/logos4.jpg", companyName: "Brand Company 4" },
   { title: "Brand Project 5", category: "Brand Identity Design", icon: Palette, image: "/logos5.jpg", companyName: "Brand Company 5" },
-  { title: "Store Project 1", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store1.jpg", companyName: "Company Name 1", liveLink: "https://example.com" },
+  { title: "Store Project 1", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store1.jpg", companyName: "Halali for Feed", liveLink: "https://halalifeed.com" },
   { title: "Store Project 2", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store2.jpg", companyName: "Company Name 2", liveLink: "https://example.com" },
   { title: "Vertex Print Suite", category: "Corporate Printing", icon: Printer },
   { title: "Bloom Social Campaign", category: "Digital Marketing", icon: Megaphone },
