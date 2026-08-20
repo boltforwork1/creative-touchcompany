@@ -12,7 +12,6 @@ import {
   Printer,
   ShoppingBag,
   Shirt,
-  Megaphone,
 } from "lucide-react"
 import {
   fadeInUp,
@@ -27,7 +26,6 @@ type Category =
   | "Corporate Printing"
   | "E-Commerce Stores"
   | "Apparel & Merch Printing"
-  | "Digital Marketing"
 
 const categories: ("All" | Category)[] = [
   "All",
@@ -36,7 +34,6 @@ const categories: ("All" | Category)[] = [
   "Corporate Printing",
   "E-Commerce Stores",
   "Apparel & Merch Printing",
-  "Digital Marketing",
 ]
 
 type Project = {
@@ -57,7 +54,6 @@ const projects: Project[] = [
   { title: "Store Project 1", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store1.jpg", companyName: "Halali for Feed", liveLink: "https://halalifeed.com" },
   { title: "Store Project 2", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store2.jpg", companyName: "Bradosti General Trading", liveLink: "https://bradosti-trading.com" },
   { title: "Vertex Print Suite", category: "Corporate Printing", icon: Printer },
-  { title: "Bloom Social Campaign", category: "Digital Marketing", icon: Megaphone },
   { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://lamsat-alqsoor.com" },
   { title: "Website Project 2", category: "Website Design", icon: Monitor, image: "/web2.jpg", companyName: "Al Wthaq Group", liveLink: "https://alwethaqgroup.com" },
   { title: "Website Project 3", category: "Website Design", icon: Monitor, image: "/web3.jpg", companyName: "Al Reyada Al Motaqadima", liveLink: "https://alreyada-almotaqdima.ae" },
@@ -70,10 +66,8 @@ const projects: Project[] = [
   { title: "Website Project 10", category: "Website Design", icon: Monitor, image: "/web10.jpg", companyName: "Modern National Home", liveLink: "https://hmn-uae.com" },
   { title: "Website Project 11", category: "Website Design", icon: Monitor, image: "/web11.jpg", companyName: "Magic Mid", liveLink: "https://magic-mid.com" },
   { title: "Website Project 12", category: "Website Design", icon: Monitor, image: "/web12.jpg", companyName: "Elite Home", liveLink: "https://elitehome-uae.com" },
-  { title: "Pulse Fitness Uniforms", category: "Apparel & Merch Printing", icon: Shirt },
+  { title: "Apparel Project 1", category: "Apparel & Merch Printing", icon: Shirt, image: "/bag1.jpg", companyName: "EMES Decoration" },
   { title: "Quartz Business Cards", category: "Corporate Printing", icon: Printer },
-  { title: "Solstice Tees Collection", category: "Apparel & Merch Printing", icon: Shirt },
-  { title: "Echo Digital Ads", category: "Digital Marketing", icon: Megaphone },
 ]
 
 export function Projects() {
