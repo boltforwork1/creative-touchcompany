@@ -54,7 +54,7 @@ const projects: Project[] = [
   { title: "Store Project 1", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store1.jpg", companyName: "Halali for Feed", liveLink: "https://halalifeed.com" },
   { title: "Store Project 2", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store2.jpg", companyName: "Bradosti General Trading", liveLink: "https://bradosti-trading.com" },
   { title: "Print Project 1", category: "Corporate Printing", icon: Printer, image: "/print1.jpg", companyName: "Lamsat Alqsor" },
-  { title: "Print Project 2", category: "Corporate Printing", icon: Printer, image: "/print2.jpg", companyName: "Corporate Client 2" },
+  { title: "Print Project 2", category: "Corporate Printing", icon: Printer, image: "/print2.jpg", companyName: "Alomraa" },
   { title: "Print Project 3", category: "Corporate Printing", icon: Printer, image: "/print3.jpg", companyName: "Corporate Client 3" },
   { title: "Print Project 4", category: "Corporate Printing", icon: Printer, image: "/print4.jpg", companyName: "Corporate Client 4" },
   { title: "Print Project 5", category: "Corporate Printing", icon: Printer, image: "/print5.jpg", companyName: "Corporate Client 5" },
