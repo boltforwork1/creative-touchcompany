@@ -26,6 +26,7 @@ type Service = {
   title: string
   description: string
   deliverables: string[]
+  image: string
 }
 
 const services: Service[] = [
@@ -34,36 +35,42 @@ const services: Service[] = [
     title: "Website Design",
     description: "Modern, responsive websites designed for a seamless user experience.",
     deliverables: ["UI/UX Design", "Responsive Development", "SEO Optimization"],
+    image: "/service1.jpg",
   },
   {
     icon: PenTool,
     title: "Brand Identity Design",
     description: "Unique visual identities that tell your brand's story with elegance.",
     deliverables: ["Logo Design", "Brand Guidelines", "Typography Systems"],
+    image: "/service2.jpg",
   },
   {
     icon: Printer,
     title: "Corporate Printing",
     description: "High-quality printing for all corporate stationery and collateral.",
     deliverables: ["Business Cards", "Letterheads", "Premium Stationery"],
+    image: "/service3.jpg",
   },
   {
     icon: ShoppingBag,
     title: "E-Commerce Stores",
     description: "Fully functional online stores built to increase engagement and drive sales.",
     deliverables: ["Custom Storefronts", "Payment Integration", "Product Management"],
+    image: "/service4.jpg",
   },
   {
     icon: Shirt,
     title: "Apparel & Merch Printing",
     description: "Premium T-shirt, uniform, and promotional material printing.",
     deliverables: ["Custom Uniforms", "Branded Merch", "Large-format Print"],
+    image: "/service5.jpg",
   },
   {
     icon: Megaphone,
     title: "Digital Marketing",
     description: "Strategic campaigns and content that boost visibility and drive success.",
     deliverables: ["Social Media Strategy", "Paid Ads", "Content Creation"],
+    image: "/service6.jpg",
   },
 ]
 
@@ -174,44 +181,59 @@ export function Services() {
                 <motion.div
                   key={service.title}
                   variants={staggerItem}
-                  className="group flex flex-col rounded-2xl border border-black/[0.04] bg-[#FDFBF7] p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-black/[0.04] bg-[#FDFBF7] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                 >
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-white text-[#C8A96E] ring-1 ring-black/[0.04] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-[#C8A96E] group-hover:text-white">
-                    <Icon size={26} strokeWidth={1.5} />
+                  {/* Cover image */}
+                  <div className="relative h-48 w-full overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    />
                   </div>
 
-                  <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
-                    {service.description}
-                  </p>
+                  {/* Floating icon overlapping image and content */}
+                  <div className="relative z-10 -mt-8 px-8">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white text-[#C8A96E] shadow-[0_10px_30px_-12px_rgba(26,24,32,0.25)] ring-1 ring-black/[0.04] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-[#C8A96E] group-hover:text-white">
+                      <Icon size={26} strokeWidth={1.5} />
+                    </div>
+                  </div>
 
-                  <div className="my-6 h-px w-full bg-black/[0.06]" />
+                  {/* Content */}
+                  <div className="flex flex-1 flex-col px-8 pb-8 pt-4">
+                    <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
+                      {service.description}
+                    </p>
 
-                  <ul className="flex flex-col gap-2.5">
-                    {service.deliverables.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-center gap-2.5 text-sm font-medium text-[#1A1820]"
+                    <div className="my-6 h-px w-full bg-black/[0.06]" />
+
+                    <ul className="flex flex-col gap-2.5">
+                      {service.deliverables.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-center gap-2.5 text-sm font-medium text-[#1A1820]"
+                        >
+                          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8A96E]" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-8 pt-2">
+                      <Link
+                        to="/contact"
+                        className="group/link inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#C8A96E] transition-colors duration-300 hover:text-[#1A1820]"
                       >
-                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8A96E]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-8 pt-2">
-                    <Link
-                      to="/contact"
-                      className="group/link inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#C8A96E] transition-colors duration-300 hover:text-[#1A1820]"
-                    >
-                      Request Quote
-                      <ArrowRight
-                        size={16}
-                        className="transition-transform duration-500 ease-out group-hover/link:translate-x-1"
-                      />
-                    </Link>
+                        Request Quote
+                        <ArrowRight
+                          size={16}
+                          className="transition-transform duration-500 ease-out group-hover/link:translate-x-1"
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               )
