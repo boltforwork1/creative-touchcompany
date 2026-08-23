@@ -147,7 +147,7 @@ export function Services() {
 
                   {/* Content */}
                   <div className="flex flex-1 flex-col px-8 pb-8 pt-4">
-                    <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">
+                    <h3 className="text-3xl md:text-4xl font-black leading-tight tracking-tight text-[#1A1820]">
                       {title}
                     </h3>
                     <p className="mt-3 text-base font-normal leading-relaxed text-gray-500">
@@ -238,7 +238,7 @@ export function Services() {
                       {step.step}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold tracking-tight text-[#1A1820]">
+                  <h3 className="text-xl md:text-2xl font-extrabold leading-tight tracking-tight text-[#1A1820]">
                     {t(`servicesPage.process.steps.${step.key}.title`)}
                   </h3>
                   <p className="mt-3 text-base font-normal leading-relaxed text-gray-500">
