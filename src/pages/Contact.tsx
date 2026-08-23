@@ -82,19 +82,19 @@ export function Contact() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
             variants={fadeInUp}
           >
             Get In Touch
           </motion.span>
           <motion.h1
-            className="max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
             Let&rsquo;s Build Something Extraordinary
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl text-lg font-medium leading-relaxed text-gray-400"
+            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400"
             variants={fadeInUp}
           >
             Have a project in mind or need more information? We&rsquo;d love to hear from you.
@@ -114,13 +114,13 @@ export function Contact() {
               whileInView="visible"
               viewport={viewportOnce}
             >
-              <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
+              <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]">
                 Contact Details
               </span>
-              <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#1A1820] sm:text-4xl">
+              <h2 className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl">
                 We&rsquo;re here to help your brand grow.
               </h2>
-              <p className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]">
+              <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580]">
                 Reach out to us directly or fill out the form. Our team is ready to bring your
                 vision to life with creativity and precision.
               </p>

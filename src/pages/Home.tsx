@@ -87,13 +87,13 @@ export function Home() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
+            <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
               {t("about.eyebrow")}
             </span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl">
+            <h2 className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl">
               {t("about.title")}
             </h2>
-            <p className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]">
+            <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580]">
               {t("about.body")}
             </p>
             <div className="mt-8">
@@ -127,19 +127,19 @@ export function Home() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
               variants={fadeInUp}
             >
               {t("services.eyebrow")}
             </motion.span>
             <motion.h2
-              className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
+              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
               variants={fadeInUp}
             >
               {t("services.title")}
             </motion.h2>
             <motion.p
-              className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]"
+              className="mt-6 text-lg font-normal leading-loose text-[#6B6580]"
               variants={fadeInUp}
             >
               {t("services.body")}
@@ -211,13 +211,13 @@ export function Home() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
               variants={fadeInUp}
             >
               {t("projects.eyebrow")}
             </motion.span>
             <motion.h2
-              className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
+              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
               variants={fadeInUp}
             >
               {t("projects.title")}
@@ -354,7 +354,7 @@ export function Home() {
           viewport={viewportOnce}
         >
           <motion.h2
-            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
             {t("cta.title")}

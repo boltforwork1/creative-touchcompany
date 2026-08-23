@@ -94,19 +94,19 @@ export function Projects() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
             variants={fadeInUp}
           >
             Our Work
           </motion.span>
           <motion.h1
-            className="max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
             A Showcase of Creative Excellence
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl text-lg font-medium leading-relaxed text-gray-400"
+            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400"
             variants={fadeInUp}
           >
             Explore our latest projects across digital design, branding, and printing.
@@ -323,7 +323,7 @@ export function Projects() {
           viewport={viewportOnce}
         >
           <motion.h2
-            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
             Ready to Start Your Project?

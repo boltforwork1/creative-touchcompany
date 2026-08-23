@@ -99,10 +99,10 @@ export function StatsSection() {
           className="mb-14 flex flex-col items-center text-center"
           variants={fadeInUp}
         >
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
+          <span className="text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
             {t("stats.eyebrow")}
           </span>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl">
             {t("stats.title")}
           </h2>
         </motion.div>

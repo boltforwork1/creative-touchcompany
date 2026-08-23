@@ -113,19 +113,19 @@ export function Services() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
             variants={fadeInUp}
           >
             Our Services
           </motion.span>
           <motion.h1
-            className="max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
             Creative Solutions for Ambitious Brands
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl text-lg font-medium leading-relaxed text-gray-400"
+            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400"
             variants={fadeInUp}
           >
             We deliver comprehensive design, printing, and digital marketing solutions crafted
@@ -145,19 +145,19 @@ export function Services() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
               variants={fadeInUp}
             >
               What We Offer
             </motion.span>
             <motion.h2
-              className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
+              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
               variants={fadeInUp}
             >
               Services Built for Growth
             </motion.h2>
             <motion.p
-              className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]"
+              className="mt-6 text-lg font-normal leading-loose text-[#6B6580]"
               variants={fadeInUp}
             >
               Every service is crafted to support your brand at every stage — from first concept
@@ -253,13 +253,13 @@ export function Services() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
               variants={fadeInUp}
             >
               How We Work
             </motion.span>
             <motion.h2
-              className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
+              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
               variants={fadeInUp}
             >
               From Concept to Execution
@@ -315,7 +315,7 @@ export function Services() {
           viewport={viewportOnce}
         >
           <motion.h2
-            className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
+            className="text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
             Ready to Start Your Project?

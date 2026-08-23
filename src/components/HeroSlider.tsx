@@ -115,19 +115,19 @@ export function HeroSlider() {
               }}
             >
               <motion.span
-                className="mb-5 block text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+                className="mb-5 block text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
                 variants={textVariants}
               >
                 {t(`${slideKey}.eyebrow`)}
               </motion.span>
               <motion.h1
-                className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
+                className="text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
                 variants={textVariants}
               >
                 {t(`${slideKey}.headline`)}
               </motion.h1>
               <motion.p
-                className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-gray-200"
+                className="mt-6 max-w-xl text-xl font-normal leading-loose text-gray-200"
                 variants={textVariants}
               >
                 {t(`${slideKey}.subheadline`)}
