@@ -1,18 +1,26 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { useTranslation } from "react-i18next"
+import i18n from "@/i18n/config"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Projects", to: "/projects" },
-  { label: "Contact", to: "/contact" },
-]
+  { key: "home", to: "/" },
+  { key: "about", to: "/about" },
+  { key: "services", to: "/services" },
+  { key: "projects", to: "/projects" },
+  { key: "contact", to: "/contact" },
+] as const
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { t } = useTranslation()
+  const isArabic = i18n.language === "ar"
+
+  const toggleLanguage = () => {
+    void i18n.changeLanguage(isArabic ? "en" : "ar")
+  }
 
   return (
     <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-white/95 shadow-sm backdrop-blur-md">
@@ -45,18 +53,26 @@ export function Header() {
                 )
               }
             >
-              {link.label}
+              {t(`nav.${link.key}`)}
             </NavLink>
           ))}
         </nav>
 
-        {/* Right: CTA Button */}
-        <div className="hidden flex-1 items-center justify-end md:flex">
+        {/* Right: Language switcher and CTA */}
+        <div className="hidden flex-1 items-center justify-end gap-4 md:flex">
+          <button
+            type="button"
+            onClick={toggleLanguage}
+            aria-label={t("lang.label")}
+            className="text-xs font-bold uppercase tracking-widest text-[#6B6580] transition-colors hover:text-[#C8A96E]"
+          >
+            {isArabic ? "EN" : "AR"}
+          </button>
           <NavLink
             to="/contact"
             className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-sm font-semibold text-[#1A1820] transition-all duration-200 hover:scale-105 hover:bg-[#C8A96E]/90"
           >
-            Get in Touch
+            {t("nav.cta")}
           </NavLink>
         </div>
 
@@ -86,15 +102,22 @@ export function Header() {
                   )
                 }
               >
-                {link.label}
+                {t(`nav.${link.key}`)}
               </NavLink>
             ))}
+            <button
+              type="button"
+              onClick={toggleLanguage}
+              className="text-left text-sm font-bold uppercase tracking-widest text-[#6B6580] transition-colors hover:text-[#C8A96E]"
+            >
+              {isArabic ? "EN" : "AR"}
+            </button>
             <NavLink
               to="/contact"
               onClick={() => setMobileOpen(false)}
               className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-center text-sm font-semibold text-[#1A1820] transition-all duration-200 hover:bg-[#C8A96E]/90"
             >
-              Get in Touch
+              {t("nav.cta")}
             </NavLink>
           </nav>
         </div>

@@ -2,6 +2,8 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant rtl (&:where([dir="rtl"], [dir="rtl"] *));
+@custom-variant ltr (&:where([dir="ltr"], [dir="ltr"] *));
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -56,6 +58,7 @@
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-arabic: "Tajawal", system-ui, sans-serif;
 }
 
 :root {
@@ -166,4 +169,23 @@
   p {
     line-height: 1.6;
   }
+}
+
+/* Arabic typography: switch to Tajawal when the document is in RTL */
+html[lang="ar"] {
+  --font-display: var(--font-arabic);
+  --font-heading: var(--font-arabic);
+  --font-body: var(--font-arabic);
+}
+html[lang="ar"] body {
+  font-family: var(--font-arabic);
+}
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] h6 {
+  font-family: var(--font-arabic);
+  font-weight: 700;
 }
