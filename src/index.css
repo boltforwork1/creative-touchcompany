@@ -58,7 +58,7 @@
   --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-body: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-arabic: "Tajawal", system-ui, sans-serif;
+  --font-arabic: "Cairo", sans-serif;
 }
 
 :root {
@@ -171,7 +171,7 @@
   }
 }
 
-/* Arabic typography: switch to Tajawal when the document is in RTL */
+/* Arabic typography: switch to Cairo when the document is in RTL */
 html[lang="ar"] {
   --font-display: var(--font-arabic);
   --font-heading: var(--font-arabic);
@@ -187,5 +187,19 @@ html[lang="ar"] h4,
 html[lang="ar"] h5,
 html[lang="ar"] h6 {
   font-family: var(--font-arabic);
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+/* Arabic premium typography refinements */
+html[lang="ar"] h2 {
+  font-size: 1.15em;
+}
+html[lang="ar"] h3 {
   font-weight: 700;
+}
+html[lang="ar"] p {
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--brand-text-muted);
 }
