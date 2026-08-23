@@ -43,6 +43,69 @@
     "body": "Creative Touch is a full-service creative agency specializing in digital design, branding, printing, and marketing solutions. We help businesses grow, stand out, and connect with their audience through innovative ideas and strong visuals. Our mission is simple: to transform creativity into results that inspire trust and build lasting impact.",
     "cta": "Read More"
   },
+  "aboutPage": {
+    "hero": {
+      "eyebrow": "About Us",
+      "title": "CREATIVE TOUCH",
+      "subtitle": "Transforming creativity into results that inspire trust and build lasting impact."
+    },
+    "pillars": {
+      "process": {
+        "title": "Proven Working Process",
+        "description": "A streamlined, strategic approach to deliver excellence."
+      },
+      "team": {
+        "title": "Dedicated Team",
+        "description": "Expert designers and marketers committed to your brand."
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Always here to ensure your campaigns run smoothly."
+      }
+    },
+    "promise": {
+      "eyebrow": "Our Promise",
+      "title": "We partner with ambitious brands to build identities that last.",
+      "body": "From the first sketch to the final print, we help businesses grow, stand out, and connect with their audience. By combining innovative ideas with strong visuals, we transform your vision into measurable results that drive your business forward.",
+      "cta": "Contact Us"
+    },
+    "direction": {
+      "eyebrow": "Our Direction",
+      "title": "Vision & Mission"
+    },
+    "vision": {
+      "title": "Our Vision",
+      "body": "To be a leading creative agency that transforms ideas into inspiring and lasting brands recognized for innovation and impact."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "body": "To deliver creative, high-quality marketing and design solutions that empower businesses to grow, connect, and stand out in a competitive world."
+    },
+    "values": {
+      "eyebrow": "Our Values",
+      "title": "What Drives Us",
+      "creativity": {
+        "title": "Creativity",
+        "description": "That inspires."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "That endures."
+      },
+      "integrity": {
+        "title": "Integrity",
+        "description": "That builds trust."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "That drives progress."
+      },
+      "commitment": {
+        "title": "Commitment",
+        "description": "That ensures success."
+      }
+    }
+  },
   "stats": {
     "eyebrow": "Our Impact",
     "title": "Numbers That Speak",

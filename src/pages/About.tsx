@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 import {
   ArrowRight,
   Target,
@@ -24,52 +25,22 @@ import {
 } from "@/lib/animations"
 
 const trustPillars = [
-  {
-    icon: Target,
-    title: "Proven Working Process",
-    description: "A streamlined, strategic approach to deliver excellence.",
-  },
-  {
-    icon: Users,
-    title: "Dedicated Team",
-    description: "Expert designers and marketers committed to your brand.",
-  },
-  {
-    icon: Headset,
-    title: "24/7 Support",
-    description: "Always here to ensure your campaigns run smoothly.",
-  },
+  { icon: Target, key: "process" },
+  { icon: Users, key: "team" },
+  { icon: Headset, key: "support" },
 ] as const
 
 const coreValues = [
-  {
-    icon: Sparkles,
-    title: "Creativity",
-    description: "That inspires.",
-  },
-  {
-    icon: Award,
-    title: "Quality",
-    description: "That endures.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Integrity",
-    description: "That builds trust.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description: "That drives progress.",
-  },
-  {
-    icon: HeartHandshake,
-    title: "Commitment",
-    description: "That ensures success.",
-  },
+  { icon: Sparkles, key: "creativity" },
+  { icon: Award, key: "quality" },
+  { icon: ShieldCheck, key: "integrity" },
+  { icon: Lightbulb, key: "innovation" },
+  { icon: HeartHandshake, key: "commitment" },
 ] as const
 
 export function About() {
+  const { t } = useTranslation()
+
   return (
     <main className="bg-white">
       {/* ===== 1. Page Hero ===== */}
@@ -81,22 +52,22 @@ export function About() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+            className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
             variants={fadeInUp}
           >
-            About Us
+            {t("aboutPage.hero.eyebrow")}
           </motion.span>
           <motion.h1
             className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
-            CREATIVE TOUCH
+            {t("aboutPage.hero.title")}
           </motion.h1>
           <motion.p
             className="mt-6 max-w-2xl text-lg font-medium leading-relaxed text-gray-400"
             variants={fadeInUp}
           >
-            Transforming creativity into results that inspire trust and build lasting impact.
+            {t("aboutPage.hero.subtitle")}
           </motion.p>
         </motion.div>
       </section>
@@ -115,7 +86,7 @@ export function About() {
               const Icon = pillar.icon
               return (
                 <motion.div
-                  key={pillar.title}
+                  key={pillar.key}
                   variants={staggerItem}
                   className="group flex flex-col items-center rounded-2xl border border-black/[0.04] bg-[#FDFBF7] p-10 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                 >
@@ -123,10 +94,10 @@ export function About() {
                     <Icon size={28} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
-                    {pillar.title}
+                    {t(`aboutPage.pillars.${pillar.key}.title`)}
                   </h3>
                   <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
-                    {pillar.description}
+                    {t(`aboutPage.pillars.${pillar.key}.description`)}
                   </p>
                 </motion.div>
               )
@@ -149,7 +120,7 @@ export function About() {
             <div className="group overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
               <img
                 src="/our-promise.jpg"
-                alt="Creative Touch Brand Promise"
+                alt={t("aboutPage.promise.title")}
                 className="aspect-[5/4] w-full rounded-2xl object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>
@@ -163,26 +134,24 @@ export function About() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
-              Our Promise
+            <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
+              {t("aboutPage.promise.eyebrow")}
             </span>
             <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-[#1A1820] sm:text-4xl">
-              We partner with ambitious brands to build identities that last.
+              {t("aboutPage.promise.title")}
             </h2>
             <p className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]">
-              From the first sketch to the final print, we help businesses grow, stand out, and
-              connect with their audience. By combining innovative ideas with strong visuals,
-              we transform your vision into measurable results that drive your business forward.
+              {t("aboutPage.promise.body")}
             </p>
             <div className="mt-8">
               <Link
                 to="/contact"
                 className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
               >
-                Contact Us
+                {t("aboutPage.promise.cta")}
                 <ArrowRight
                   size={18}
-                  className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                  className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
                 />
               </Link>
             </div>
@@ -201,16 +170,16 @@ export function About() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
               variants={fadeInUp}
             >
-              Our Direction
+              {t("aboutPage.direction.eyebrow")}
             </motion.span>
             <motion.h2
               className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
               variants={fadeInUp}
             >
-              Vision & Mission
+              {t("aboutPage.direction.title")}
             </motion.h2>
           </motion.div>
 
@@ -229,10 +198,11 @@ export function About() {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Eye size={28} strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">Our Vision</h3>
+              <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">
+                {t("aboutPage.vision.title")}
+              </h3>
               <p className="mt-4 text-lg font-normal leading-relaxed text-[#6B6580]">
-                To be a leading creative agency that transforms ideas into inspiring and lasting
-                brands recognized for innovation and impact.
+                {t("aboutPage.vision.body")}
               </p>
             </motion.div>
 
@@ -244,10 +214,11 @@ export function About() {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Rocket size={28} strokeWidth={1.5} />
               </div>
-              <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">Our Mission</h3>
+              <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">
+                {t("aboutPage.mission.title")}
+              </h3>
               <p className="mt-4 text-lg font-normal leading-relaxed text-[#6B6580]">
-                To deliver creative, high-quality marketing and design solutions that empower
-                businesses to grow, connect, and stand out in a competitive world.
+                {t("aboutPage.mission.body")}
               </p>
             </motion.div>
           </motion.div>
@@ -265,16 +236,16 @@ export function About() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
               variants={fadeInUp}
             >
-              Our Values
+              {t("aboutPage.values.eyebrow")}
             </motion.span>
             <motion.h2
               className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
               variants={fadeInUp}
             >
-              What Drives Us
+              {t("aboutPage.values.title")}
             </motion.h2>
           </motion.div>
 
@@ -289,7 +260,7 @@ export function About() {
               const Icon = value.icon
               return (
                 <motion.div
-                  key={value.title}
+                  key={value.key}
                   variants={staggerItem}
                   className="group flex flex-col items-center rounded-2xl border border-black/[0.04] bg-white p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                 >
@@ -297,10 +268,10 @@ export function About() {
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-lg font-bold tracking-tight text-[#1A1820]">
-                    {value.title}
+                    {t(`aboutPage.values.${value.key}.title`)}
                   </h3>
                   <p className="mt-2 text-sm font-normal leading-relaxed text-[#6B6580]">
-                    {value.description}
+                    {t(`aboutPage.values.${value.key}.description`)}
                   </p>
                 </motion.div>
               )
@@ -322,17 +293,17 @@ export function About() {
             className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
             variants={fadeInUp}
           >
-            Ready to Start Your Project?
+            {t("cta.title")}
           </motion.h2>
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
-              Start Now
+              {t("cta.button")}
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
               />
             </Link>
           </motion.div>
