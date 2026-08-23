@@ -47,10 +47,10 @@ type Project = {
 
 const projects: Project[] = [
   { title: "Brand Project 1", category: "Brand Identity Design", icon: Palette, image: "/logos1.jpg", companyName: "Lamsat Alqsor" },
-  { title: "Brand Project 2", category: "Brand Identity Design", icon: Palette, image: "/logos2.jpg", companyName: "Brand Company 2" },
-  { title: "Brand Project 3", category: "Brand Identity Design", icon: Palette, image: "/logos3.jpg", companyName: "Brand Company 3" },
-  { title: "Brand Project 4", category: "Brand Identity Design", icon: Palette, image: "/logos4.jpg", companyName: "Brand Company 4" },
-  { title: "Brand Project 5", category: "Brand Identity Design", icon: Palette, image: "/logos5.jpg", companyName: "Brand Company 5" },
+  { title: "Brand Project 2", category: "Brand Identity Design", icon: Palette, image: "/logos2.jpg", companyName: "Level" },
+  { title: "Brand Project 3", category: "Brand Identity Design", icon: Palette, image: "/logos3.jpg", companyName: "7 Seas" },
+  { title: "Brand Project 4", category: "Brand Identity Design", icon: Palette, image: "/logos4.jpg", companyName: "Ath Aldar" },
+  { title: "Brand Project 5", category: "Brand Identity Design", icon: Palette, image: "/logos5.jpg", companyName: "Alreyada Almotaqadima" },
   { title: "Store Project 1", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store1.jpg", companyName: "Halali for Feed", liveLink: "https://halalifeed.com" },
   { title: "Store Project 2", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store2.jpg", companyName: "Bradosti General Trading", liveLink: "https://bradosti-trading.com" },
   { title: "Print Project 1", category: "Corporate Printing", icon: Printer, image: "/print1.jpg", companyName: "Lamsat Alqsor" },
