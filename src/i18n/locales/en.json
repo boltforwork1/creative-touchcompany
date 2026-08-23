@@ -291,6 +291,18 @@
       "success": "Your message has been sent successfully."
     }
   },
+  "footer": {
+    "description": "From digital design to full brand identity and marketing solutions — we shape brands that leave a lasting impression.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "address": "Ajman Free Zone, UAE",
+    "phone": "+971 56 587 3939",
+    "email": "info@creative-touchfze.com",
+    "hours": "Mon–Fri 09:00–23:00 · Sun 09:00–16:00",
+    "rights": "© 2026. All rights reserved.",
+    "poweredBy": "Powered By",
+    "brand": "Creative Touch"
+  },
   "cta": {
     "title": "Ready to Start Your Project?",
     "button": "Start Now"

@@ -1,38 +1,45 @@
 import { NavLink } from "react-router-dom"
+import { useTranslation } from "react-i18next"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
 
-const navLinks = [
-  { label: "Home", to: "/" },
-  { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
-  { label: "Projects", to: "/projects" },
-  { label: "Contact", to: "/contact" },
-]
-
-const contactItems = [
-  {
-    icon: MapPin,
-    text: "Ajman Free Zone, UAE",
-    href: undefined,
-  },
-  {
-    icon: Phone,
-    text: "+971 56 587 3939",
-    href: "tel:+971565873939",
-  },
-  {
-    icon: Mail,
-    text: "info@creative-touchfze.com",
-    href: "mailto:info@creative-touchfze.com",
-  },
-  {
-    icon: Clock,
-    text: "Mon–Fri 09:00–23:00 · Sun 09:00–16:00",
-    href: undefined,
-  },
-]
+const navKeys = [
+  { key: "home", to: "/" },
+  { key: "about", to: "/about" },
+  { key: "services", to: "/services" },
+  { key: "projects", to: "/projects" },
+  { key: "contact", to: "/contact" },
+] as const
 
 export function Footer() {
+  const { t } = useTranslation()
+
+  const contactItems = [
+    {
+      icon: MapPin,
+      text: t("footer.address"),
+      href: undefined,
+      ltr: false,
+    },
+    {
+      icon: Phone,
+      text: t("footer.phone"),
+      href: "tel:+971565873939",
+      ltr: true,
+    },
+    {
+      icon: Mail,
+      text: t("footer.email"),
+      href: "mailto:info@creative-touchfze.com",
+      ltr: true,
+    },
+    {
+      icon: Clock,
+      text: t("footer.hours"),
+      href: undefined,
+      ltr: false,
+    },
+  ] as const
+
   return (
     <footer className="border-t border-black/[0.08] bg-[#FAFAFA]">
       <div className="mx-auto max-w-7xl px-6 py-16">
@@ -48,8 +55,8 @@ export function Footer() {
               />
             </NavLink>
 
-            <p className="max-w-xs text-sm leading-relaxed text-[#6B6580]">
-              From digital design to full brand identity and marketing solutions — we shape brands that leave a lasting impression.
+            <p className="max-w-xs text-sm leading-loose text-[#6B6580] rtl:leading-[1.9]">
+              {t("footer.description")}
             </p>
 
             {/* Gold accent line */}
@@ -58,22 +65,22 @@ export function Footer() {
 
           {/* Navigation column */}
           <div>
-            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase">
-              Navigation
+            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase rtl:tracking-normal">
+              {t("footer.quickLinks")}
             </h4>
             <nav className="flex flex-col gap-3">
-              {navLinks.map((link) => (
+              {navKeys.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}
                   end={link.to === "/"}
                   className={({ isActive }) =>
-                    `text-sm tracking-wide transition-colors duration-200 ${
+                    `text-sm font-normal tracking-wide transition-colors duration-200 ${
                       isActive ? "text-[#C8A96E]" : "text-[#1A1820] hover:text-[#C8A96E]"
                     }`
                   }
                 >
-                  {link.label}
+                  {t(`nav.${link.key}`)}
                 </NavLink>
               ))}
             </nav>
@@ -81,11 +88,11 @@ export function Footer() {
 
           {/* Contact column */}
           <div>
-            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase">
-              Contact
+            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase rtl:tracking-normal">
+              {t("footer.contactInfo")}
             </h4>
             <ul className="flex flex-col gap-4">
-              {contactItems.map(({ icon: Icon, text, href }) => (
+              {contactItems.map(({ icon: Icon, text, href, ltr }) => (
                 <li key={text} className="flex items-start gap-3">
                   <Icon
                     size={14}
@@ -97,10 +104,12 @@ export function Footer() {
                       href={href}
                       className="text-sm leading-snug text-[#1A1820] transition-colors duration-200 hover:text-[#C8A96E]"
                     >
-                      {text}
+                      {ltr ? <span dir="ltr">{text}</span> : text}
                     </a>
                   ) : (
-                    <span className="text-sm leading-snug text-[#1A1820]">{text}</span>
+                    <span className="text-sm leading-snug text-[#1A1820]">
+                      {ltr ? <span dir="ltr">{text}</span> : text}
+                    </span>
                   )}
                 </li>
               ))}
@@ -111,8 +120,9 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-black/[0.08] pt-8 sm:flex-row">
           <p className="text-xs tracking-wide text-[#6B6580]">
-            © 2026. All rights reserved. Powered By{" "}
-            <span className="text-[#C8A96E]">Creative Touch</span>
+            <span dir="ltr">{t("footer.rights")}</span>{" "}
+            {t("footer.poweredBy")}{" "}
+            <span className="text-[#C8A96E]" dir="ltr">{t("footer.brand")}</span>
           </p>
           <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#C8A96E]/40 to-transparent sm:hidden" />
         </div>
