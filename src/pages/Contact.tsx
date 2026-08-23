@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 import {
   MapPin,
   Phone,
@@ -24,37 +25,8 @@ import {
   viewportOnce,
 } from "@/lib/animations"
 
-const contactBlocks = [
-  {
-    icon: MapPin,
-    title: "Our Location",
-    text: "Ajman Free Zone, UAE",
-  },
-  {
-    icon: Phone,
-    title: "Phone Number",
-    text: "+971 56 587 3939",
-  },
-  {
-    icon: Mail,
-    title: "Email Address",
-    text: "info@creative-touchfze.com",
-  },
-  {
-    icon: Clock,
-    title: "Working Hours",
-    text: "Mon–Fri 09:00–23:00, Sun 09:00–16:00",
-  },
-] as const
-
-const serviceOptions = [
-  "Website Design",
-  "Branding",
-  "Printing",
-  "Digital Marketing",
-]
-
 export function Contact() {
+  const { t } = useTranslation()
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -62,6 +34,20 @@ export function Contact() {
     service: "",
     message: "",
   })
+
+  const contactBlocks = [
+    { icon: MapPin, label: t("contact.info.address.label"), value: t("contact.info.address.value"), ltr: false },
+    { icon: Phone, label: t("contact.info.phone.label"), value: t("contact.info.phone.value"), ltr: true },
+    { icon: Mail, label: t("contact.info.email.label"), value: t("contact.info.email.value"), ltr: true },
+    { icon: Clock, label: t("contact.info.hours.label"), value: t("contact.info.hours.value"), ltr: false },
+  ] as const
+
+  const serviceOptions = [
+    "Website Design",
+    "Branding",
+    "Printing",
+    "Digital Marketing",
+  ]
 
   const handleChange = (key: keyof typeof form, value: string) => {
     setForm((prev) => ({ ...prev, [key]: value }))
@@ -82,22 +68,22 @@ export function Contact() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
+            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
             variants={fadeInUp}
           >
-            Get In Touch
+            {t("contact.hero.eyebrow")}
           </motion.span>
           <motion.h1
             className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
-            Let&rsquo;s Build Something Extraordinary
+            {t("contact.hero.title")}
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400"
+            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400 rtl:leading-[1.9]"
             variants={fadeInUp}
           >
-            Have a project in mind or need more information? We&rsquo;d love to hear from you.
+            {t("contact.hero.subtitle")}
           </motion.p>
         </motion.div>
       </section>
@@ -114,15 +100,14 @@ export function Contact() {
               whileInView="visible"
               viewport={viewportOnce}
             >
-              <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]">
-                Contact Details
+              <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
+                {t("contact.info.eyebrow")}
               </span>
               <h2 className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl">
-                We&rsquo;re here to help your brand grow.
+                {t("contact.info.title")}
               </h2>
-              <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580]">
-                Reach out to us directly or fill out the form. Our team is ready to bring your
-                vision to life with creativity and precision.
+              <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580] rtl:leading-[1.9]">
+                {t("contact.info.body")}
               </p>
 
               <motion.div
@@ -136,7 +121,7 @@ export function Contact() {
                   const Icon = block.icon
                   return (
                     <motion.div
-                      key={block.title}
+                      key={block.label}
                       variants={staggerItem}
                       className="group flex flex-col gap-3 rounded-2xl border border-black/[0.04] bg-[#FDFBF7] p-6 transition-all duration-700 ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                     >
@@ -144,10 +129,14 @@ export function Contact() {
                         <Icon size={24} strokeWidth={1.5} />
                       </div>
                       <h3 className="text-base font-bold tracking-tight text-[#1A1820]">
-                        {block.title}
+                        {block.label}
                       </h3>
                       <p className="text-sm font-normal leading-relaxed text-[#6B6580]">
-                        {block.text}
+                        {block.ltr ? (
+                          <span dir="ltr" className="block text-start">{block.value}</span>
+                        ) : (
+                          block.value
+                        )}
                       </p>
                     </motion.div>
                   )
@@ -169,17 +158,17 @@ export function Contact() {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="name"
-                      className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1820]"
+                      className="text-xs font-bold uppercase tracking-[0.15em] text-[#1A1820] rtl:tracking-normal"
                     >
-                      Full Name
+                      {t("contact.form.name")}
                     </label>
                     <input
                       id="name"
                       type="text"
                       value={form.name}
                       onChange={(e) => handleChange("name", e.target.value)}
-                      placeholder="Your full name"
-                      className="h-12 w-full rounded-lg border border-gray-200 bg-white px-4 text-base text-[#1A1820] placeholder:text-[#6B6580]/50 transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] focus:outline-none"
+                      placeholder={t("contact.form.namePlaceholder")}
+                      className="h-12 w-full rounded-lg border border-gray-200 bg-white ps-4 pe-4 text-base text-[#1A1820] placeholder:text-[#6B6580]/50 transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] focus:outline-none"
                     />
                   </div>
 
@@ -187,17 +176,17 @@ export function Contact() {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="email"
-                      className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1820]"
+                      className="text-xs font-bold uppercase tracking-[0.15em] text-[#1A1820] rtl:tracking-normal"
                     >
-                      Email Address
+                      {t("contact.form.email")}
                     </label>
                     <input
                       id="email"
                       type="email"
                       value={form.email}
                       onChange={(e) => handleChange("email", e.target.value)}
-                      placeholder="you@example.com"
-                      className="h-12 w-full rounded-lg border border-gray-200 bg-white px-4 text-base text-[#1A1820] placeholder:text-[#6B6580]/50 transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] focus:outline-none"
+                      placeholder={t("contact.form.emailPlaceholder")}
+                      className="h-12 w-full rounded-lg border border-gray-200 bg-white ps-4 pe-4 text-base text-[#1A1820] placeholder:text-[#6B6580]/50 transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] focus:outline-none"
                     />
                   </div>
 
@@ -205,31 +194,32 @@ export function Contact() {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="phone"
-                      className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1820]"
+                      className="text-xs font-bold uppercase tracking-[0.15em] text-[#1A1820] rtl:tracking-normal"
                     >
-                      Phone Number
+                      {t("contact.form.phone")}
                     </label>
                     <input
                       id="phone"
                       type="tel"
                       value={form.phone}
                       onChange={(e) => handleChange("phone", e.target.value)}
-                      placeholder="+971 56 587 3939"
-                      className="h-12 w-full rounded-lg border border-gray-200 bg-white px-4 text-base text-[#1A1820] placeholder:text-[#6B6580]/50 transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] focus:outline-none"
+                      placeholder={t("contact.form.phonePlaceholder")}
+                      dir="ltr"
+                      className="h-12 w-full rounded-lg border border-gray-200 bg-white ps-4 pe-4 text-base text-[#1A1820] placeholder:text-[#6B6580]/50 transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] focus:outline-none rtl:text-right"
                     />
                   </div>
 
                   {/* Interested Service */}
                   <div className="flex flex-col gap-2">
-                    <label className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1820]">
-                      Interested Service
+                    <label className="text-xs font-bold uppercase tracking-[0.15em] text-[#1A1820] rtl:tracking-normal">
+                      {t("contact.form.service")}
                     </label>
                     <Select
                       value={form.service}
                       onValueChange={(value) => handleChange("service", value)}
                     >
-                      <SelectTrigger className="h-12 w-full rounded-lg border border-gray-200 bg-white px-4 text-base text-[#1A1820] transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] data-[placeholder]:text-[#6B6580]/50">
-                        <SelectValue placeholder="Select a service" />
+                      <SelectTrigger className="h-12 w-full rounded-lg border border-gray-200 bg-white ps-4 pe-4 text-base text-[#1A1820] transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] data-[placeholder]:text-[#6B6580]/50">
+                        <SelectValue placeholder={t("contact.form.servicePlaceholder")} />
                       </SelectTrigger>
                       <SelectContent className="rounded-lg border-gray-200 bg-white">
                         {serviceOptions.map((service) => (
@@ -249,29 +239,29 @@ export function Contact() {
                   <div className="flex flex-col gap-2">
                     <label
                       htmlFor="message"
-                      className="text-xs font-semibold uppercase tracking-[0.15em] text-[#1A1820]"
+                      className="text-xs font-bold uppercase tracking-[0.15em] text-[#1A1820] rtl:tracking-normal"
                     >
-                      Message
+                      {t("contact.form.message")}
                     </label>
                     <textarea
                       id="message"
                       rows={5}
                       value={form.message}
                       onChange={(e) => handleChange("message", e.target.value)}
-                      placeholder="Tell us about your project..."
-                      className="w-full resize-none rounded-lg border border-gray-200 bg-white px-4 py-3 text-base text-[#1A1820] placeholder:text-[#6B6580]/50 transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] focus:outline-none"
+                      placeholder={t("contact.form.messagePlaceholder")}
+                      className="w-full resize-none rounded-lg border border-gray-200 bg-white ps-4 pe-4 py-3 text-base text-[#1A1820] placeholder:text-[#6B6580]/50 transition-all duration-300 focus:border-[#C8A96E] focus:ring-1 focus:ring-[#C8A96E] focus:outline-none"
                     />
                   </div>
 
                   {/* Submit */}
                   <button
                     type="submit"
-                    className="group mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#C8A96E] px-8 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
+                    className="group mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#C8A96E] px-8 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
                   >
-                    Send Message
+                    {t("contact.form.submit")}
                     <Send
                       size={18}
-                      className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                      className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
                     />
                   </button>
                 </form>

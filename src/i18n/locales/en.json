@@ -249,6 +249,48 @@
       }
     }
   },
+  "contact": {
+    "hero": {
+      "eyebrow": "Get In Touch",
+      "title": "Let's Build Something Extraordinary",
+      "subtitle": "Have a project in mind or need more information? We'd love to hear from you."
+    },
+    "info": {
+      "eyebrow": "Contact Details",
+      "title": "We're here to help your brand grow.",
+      "body": "Reach out to us directly or fill out the form. Our team is ready to bring your vision to life with creativity and precision.",
+      "address": {
+        "label": "Our Location",
+        "value": "Ajman Free Zone, UAE"
+      },
+      "phone": {
+        "label": "Phone Number",
+        "value": "+971 56 587 3939"
+      },
+      "email": {
+        "label": "Email Address",
+        "value": "info@creative-touchfze.com"
+      },
+      "hours": {
+        "label": "Working Hours",
+        "value": "Mon–Fri 09:00–23:00, Sun 09:00–16:00"
+      }
+    },
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "you@example.com",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+971 56 587 3939",
+      "service": "Interested Service",
+      "servicePlaceholder": "Select a service",
+      "message": "Your Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "submit": "Send Message",
+      "success": "Your message has been sent successfully."
+    }
+  },
   "cta": {
     "title": "Ready to Start Your Project?",
     "button": "Start Now"
