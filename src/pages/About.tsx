@@ -93,7 +93,7 @@ export function About() {
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Icon size={28} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1A1820]">
+                  <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                     {t(`aboutPage.pillars.${pillar.key}.title`)}
                   </h3>
                   <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
@@ -198,7 +198,7 @@ export function About() {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Eye size={28} strokeWidth={1.5} />
               </div>
-              <h3 className="text-3xl md:text-4xl font-black leading-tight tracking-tight text-[#1A1820]">
+              <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">
                 {t("aboutPage.vision.title")}
               </h3>
               <p className="mt-4 text-lg font-normal leading-relaxed text-[#6B6580]">
@@ -214,7 +214,7 @@ export function About() {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Rocket size={28} strokeWidth={1.5} />
               </div>
-              <h3 className="text-3xl md:text-4xl font-black leading-tight tracking-tight text-[#1A1820]">
+              <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">
                 {t("aboutPage.mission.title")}
               </h3>
               <p className="mt-4 text-lg font-normal leading-relaxed text-[#6B6580]">
@@ -267,7 +267,7 @@ export function About() {
                   <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-xl md:text-2xl font-extrabold leading-tight tracking-tight text-[#1A1820]">
+                  <h3 className="text-lg font-bold tracking-tight text-[#1A1820]">
                     {t(`aboutPage.values.${value.key}.title`)}
                   </h3>
                   <p className="mt-2 text-sm font-normal leading-relaxed text-[#6B6580]">

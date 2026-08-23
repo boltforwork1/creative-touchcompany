@@ -45,10 +45,10 @@ export function Header() {
               end={link.to === "/"}
               className={({ isActive }) =>
                 cn(
-                  "relative text-lg lg:text-xl font-bold lg:font-extrabold leading-relaxed transition-colors duration-200",
+                  "relative text-[15px] font-semibold leading-relaxed transition-colors duration-200",
                   isArabic
                     ? "tracking-normal"
-                    : "tracking-wider uppercase",
+                    : "tracking-widest uppercase",
                   "after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#C8A96E] after:transition-all after:duration-300 hover:after:w-full",
                   isActive
                     ? "text-[#C8A96E] after:w-full"
@@ -100,8 +100,8 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    "text-lg font-bold leading-relaxed transition-colors duration-200",
-                    isArabic ? "tracking-normal" : "tracking-wider uppercase",
+                    "text-[15px] font-semibold leading-relaxed transition-colors duration-200",
+                    isArabic ? "tracking-normal" : "tracking-widest uppercase",
                     isActive ? "text-[#C8A96E]" : "text-[#1A1820] hover:text-[#C8A96E]"
                   )
                 }

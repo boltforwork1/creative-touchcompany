@@ -166,7 +166,7 @@ export function Home() {
                   <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-[#C8A96E] group-hover:text-white">
                     <Icon size={26} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1A1820]">
+                  <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                     {t(`services.items.${service.key}.title`)}
                   </h3>
                   <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
@@ -252,7 +252,7 @@ export function Home() {
                   <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
                     {t(project.categoryKey)}
                   </span>
-                  <h3 className="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1A1820]">
+                  <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                     {project.nameKey}
                   </h3>
 

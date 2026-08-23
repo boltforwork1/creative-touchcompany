@@ -171,7 +171,7 @@ export function Projects() {
                         <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
                           {t(`projects.page.filters.${project.categoryKey}`)}
                         </span>
-                        <h3 className="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1A1820]">
+                        <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                           {project.companyName}
                         </h3>
 
@@ -218,7 +218,7 @@ export function Projects() {
                         <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
                           {t(`projects.page.filters.${project.categoryKey}`)}
                         </span>
-                        <h3 className="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-[#1A1820]">
+                        <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                           {project.companyName}
                         </h3>
 
@@ -262,7 +262,7 @@ export function Projects() {
                         className="text-[#C8A96E] rtl:rotate-90"
                         strokeWidth={1.5}
                       />
-                      <h3 className="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight text-white">
+                      <h3 className="text-xl font-bold tracking-tight text-white">
                         {project.title}
                       </h3>
                       <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">

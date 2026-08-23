@@ -128,7 +128,7 @@ export function Contact() {
                       <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:bg-[#C8A96E] group-hover:text-white">
                         <Icon size={24} strokeWidth={1.5} />
                       </div>
-                      <h3 className="text-lg md:text-xl font-extrabold leading-tight tracking-tight text-[#1A1820]">
+                      <h3 className="text-base font-bold tracking-tight text-[#1A1820]">
                         {block.label}
                       </h3>
                       <p className="text-sm font-normal leading-relaxed text-[#6B6580]">
