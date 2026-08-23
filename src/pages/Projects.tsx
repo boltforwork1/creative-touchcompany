@@ -13,6 +13,7 @@ import {
   ShoppingBag,
   Shirt,
 } from "lucide-react"
+import { useTranslation } from "react-i18next"
 import {
   fadeInUp,
   staggerContainer,
@@ -20,25 +21,11 @@ import {
   viewportOnce,
 } from "@/lib/animations"
 
-type Category =
-  | "Website Design"
-  | "Brand Identity Design"
-  | "Corporate Printing"
-  | "E-Commerce Stores"
-  | "Apparel & Merch Printing"
-
-const categories: ("All" | Category)[] = [
-  "All",
-  "Website Design",
-  "Brand Identity Design",
-  "Corporate Printing",
-  "E-Commerce Stores",
-  "Apparel & Merch Printing",
-]
+type CategoryKey = "web" | "brand" | "print" | "ecommerce" | "apparel"
 
 type Project = {
   title: string
-  category: Category
+  categoryKey: CategoryKey
   icon: typeof Monitor
   image?: string
   companyName?: string
@@ -46,42 +33,52 @@ type Project = {
 }
 
 const projects: Project[] = [
-  { title: "Brand Project 1", category: "Brand Identity Design", icon: Palette, image: "/logos1.jpg", companyName: "Lamsat Alqsor" },
-  { title: "Brand Project 2", category: "Brand Identity Design", icon: Palette, image: "/logos2.jpg", companyName: "Level" },
-  { title: "Brand Project 3", category: "Brand Identity Design", icon: Palette, image: "/logos3.jpg", companyName: "7 Seas" },
-  { title: "Brand Project 4", category: "Brand Identity Design", icon: Palette, image: "/logos4.jpg", companyName: "Athr Aldar" },
-  { title: "Brand Project 5", category: "Brand Identity Design", icon: Palette, image: "/logos5.jpg", companyName: "Alreyada Almotaqadima" },
-  { title: "Store Project 1", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store1.jpg", companyName: "Halali for Feed", liveLink: "https://halalifeed.com" },
-  { title: "Store Project 2", category: "E-Commerce Stores", icon: ShoppingBag, image: "/store2.jpg", companyName: "Bradosti General Trading", liveLink: "https://bradosti-trading.com" },
-  { title: "Print Project 1", category: "Corporate Printing", icon: Printer, image: "/print1.jpg", companyName: "Lamsat Alqsor" },
-  { title: "Print Project 2", category: "Corporate Printing", icon: Printer, image: "/print2.jpg", companyName: "Alomraa" },
-  { title: "Print Project 3", category: "Corporate Printing", icon: Printer, image: "/print3.jpg", companyName: "NARC" },
-  { title: "Print Project 4", category: "Corporate Printing", icon: Printer, image: "/print4.jpg", companyName: "GTS" },
-  { title: "Print Project 5", category: "Corporate Printing", icon: Printer, image: "/print5.jpg", companyName: "Zed group" },
-  { title: "Print Project 6", category: "Corporate Printing", icon: Printer, image: "/print6.jpg", companyName: "Ath Aldar" },
-  { title: "Website Project 1", category: "Website Design", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://lamsat-alqsoor.com" },
-  { title: "Website Project 2", category: "Website Design", icon: Monitor, image: "/web2.jpg", companyName: "Al Wthaq Group", liveLink: "https://alwethaqgroup.com" },
-  { title: "Website Project 3", category: "Website Design", icon: Monitor, image: "/web3.jpg", companyName: "Al Reyada Al Motaqadima", liveLink: "https://alreyada-almotaqdima.ae" },
-  { title: "Website Project 4", category: "Website Design", icon: Monitor, image: "/web4.jpg", companyName: "7 Seas Decor", liveLink: "https://7seas-decor.com" },
-  { title: "Website Project 5", category: "Website Design", icon: Monitor, image: "/web5.jpg", companyName: "Solaiman Hasan Technical Services", liveLink: "https://soliman-technical.com" },
-  { title: "Website Project 6", category: "Website Design", icon: Monitor, image: "/web6.jpg", companyName: "MKM KARA", liveLink: "https://mkm-kara.com" },
-  { title: "Website Project 7", category: "Website Design", icon: Monitor, image: "/web7.jpg", companyName: "MOCC", liveLink: "https://mocc-ksa.com" },
-  { title: "Website Project 8", category: "Website Design", icon: Monitor, image: "/web8.jpg", companyName: "Wejhat Al Ebtkar", liveLink: "https://wejhatalebtkar.com" },
-  { title: "Website Project 9", category: "Website Design", icon: Monitor, image: "/web9.jpg", companyName: "Mizan Al Nokhbah Accounting", liveLink: "https://mizanuae.com" },
-  { title: "Website Project 10", category: "Website Design", icon: Monitor, image: "/web10.jpg", companyName: "Modern National Home", liveLink: "https://hmn-uae.com" },
-  { title: "Website Project 11", category: "Website Design", icon: Monitor, image: "/web11.jpg", companyName: "Magic Mid", liveLink: "https://magic-mid.com" },
-  { title: "Website Project 12", category: "Website Design", icon: Monitor, image: "/web12.jpg", companyName: "Elite Home", liveLink: "https://elitehome-uae.com" },
-  { title: "Apparel Project 1", category: "Apparel & Merch Printing", icon: Shirt, image: "/bag1.jpg", companyName: "EMES Decoration" },
+  { title: "Brand Project 1", categoryKey: "brand", icon: Palette, image: "/logos1.jpg", companyName: "Lamsat Alqsor" },
+  { title: "Brand Project 2", categoryKey: "brand", icon: Palette, image: "/logos2.jpg", companyName: "Level" },
+  { title: "Brand Project 3", categoryKey: "brand", icon: Palette, image: "/logos3.jpg", companyName: "7 Seas" },
+  { title: "Brand Project 4", categoryKey: "brand", icon: Palette, image: "/logos4.jpg", companyName: "Athr Aldar" },
+  { title: "Brand Project 5", categoryKey: "brand", icon: Palette, image: "/logos5.jpg", companyName: "Alreyada Almotaqadima" },
+  { title: "Store Project 1", categoryKey: "ecommerce", icon: ShoppingBag, image: "/store1.jpg", companyName: "Halali for Feed", liveLink: "https://halalifeed.com" },
+  { title: "Store Project 2", categoryKey: "ecommerce", icon: ShoppingBag, image: "/store2.jpg", companyName: "Bradosti General Trading", liveLink: "https://bradosti-trading.com" },
+  { title: "Print Project 1", categoryKey: "print", icon: Printer, image: "/print1.jpg", companyName: "Lamsat Alqsor" },
+  { title: "Print Project 2", categoryKey: "print", icon: Printer, image: "/print2.jpg", companyName: "Alomraa" },
+  { title: "Print Project 3", categoryKey: "print", icon: Printer, image: "/print3.jpg", companyName: "NARC" },
+  { title: "Print Project 4", categoryKey: "print", icon: Printer, image: "/print4.jpg", companyName: "GTS" },
+  { title: "Print Project 5", categoryKey: "print", icon: Printer, image: "/print5.jpg", companyName: "Zed group" },
+  { title: "Print Project 6", categoryKey: "print", icon: Printer, image: "/print6.jpg", companyName: "Ath Aldar" },
+  { title: "Website Project 1", categoryKey: "web", icon: Monitor, image: "/web1.jpg", companyName: "Lamsat Alqsor", liveLink: "https://lamsat-alqsoor.com" },
+  { title: "Website Project 2", categoryKey: "web", icon: Monitor, image: "/web2.jpg", companyName: "Al Wthaq Group", liveLink: "https://alwethaqgroup.com" },
+  { title: "Website Project 3", categoryKey: "web", icon: Monitor, image: "/web3.jpg", companyName: "Al Reyada Al Motaqadima", liveLink: "https://alreyada-almotaqdima.ae" },
+  { title: "Website Project 4", categoryKey: "web", icon: Monitor, image: "/web4.jpg", companyName: "7 Seas Decor", liveLink: "https://7seas-decor.com" },
+  { title: "Website Project 5", categoryKey: "web", icon: Monitor, image: "/web5.jpg", companyName: "Solaiman Hasan Technical Services", liveLink: "https://soliman-technical.com" },
+  { title: "Website Project 6", categoryKey: "web", icon: Monitor, image: "/web6.jpg", companyName: "MKM KARA", liveLink: "https://mkm-kara.com" },
+  { title: "Website Project 7", categoryKey: "web", icon: Monitor, image: "/web7.jpg", companyName: "MOCC", liveLink: "https://mocc-ksa.com" },
+  { title: "Website Project 8", categoryKey: "web", icon: Monitor, image: "/web8.jpg", companyName: "Wejhat Al Ebtkar", liveLink: "https://wejhatalebtkar.com" },
+  { title: "Website Project 9", categoryKey: "web", icon: Monitor, image: "/web9.jpg", companyName: "Mizan Al Nokhbah Accounting", liveLink: "https://mizanuae.com" },
+  { title: "Website Project 10", categoryKey: "web", icon: Monitor, image: "/web10.jpg", companyName: "Modern National Home", liveLink: "https://hmn-uae.com" },
+  { title: "Website Project 11", categoryKey: "web", icon: Monitor, image: "/web11.jpg", companyName: "Magic Mid", liveLink: "https://magic-mid.com" },
+  { title: "Website Project 12", categoryKey: "web", icon: Monitor, image: "/web12.jpg", companyName: "Elite Home", liveLink: "https://elitehome-uae.com" },
+  { title: "Apparel Project 1", categoryKey: "apparel", icon: Shirt, image: "/bag1.jpg", companyName: "EMES Decoration" },
+]
+
+const filterKeys: ("all" | CategoryKey)[] = [
+  "all",
+  "web",
+  "brand",
+  "print",
+  "ecommerce",
+  "apparel",
 ]
 
 export function Projects() {
-  const [activeCategory, setActiveCategory] = useState<"All" | Category>("All")
+  const { t } = useTranslation()
+  const [activeCategory, setActiveCategory] = useState<"all" | CategoryKey>("all")
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   const filtered =
-    activeCategory === "All"
+    activeCategory === "all"
       ? projects
-      : projects.filter((p) => p.category === activeCategory)
+      : projects.filter((p) => p.categoryKey === activeCategory)
 
   return (
     <main className="bg-white">
@@ -94,22 +91,22 @@ export function Projects() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
+            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
             variants={fadeInUp}
           >
-            Our Work
+            {t("projects.page.hero.eyebrow")}
           </motion.span>
           <motion.h1
             className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
-            A Showcase of Creative Excellence
+            {t("projects.page.hero.title")}
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400"
+            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400 rtl:leading-[1.9]"
             variants={fadeInUp}
           >
-            Explore our latest projects across digital design, branding, and printing.
+            {t("projects.page.hero.subtitle")}
           </motion.p>
         </motion.div>
       </section>
@@ -125,19 +122,19 @@ export function Projects() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            {categories.map((cat) => {
+            {filterKeys.map((cat) => {
               const isActive = activeCategory === cat
               return (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`relative rounded-full px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-500 ease-out ${
+                  className={`relative rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] transition-all duration-500 ease-out rtl:tracking-normal ${
                     isActive
                       ? "bg-[#C8A96E] text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)]"
                       : "bg-transparent text-[#6B6580] hover:text-[#1A1820]"
                   }`}
                 >
-                  {cat}
+                  {t(`projects.page.filters.${cat}`)}
                 </button>
               )
             })}
@@ -171,8 +168,8 @@ export function Projects() {
 
                       {/* Body */}
                       <div className="flex flex-1 flex-col p-6">
-                        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E]">
-                          {project.category}
+                        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
+                          {t(`projects.page.filters.${project.categoryKey}`)}
                         </span>
                         <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                           {project.companyName}
@@ -184,7 +181,7 @@ export function Projects() {
                             onClick={() => setSelectedImage(project.image!)}
                             className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
                           >
-                            View Full Screen
+                            {t("projects.viewFullScreen")}
                             <Maximize2
                               size={16}
                               className="transition-transform duration-500 ease-out group-hover/link:scale-110"
@@ -218,8 +215,8 @@ export function Projects() {
 
                       {/* Body */}
                       <div className="flex flex-1 flex-col p-6">
-                        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E]">
-                          {project.category}
+                        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
+                          {t(`projects.page.filters.${project.categoryKey}`)}
                         </span>
                         <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                           {project.companyName}
@@ -232,10 +229,10 @@ export function Projects() {
                             rel="noopener noreferrer"
                             className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
                           >
-                            Open in Browser
+                            {t("projects.openBrowser")}
                             <ExternalLink
                               size={16}
-                              className="transition-transform duration-500 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                              className="transition-transform duration-500 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 rtl:group-hover/link:-translate-x-0.5"
                             />
                           </a>
                         </div>
@@ -262,14 +259,14 @@ export function Projects() {
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1A1820]/85 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100">
                       <ArrowUpRight
                         size={28}
-                        className="text-[#C8A96E]"
+                        className="text-[#C8A96E] rtl:rotate-90"
                         strokeWidth={1.5}
                       />
                       <h3 className="text-xl font-bold tracking-tight text-white">
                         {project.title}
                       </h3>
-                      <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#C8A96E]">
-                        {project.category}
+                      <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
+                        {t(`projects.page.filters.${project.categoryKey}`)}
                       </span>
                     </div>
                   </motion.div>
@@ -294,14 +291,14 @@ export function Projects() {
             <button
               type="button"
               onClick={() => setSelectedImage(null)}
-              aria-label="Close"
-              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820]"
+              aria-label={t("projects.page.lightbox.close")}
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] rtl:right-auto rtl:left-6"
             >
               <X size={22} strokeWidth={1.5} />
             </button>
             <motion.img
               src={selectedImage}
-              alt="Full screen preview"
+              alt={t("projects.page.lightbox.close")}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -326,17 +323,17 @@ export function Projects() {
             className="text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
-            Ready to Start Your Project?
+            {t("cta.title")}
           </motion.h2>
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
-              Start Now
+              {t("cta.button")}
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
               />
             </Link>
           </motion.div>

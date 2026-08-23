@@ -227,6 +227,26 @@
       "print": "Corporate Printing",
       "ecommerce": "E-Commerce Stores",
       "apparel": "Apparel & Merch Printing"
+    },
+    "page": {
+      "hero": {
+        "eyebrow": "Our Work",
+        "title": "A Showcase of Creative Excellence",
+        "subtitle": "Explore our latest projects across digital design, branding, and printing."
+      },
+      "filters": {
+        "all": "All",
+        "web": "Website Design",
+        "brand": "Brand Identity",
+        "print": "Corporate Printing",
+        "ecommerce": "E-Commerce",
+        "apparel": "Apparel & Merch"
+      },
+      "lightbox": {
+        "close": "Close",
+        "next": "Next",
+        "prev": "Previous"
+      }
     }
   },
   "cta": {
