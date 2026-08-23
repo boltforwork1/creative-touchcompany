@@ -148,6 +148,73 @@
       }
     }
   },
+  "servicesPage": {
+    "hero": {
+      "eyebrow": "Our Services",
+      "title": "Creative Solutions for Ambitious Brands",
+      "subtitle": "We deliver comprehensive design, printing, and digital marketing solutions crafted to create real value and lasting impact."
+    },
+    "grid": {
+      "eyebrow": "What We Offer",
+      "title": "Services Built for Growth",
+      "body": "Every service is crafted to support your brand at every stage — from first concept to full-scale execution across digital and print."
+    },
+    "requestQuote": "Request Quote",
+    "items": {
+      "webDesign": {
+        "title": "Website Design",
+        "description": "Modern, responsive websites designed for a seamless user experience.",
+        "deliverables": ["UI/UX Design", "Responsive Development", "SEO Optimization"]
+      },
+      "brandIdentity": {
+        "title": "Brand Identity Design",
+        "description": "Unique visual identities that tell your brand's story with elegance.",
+        "deliverables": ["Logo Design", "Brand Guidelines", "Typography Systems"]
+      },
+      "corporatePrinting": {
+        "title": "Corporate Printing",
+        "description": "High-quality printing for all corporate stationery and collateral.",
+        "deliverables": ["Business Cards", "Letterheads", "Premium Stationery"]
+      },
+      "ecommerce": {
+        "title": "E-Commerce Stores",
+        "description": "Fully functional online stores built to increase engagement and drive sales.",
+        "deliverables": ["Custom Storefronts", "Payment Integration", "Product Management"]
+      },
+      "apparel": {
+        "title": "Apparel & Merch Printing",
+        "description": "Premium T-shirt, uniform, and promotional material printing.",
+        "deliverables": ["Custom Uniforms", "Branded Merch", "Large-format Print"]
+      },
+      "digitalMarketing": {
+        "title": "Digital Marketing",
+        "description": "Strategic campaigns and content that boost visibility and drive success.",
+        "deliverables": ["Social Media Strategy", "Paid Ads", "Content Creation"]
+      }
+    },
+    "process": {
+      "eyebrow": "How We Work",
+      "title": "From Concept to Execution",
+      "steps": {
+        "discovery": {
+          "title": "Discovery",
+          "description": "We dive deep into your brand, audience, and goals to understand what matters most."
+        },
+        "strategy": {
+          "title": "Strategy",
+          "description": "We craft a clear, actionable plan that aligns creativity with your business objectives."
+        },
+        "design": {
+          "title": "Design",
+          "description": "We bring ideas to life with meticulous design and refined visual execution."
+        },
+        "delivery": {
+          "title": "Delivery",
+          "description": "We launch, measure, and refine to ensure your project creates lasting impact."
+        }
+      }
+    }
+  },
   "projects": {
     "eyebrow": "Recent",
     "title": "Our Projects",

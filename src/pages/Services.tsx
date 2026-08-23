@@ -13,6 +13,7 @@ import {
   Palette,
   Rocket,
 } from "lucide-react"
+import { useTranslation } from "react-i18next"
 import {
   fadeInUp,
   staggerContainer,
@@ -23,85 +24,29 @@ import {
 
 type Service = {
   icon: typeof Monitor
-  title: string
-  description: string
-  deliverables: string[]
+  key: string
   image: string
 }
 
 const services: Service[] = [
-  {
-    icon: Monitor,
-    title: "Website Design",
-    description: "Modern, responsive websites designed for a seamless user experience.",
-    deliverables: ["UI/UX Design", "Responsive Development", "SEO Optimization"],
-    image: "/service1.jpg",
-  },
-  {
-    icon: PenTool,
-    title: "Brand Identity Design",
-    description: "Unique visual identities that tell your brand's story with elegance.",
-    deliverables: ["Logo Design", "Brand Guidelines", "Typography Systems"],
-    image: "/service2.jpg",
-  },
-  {
-    icon: Printer,
-    title: "Corporate Printing",
-    description: "High-quality printing for all corporate stationery and collateral.",
-    deliverables: ["Business Cards", "Letterheads", "Premium Stationery"],
-    image: "/service3.jpg",
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-Commerce Stores",
-    description: "Fully functional online stores built to increase engagement and drive sales.",
-    deliverables: ["Custom Storefronts", "Payment Integration", "Product Management"],
-    image: "/service4.jpg",
-  },
-  {
-    icon: Shirt,
-    title: "Apparel & Merch Printing",
-    description: "Premium T-shirt, uniform, and promotional material printing.",
-    deliverables: ["Custom Uniforms", "Branded Merch", "Large-format Print"],
-    image: "/service5.jpg",
-  },
-  {
-    icon: Megaphone,
-    title: "Digital Marketing",
-    description: "Strategic campaigns and content that boost visibility and drive success.",
-    deliverables: ["Social Media Strategy", "Paid Ads", "Content Creation"],
-    image: "/service6.jpg",
-  },
+  { icon: Monitor, key: "webDesign", image: "/service1.jpg" },
+  { icon: PenTool, key: "brandIdentity", image: "/service2.jpg" },
+  { icon: Printer, key: "corporatePrinting", image: "/service3.jpg" },
+  { icon: ShoppingBag, key: "ecommerce", image: "/service4.jpg" },
+  { icon: Shirt, key: "apparel", image: "/service5.jpg" },
+  { icon: Megaphone, key: "digitalMarketing", image: "/service6.jpg" },
 ]
 
 const processSteps = [
-  {
-    icon: Search,
-    step: "01",
-    title: "Discovery",
-    description: "We dive deep into your brand, audience, and goals to understand what matters most.",
-  },
-  {
-    icon: Lightbulb,
-    step: "02",
-    title: "Strategy",
-    description: "We craft a clear, actionable plan that aligns creativity with your business objectives.",
-  },
-  {
-    icon: Palette,
-    step: "03",
-    title: "Design",
-    description: "We bring ideas to life with meticulous design and refined visual execution.",
-  },
-  {
-    icon: Rocket,
-    step: "04",
-    title: "Delivery",
-    description: "We launch, measure, and refine to ensure your project creates lasting impact.",
-  },
+  { icon: Search, key: "discovery", step: "01" },
+  { icon: Lightbulb, key: "strategy", step: "02" },
+  { icon: Palette, key: "design", step: "03" },
+  { icon: Rocket, key: "delivery", step: "04" },
 ] as const
 
 export function Services() {
+  const { t } = useTranslation()
+
   return (
     <main className="bg-white">
       {/* ===== 1. Page Hero ===== */}
@@ -113,23 +58,22 @@ export function Services() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
+            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
             variants={fadeInUp}
           >
-            Our Services
+            {t("servicesPage.hero.eyebrow")}
           </motion.span>
           <motion.h1
             className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
-            Creative Solutions for Ambitious Brands
+            {t("servicesPage.hero.title")}
           </motion.h1>
           <motion.p
             className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400"
             variants={fadeInUp}
           >
-            We deliver comprehensive design, printing, and digital marketing solutions crafted
-            to create real value and lasting impact.
+            {t("servicesPage.hero.subtitle")}
           </motion.p>
         </motion.div>
       </section>
@@ -145,23 +89,22 @@ export function Services() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
               variants={fadeInUp}
             >
-              What We Offer
+              {t("servicesPage.grid.eyebrow")}
             </motion.span>
             <motion.h2
               className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
               variants={fadeInUp}
             >
-              Services Built for Growth
+              {t("servicesPage.grid.title")}
             </motion.h2>
             <motion.p
               className="mt-6 text-lg font-normal leading-loose text-[#6B6580]"
               variants={fadeInUp}
             >
-              Every service is crafted to support your brand at every stage — from first concept
-              to full-scale execution across digital and print.
+              {t("servicesPage.grid.body")}
             </motion.p>
           </motion.div>
 
@@ -177,9 +120,12 @@ export function Services() {
           >
             {services.map((service) => {
               const Icon = service.icon
+              const title = t(`servicesPage.items.${service.key}.title`)
+              const description = t(`servicesPage.items.${service.key}.description`)
+              const deliverables = t(`servicesPage.items.${service.key}.deliverables`, { returnObjects: true }) as string[]
               return (
                 <motion.div
-                  key={service.title}
+                  key={service.key}
                   variants={staggerItem}
                   className="group flex flex-col overflow-hidden rounded-2xl border border-black/[0.04] bg-[#FDFBF7] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                 >
@@ -187,7 +133,7 @@ export function Services() {
                   <div className="relative h-48 w-full overflow-hidden">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={title}
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                   </div>
@@ -201,20 +147,20 @@ export function Services() {
 
                   {/* Content */}
                   <div className="flex flex-1 flex-col px-8 pb-8 pt-4">
-                    <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
-                      {service.title}
+                    <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">
+                      {title}
                     </h3>
-                    <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
-                      {service.description}
+                    <p className="mt-3 text-base font-normal leading-relaxed text-gray-500">
+                      {description}
                     </p>
 
                     <div className="my-6 h-px w-full bg-black/[0.06]" />
 
                     <ul className="flex flex-col gap-2.5">
-                      {service.deliverables.map((item) => (
+                      {deliverables.map((item) => (
                         <li
                           key={item}
-                          className="flex items-center gap-2.5 text-sm font-medium text-[#1A1820]"
+                          className="flex items-center gap-2.5 text-sm font-medium text-gray-500"
                         >
                           <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8A96E]" />
                           {item}
@@ -227,10 +173,10 @@ export function Services() {
                         to="/contact"
                         className="group/link inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#C8A96E] transition-colors duration-300 hover:text-[#1A1820]"
                       >
-                        Request Quote
+                        {t("servicesPage.requestQuote")}
                         <ArrowRight
                           size={16}
-                          className="transition-transform duration-500 ease-out group-hover/link:translate-x-1"
+                          className="transition-transform duration-500 ease-out group-hover/link:translate-x-1 rtl:rotate-180 rtl:group-hover/link:-translate-x-1"
                         />
                       </Link>
                     </div>
@@ -253,16 +199,16 @@ export function Services() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E]"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
               variants={fadeInUp}
             >
-              How We Work
+              {t("servicesPage.process.eyebrow")}
             </motion.span>
             <motion.h2
               className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
               variants={fadeInUp}
             >
-              From Concept to Execution
+              {t("servicesPage.process.title")}
             </motion.h2>
           </motion.div>
 
@@ -293,10 +239,10 @@ export function Services() {
                     </span>
                   </div>
                   <h3 className="text-lg font-bold tracking-tight text-[#1A1820]">
-                    {step.title}
+                    {t(`servicesPage.process.steps.${step.key}.title`)}
                   </h3>
-                  <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
-                    {step.description}
+                  <p className="mt-3 text-base font-normal leading-relaxed text-gray-500">
+                    {t(`servicesPage.process.steps.${step.key}.description`)}
                   </p>
                 </motion.div>
               )
@@ -318,17 +264,17 @@ export function Services() {
             className="text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl"
             variants={fadeInUp}
           >
-            Ready to Start Your Project?
+            {t("cta.title")}
           </motion.h2>
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
-              Start Now
+              {t("cta.button")}
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
               />
             </Link>
           </motion.div>
