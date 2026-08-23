@@ -8,7 +8,99 @@
     "cta": "Get in Touch"
   },
   "lang": {
-    "switch": "العربية",
+    "switch": "عربي",
     "label": "Language"
+  },
+  "hero": {
+    "slide1": {
+      "eyebrow": "Who We Are",
+      "headline": "About Creative Touch",
+      "subheadline": "Transforming creativity into results that inspire trust and build lasting impact.",
+      "cta": "Discover Our Story"
+    },
+    "slide2": {
+      "eyebrow": "What We Do",
+      "headline": "Our Core Services",
+      "subheadline": "Comprehensive design, printing, and digital marketing solutions tailored for your brand.",
+      "cta": "Explore Services"
+    },
+    "slide3": {
+      "eyebrow": "Our Work",
+      "headline": "A Showcase of Excellence",
+      "subheadline": "Explore our latest projects and see how we bring ambitious visions to life.",
+      "cta": "View Portfolio"
+    },
+    "slide4": {
+      "eyebrow": "Start Your Journey",
+      "headline": "Let's Build Together",
+      "subheadline": "Have a project in mind? We'd love to hear from you and start crafting your success.",
+      "cta": "Get in Touch"
+    }
+  },
+  "about": {
+    "eyebrow": "About Us",
+    "title": "Creative Touch",
+    "body": "Creative Touch is a full-service creative agency specializing in digital design, branding, printing, and marketing solutions. We help businesses grow, stand out, and connect with their audience through innovative ideas and strong visuals. Our mission is simple: to transform creativity into results that inspire trust and build lasting impact.",
+    "cta": "Read More"
+  },
+  "stats": {
+    "eyebrow": "Our Impact",
+    "title": "Numbers That Speak",
+    "items": {
+      "projects": "Projects Delivered",
+      "clients": "Happy Clients",
+      "years": "Years Experience",
+      "satisfaction": "Client Satisfaction"
+    }
+  },
+  "services": {
+    "eyebrow": "Our Services",
+    "title": "At Creative Touch",
+    "body": "We offer a comprehensive range of creative services designed to support brands at every stage — from initial concept to full-scale execution across digital and print.",
+    "cta": "View All Services",
+    "items": {
+      "web": {
+        "title": "Website Design",
+        "description": "Beautiful, responsive websites that engage visitors and drive results."
+      },
+      "brand": {
+        "title": "Brand Identity Design",
+        "description": "Logos, color systems, and visual languages that define who you are."
+      },
+      "print": {
+        "title": "Comprehensive Printing Services",
+        "description": "Premium print materials — from business cards to large-format signage."
+      },
+      "ecommerce": {
+        "title": "E-Commerce Stores",
+        "description": "Powerful online stores built to convert visitors into loyal customers."
+      },
+      "identity": {
+        "title": "Full Identity Printing",
+        "description": "Complete brand collateral that brings your identity to life in print."
+      },
+      "marketing": {
+        "title": "Social Media & Digital Marketing",
+        "description": "Strategic campaigns that grow your audience and amplify your message."
+      }
+    }
+  },
+  "projects": {
+    "eyebrow": "Recent",
+    "title": "Our Projects",
+    "openBrowser": "Open in Browser",
+    "viewFullScreen": "View Full Screen",
+    "cta": "View All Projects",
+    "categories": {
+      "web": "Website Design",
+      "brand": "Brand Identity Design",
+      "print": "Corporate Printing",
+      "ecommerce": "E-Commerce Stores",
+      "apparel": "Apparel & Merch Printing"
+    }
+  },
+  "cta": {
+    "title": "Ready to Start Your Project?",
+    "button": "Start Now"
   }
 }

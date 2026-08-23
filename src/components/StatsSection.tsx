@@ -1,18 +1,19 @@
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations"
 
 type Stat = {
   value: number
   suffix: string
-  label: string
+  labelKey: string
 }
 
 const stats: Stat[] = [
-  { value: 500, suffix: "+", label: "Projects Delivered" },
-  { value: 150, suffix: "+", label: "Happy Clients" },
-  { value: 10, suffix: "+", label: "Years Experience" },
-  { value: 99, suffix: "%", label: "Client Satisfaction" },
+  { value: 500, suffix: "+", labelKey: "stats.items.projects" },
+  { value: 150, suffix: "+", labelKey: "stats.items.clients" },
+  { value: 10, suffix: "+", labelKey: "stats.items.years" },
+  { value: 99, suffix: "%", labelKey: "stats.items.satisfaction" },
 ]
 
 const DURATION = 2000
@@ -44,7 +45,7 @@ function useCountUp(target: number, active: boolean, duration = DURATION) {
   return count
 }
 
-function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
+function StatItem({ stat, active, label }: { stat: Stat; active: boolean; label: string }) {
   const count = useCountUp(stat.value, active)
 
   return (
@@ -53,8 +54,8 @@ function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
         {count}
         {stat.suffix}
       </span>
-      <span className="mt-3 text-sm font-medium uppercase tracking-[0.2em] text-[#F2F0FF]/80 sm:text-base">
-        {stat.label}
+      <span className="mt-3 text-sm font-medium uppercase tracking-[0.2em] text-[#F2F0FF]/80 sm:text-base rtl:tracking-normal rtl:normal-case">
+        {label}
       </span>
     </motion.div>
   )
@@ -63,6 +64,7 @@ function StatItem({ stat, active }: { stat: Stat; active: boolean }) {
 export function StatsSection() {
   const ref = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(false)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const node = ref.current
@@ -97,17 +99,22 @@ export function StatsSection() {
           className="mb-14 flex flex-col items-center text-center"
           variants={fadeInUp}
         >
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
-            Our Impact
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
+            {t("stats.eyebrow")}
           </span>
           <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Numbers That Speak
+            {t("stats.title")}
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {stats.map((stat) => (
-            <StatItem key={stat.label} stat={stat} active={active} />
+            <StatItem
+              key={stat.labelKey}
+              stat={stat}
+              active={active}
+              label={t(stat.labelKey)}
+            />
           ))}
         </div>
       </motion.div>

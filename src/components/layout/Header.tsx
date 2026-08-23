@@ -45,7 +45,10 @@ export function Header() {
               end={link.to === "/"}
               className={({ isActive }) =>
                 cn(
-                  "relative text-sm font-medium tracking-widest uppercase transition-colors duration-200",
+                  "relative text-[15px] font-semibold leading-relaxed transition-colors duration-200",
+                  isArabic
+                    ? "tracking-normal"
+                    : "tracking-widest uppercase",
                   "after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#C8A96E] after:transition-all after:duration-300 hover:after:w-full",
                   isActive
                     ? "text-[#C8A96E] after:w-full"
@@ -64,9 +67,9 @@ export function Header() {
             type="button"
             onClick={toggleLanguage}
             aria-label={t("lang.label")}
-            className="text-xs font-bold uppercase tracking-widest text-[#6B6580] transition-colors hover:text-[#C8A96E]"
+            className="rounded-full border border-black/[0.08] px-4 py-2 text-sm font-bold transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E]/5 hover:text-[#C8A96E]"
           >
-            {isArabic ? "EN" : "AR"}
+            {t("lang.switch")}
           </button>
           <NavLink
             to="/contact"
@@ -97,7 +100,8 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    "text-sm font-medium tracking-widest uppercase transition-colors duration-200",
+                    "text-[15px] font-semibold leading-relaxed transition-colors duration-200",
+                    isArabic ? "tracking-normal" : "tracking-widest uppercase",
                     isActive ? "text-[#C8A96E]" : "text-[#1A1820] hover:text-[#C8A96E]"
                   )
                 }
@@ -108,9 +112,9 @@ export function Header() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="text-left text-sm font-bold uppercase tracking-widest text-[#6B6580] transition-colors hover:text-[#C8A96E]"
+              className="rounded-full border border-black/[0.08] px-4 py-2 text-left text-sm font-bold transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E]/5 hover:text-[#C8A96E]"
             >
-              {isArabic ? "EN" : "AR"}
+              {t("lang.switch")}
             </button>
             <NavLink
               to="/contact"

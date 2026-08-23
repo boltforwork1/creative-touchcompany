@@ -13,6 +13,7 @@ import {
   Layers,
   Monitor,
 } from "lucide-react"
+import { useTranslation } from "react-i18next"
 import { StatsSection } from "@/components/StatsSection"
 import { HeroSlider } from "@/components/HeroSlider"
 import {
@@ -24,57 +25,34 @@ import {
   viewportOnce,
 } from "@/lib/animations"
 
-const services = [
-  {
-    icon: Monitor,
-    title: "Website Design",
-    description: "Beautiful, responsive websites that engage visitors and drive results.",
-  },
-  {
-    icon: Palette,
-    title: "Brand Identity Design",
-    description: "Logos, color systems, and visual languages that define who you are.",
-  },
-  {
-    icon: Printer,
-    title: "Comprehensive Printing Services",
-    description: "Premium print materials — from business cards to large-format signage.",
-  },
-  {
-    icon: ShoppingBag,
-    title: "E-Commerce Stores",
-    description: "Powerful online stores built to convert visitors into loyal customers.",
-  },
-  {
-    icon: Layers,
-    title: "Full Identity Printing",
-    description: "Complete brand collateral that brings your identity to life in print.",
-  },
-  {
-    icon: Megaphone,
-    title: "Social Media & Digital Marketing",
-    description: "Strategic campaigns that grow your audience and amplify your message.",
-  },
+const serviceKeys = [
+  { icon: Monitor, key: "web" },
+  { icon: Palette, key: "brand" },
+  { icon: Printer, key: "print" },
+  { icon: ShoppingBag, key: "ecommerce" },
+  { icon: Layers, key: "identity" },
+  { icon: Megaphone, key: "marketing" },
 ] as const
 
 type FeaturedProject = {
-  category: string
-  name: string
+  categoryKey: string
+  nameKey: string
   image: string
   liveLink?: string
 }
 
 const featuredProjects: FeaturedProject[] = [
-  { category: "Website Design", name: "Al Wthaq Group", image: "/web1.jpg", liveLink: "https://alwethaqgroup.com" },
-  { category: "Website Design", name: "Lamsat Alqsor", image: "/web2.jpg", liveLink: "https://lamsat-alqsoor.com" },
-  { category: "Brand Identity Design", name: "Brand Company 1", image: "/logos1.jpg" },
-  { category: "Corporate Printing", name: "Corporate Client 1", image: "/print1.jpg" },
-  { category: "E-Commerce Stores", name: "Store Name 1", image: "/store1.jpg", liveLink: "https://halalifeed.com" },
-  { category: "Apparel & Merch Printing", name: "EMES Decoration", image: "/bag1.jpg" },
+  { categoryKey: "projects.categories.web", nameKey: "Al Wthaq Group", image: "/web1.jpg", liveLink: "https://alwethaqgroup.com" },
+  { categoryKey: "projects.categories.web", nameKey: "Lamsat Alqsor", image: "/web2.jpg", liveLink: "https://lamsat-alqsoor.com" },
+  { categoryKey: "projects.categories.brand", nameKey: "Brand Company 1", image: "/logos1.jpg" },
+  { categoryKey: "projects.categories.print", nameKey: "Corporate Client 1", image: "/print1.jpg" },
+  { categoryKey: "projects.categories.ecommerce", nameKey: "Store Name 1", image: "/store1.jpg", liveLink: "https://halalifeed.com" },
+  { categoryKey: "projects.categories.apparel", nameKey: "EMES Decoration", image: "/bag1.jpg" },
 ]
 
 export function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const { t } = useTranslation()
 
   return (
     <main className="bg-white">
@@ -95,7 +73,7 @@ export function Home() {
             <div className="group overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]">
               <img
                 src="/our-promise.jpg"
-                alt="About Creative Touch"
+                alt={t("about.title")}
                 className="aspect-[5/4] w-full rounded-2xl object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             </div>
@@ -109,28 +87,24 @@ export function Home() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]">
-              About Us
+            <span className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
+              {t("about.eyebrow")}
             </span>
             <h2 className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl">
-              Creative Touch
+              {t("about.title")}
             </h2>
             <p className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]">
-              Creative Touch is a full-service creative agency specializing in digital design,
-              branding, printing, and marketing solutions. We help businesses grow, stand out,
-              and connect with their audience through innovative ideas and strong visuals. Our
-              mission is simple: to transform creativity into results that inspire trust and
-              build lasting impact.
+              {t("about.body")}
             </p>
             <div className="mt-8">
               <Link
                 to="/about"
                 className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E] hover:text-[#1A1820] active:scale-[0.98]"
               >
-                Read More
+                {t("about.cta")}
                 <ArrowRight
                   size={18}
-                  className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                  className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
                 />
               </Link>
             </div>
@@ -153,23 +127,22 @@ export function Home() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
               variants={fadeInUp}
             >
-              Our Services
+              {t("services.eyebrow")}
             </motion.span>
             <motion.h2
               className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
               variants={fadeInUp}
             >
-              At Creative Touch
+              {t("services.title")}
             </motion.h2>
             <motion.p
               className="mt-6 text-lg font-medium leading-relaxed text-[#6B6580]"
               variants={fadeInUp}
             >
-              We offer a comprehensive range of creative services designed to support brands at
-              every stage — from initial concept to full-scale execution across digital and print.
+              {t("services.body")}
             </motion.p>
           </motion.div>
 
@@ -181,11 +154,11 @@ export function Home() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            {services.map((service) => {
+            {serviceKeys.map((service) => {
               const Icon = service.icon
               return (
                 <motion.div
-                  key={service.title}
+                  key={service.key}
                   variants={staggerItem}
                   className="group rounded-2xl border border-black/[0.04] bg-white p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
                 >
@@ -194,10 +167,10 @@ export function Home() {
                     <Icon size={26} strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
-                    {service.title}
+                    {t(`services.items.${service.key}.title`)}
                   </h3>
                   <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
-                    {service.description}
+                    {t(`services.items.${service.key}.description`)}
                   </p>
                 </motion.div>
               )
@@ -216,10 +189,10 @@ export function Home() {
               to="/services"
               className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
             >
-              View All Services
+              {t("services.cta")}
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
               />
             </Link>
           </motion.div>
@@ -238,16 +211,16 @@ export function Home() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+              className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
               variants={fadeInUp}
             >
-              Recent
+              {t("projects.eyebrow")}
             </motion.span>
             <motion.h2
               className="text-3xl font-extrabold tracking-tight text-[#1A1820] sm:text-4xl lg:text-5xl"
               variants={fadeInUp}
             >
-              Our Projects
+              {t("projects.title")}
             </motion.h2>
           </motion.div>
 
@@ -261,7 +234,7 @@ export function Home() {
           >
             {featuredProjects.map((project) => (
               <motion.div
-                key={project.name}
+                key={project.nameKey}
                 variants={staggerItem}
                 className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.15)]"
               >
@@ -269,18 +242,18 @@ export function Home() {
                 <div className="h-52 w-full overflow-hidden">
                   <img
                     src={project.image}
-                    alt={project.name}
+                    alt={project.nameKey}
                     className="h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
 
                 {/* Body */}
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E]">
-                    {project.category}
+                  <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
+                    {t(project.categoryKey)}
                   </span>
                   <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
-                    {project.name}
+                    {project.nameKey}
                   </h3>
 
                   <div className="mt-5">
@@ -291,10 +264,10 @@ export function Home() {
                         rel="noopener noreferrer"
                         className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
                       >
-                        Open in Browser
+                        {t("projects.openBrowser")}
                         <ExternalLink
                           size={16}
-                          className="transition-transform duration-500 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5"
+                          className="transition-transform duration-500 ease-out group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 rtl:group-hover/link:-translate-x-0.5"
                         />
                       </a>
                     ) : (
@@ -303,7 +276,7 @@ export function Home() {
                         onClick={() => setSelectedImage(project.image)}
                         className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
                       >
-                        View Full Screen
+                        {t("projects.viewFullScreen")}
                         <Maximize2
                           size={16}
                           className="transition-transform duration-500 ease-out group-hover/link:scale-110"
@@ -328,10 +301,10 @@ export function Home() {
               to="/projects"
               className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E] hover:text-[#1A1820] active:scale-[0.98]"
             >
-              View All Projects
+              {t("projects.cta")}
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
               />
             </Link>
           </motion.div>
@@ -353,7 +326,7 @@ export function Home() {
               type="button"
               onClick={() => setSelectedImage(null)}
               aria-label="Close"
-              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820]"
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] rtl:right-auto rtl:left-6"
             >
               <X size={22} strokeWidth={1.5} />
             </button>
@@ -384,17 +357,17 @@ export function Home() {
             className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl"
             variants={fadeInUp}
           >
-            Ready to Start Your Project?
+            {t("cta.title")}
           </motion.h2>
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
-              Start Now
+              {t("cta.button")}
               <ArrowRight
                 size={18}
-                className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
               />
             </Link>
           </motion.div>

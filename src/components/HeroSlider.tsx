@@ -2,53 +2,14 @@ import { useEffect, useState, useCallback } from "react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
-type Slide = {
-  eyebrow: string
-  headline: string
-  subheadline: string
-  cta: string
-  href: string
-  image: string
-}
-
-const slides: Slide[] = [
-  {
-    eyebrow: "Who We Are",
-    headline: "About Creative Touch",
-    subheadline:
-      "Transforming creativity into results that inspire trust and build lasting impact.",
-    cta: "Discover Our Story",
-    href: "/about",
-    image: "/hero-about.jpg",
-  },
-  {
-    eyebrow: "What We Do",
-    headline: "Our Core Services",
-    subheadline:
-      "Comprehensive design, printing, and digital marketing solutions tailored for your brand.",
-    cta: "Explore Services",
-    href: "/services",
-    image: "/hero-services.jpg",
-  },
-  {
-    eyebrow: "Our Work",
-    headline: "A Showcase of Excellence",
-    subheadline:
-      "Explore our latest projects and see how we bring ambitious visions to life.",
-    cta: "View Portfolio",
-    href: "/projects",
-    image: "/hero-projects.jpg",
-  },
-  {
-    eyebrow: "Start Your Journey",
-    headline: "Let\u2019s Build Together",
-    subheadline:
-      "Have a project in mind? We\u2019d love to hear from you and start crafting your success.",
-    cta: "Get in Touch",
-    href: "/contact",
-    image: "/hero-contact.jpg",
-  },
+const slideHrefs = ["/about", "/services", "/projects", "/contact"]
+const slideImages = [
+  "/hero-about.jpg",
+  "/hero-services.jpg",
+  "/hero-projects.jpg",
+  "/hero-contact.jpg",
 ]
 
 const AUTOPLAY_MS = 6000
@@ -73,20 +34,23 @@ const textVariants = {
 export function HeroSlider() {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState(1)
+  const { t } = useTranslation()
+
+  const slideKey = `hero.slide${index + 1}` as const
 
   const goTo = useCallback((next: number, dir: number) => {
     setDirection(dir)
-    setIndex((next + slides.length) % slides.length)
+    setIndex((next + slideHrefs.length) % slideHrefs.length)
   }, [])
 
   const nextSlide = useCallback(() => {
     setDirection(1)
-    setIndex((prev) => (prev + 1) % slides.length)
+    setIndex((prev) => (prev + 1) % slideHrefs.length)
   }, [])
 
   const prevSlide = useCallback(() => {
     setDirection(-1)
-    setIndex((prev) => (prev - 1 + slides.length) % slides.length)
+    setIndex((prev) => (prev - 1 + slideHrefs.length) % slideHrefs.length)
   }, [])
 
   useEffect(() => {
@@ -119,14 +83,16 @@ export function HeroSlider() {
             transition={{ duration: 8, ease: "easeOut" }}
           >
             <img
-              src={slides[index].image}
-              alt={slides[index].headline}
+              src={slideImages[index]}
+              alt={t(`${slideKey}.headline`)}
               className="h-full w-full object-cover"
             />
           </motion.div>
 
           {/* Dark gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30 rtl:bg-gradient-to-l"
+          />
         </motion.div>
       </AnimatePresence>
 
@@ -149,32 +115,32 @@ export function HeroSlider() {
               }}
             >
               <motion.span
-                className="mb-5 block text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E]"
+                className="mb-5 block text-xs font-semibold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
                 variants={textVariants}
               >
-                {slides[index].eyebrow}
+                {t(`${slideKey}.eyebrow`)}
               </motion.span>
               <motion.h1
                 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
                 variants={textVariants}
               >
-                {slides[index].headline}
+                {t(`${slideKey}.headline`)}
               </motion.h1>
               <motion.p
                 className="mt-6 max-w-xl text-lg font-medium leading-relaxed text-gray-200"
                 variants={textVariants}
               >
-                {slides[index].subheadline}
+                {t(`${slideKey}.subheadline`)}
               </motion.p>
               <motion.div className="mt-10" variants={textVariants}>
                 <Link
-                  to={slides[index].href}
+                  to={slideHrefs[index]}
                   className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200,169,110,0.5)] active:scale-[0.98]"
                 >
-                  {slides[index].cta}
+                  {t(`${slideKey}.cta`)}
                   <ArrowRight
                     size={18}
-                    className="transition-transform duration-500 ease-out group-hover:translate-x-1"
+                    className="transition-transform duration-500 ease-out group-hover:translate-x-1 rtl:rotate-180 rtl:group-hover:-translate-x-1"
                   />
                 </Link>
               </motion.div>
@@ -189,14 +155,14 @@ export function HeroSlider() {
         aria-label="Previous slide"
         className="group absolute bottom-24 left-4 top-auto z-20 flex h-11 w-11 translate-y-0 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] sm:left-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
       >
-        <ChevronLeft size={20} strokeWidth={1.5} />
+        <ChevronLeft size={20} strokeWidth={1.5} className="rtl:rotate-180" />
       </button>
       <button
         onClick={nextSlide}
         aria-label="Next slide"
         className="group absolute bottom-24 right-4 top-auto z-20 flex h-11 w-11 translate-y-0 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] sm:right-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
       >
-        <ChevronRight size={20} strokeWidth={1.5} />
+        <ChevronRight size={20} strokeWidth={1.5} className="rtl:rotate-180" />
       </button>
 
       {/* Progress bar + dots */}
@@ -214,7 +180,7 @@ export function HeroSlider() {
 
         {/* Dot indicators */}
         <div className="flex items-center justify-center gap-3 py-5">
-          {slides.map((_, i) => (
+          {slideHrefs.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i, i > index ? 1 : -1)}
