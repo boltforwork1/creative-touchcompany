@@ -127,7 +127,7 @@ export function HeroSlider() {
                 {t(`${slideKey}.headline`)}
               </motion.h1>
               <motion.p
-                className="mt-6 max-w-xl text-xl font-normal leading-loose text-gray-200"
+                className="mt-6 max-w-xl text-xl font-normal leading-loose text-white"
                 variants={textVariants}
               >
                 {t(`${slideKey}.subheadline`)}
