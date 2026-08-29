@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import { useTranslation } from "react-i18next"
+import i18n from "@/i18n/config"
 import { fadeInUp, staggerContainer, staggerItem, viewportOnce } from "@/lib/animations"
 
 type Stat = {
@@ -102,7 +103,7 @@ export function StatsSection() {
           <span className="text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold">
             {t("stats.eyebrow")}
           </span>
-          <h2 className="mt-4 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl rtl:text-5xl lg:rtl:text-6xl rtl:font-black">
+          <h2 className={`mt-4 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-4xl md:text-5xl lg:text-7xl font-black leading-tight' : ''}`}>
             {t("stats.title")}
           </h2>
         </motion.div>
