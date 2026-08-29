@@ -129,7 +129,7 @@ export function Projects() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  style={i18n.language === "ar" ? { fontSize: "1.4rem", fontWeight: "bold", padding: "0.5rem 1.5rem" } : {}}
+                  style={i18n.language === "ar" ? { fontSize: "1.15rem", fontWeight: "bold", padding: "0.5rem 1.25rem" } : {}}
                   className={`relative rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] transition-all duration-500 ease-out rtl:tracking-normal ${
                     isActive
                       ? "bg-[#C8A96E] text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)]"
@@ -170,7 +170,10 @@ export function Projects() {
 
                       {/* Body */}
                       <div className="flex flex-1 flex-col p-6">
-                        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
+                        <span
+                          style={i18n.language === "ar" ? { fontSize: "1.1rem", fontWeight: "bold" } : {}}
+                          className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal"
+                        >
                           {t(`projects.page.filters.${project.categoryKey}`)}
                         </span>
                         <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
@@ -217,7 +220,10 @@ export function Projects() {
 
                       {/* Body */}
                       <div className="flex flex-1 flex-col p-6">
-                        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
+                        <span
+                          style={i18n.language === "ar" ? { fontSize: "1.1rem", fontWeight: "bold" } : {}}
+                          className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal"
+                        >
                           {t(`projects.page.filters.${project.categoryKey}`)}
                         </span>
                         <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
@@ -267,7 +273,10 @@ export function Projects() {
                       <h3 className="text-xl font-bold tracking-tight text-white">
                         {project.title}
                       </h3>
-                      <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
+                      <span
+                        style={i18n.language === "ar" ? { fontSize: "1.1rem", fontWeight: "bold" } : {}}
+                        className="text-xs font-medium uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal"
+                      >
                         {t(`projects.page.filters.${project.categoryKey}`)}
                       </span>
                     </div>
