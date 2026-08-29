@@ -14,6 +14,7 @@ import {
   Shirt,
 } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import i18n from "@/i18n/config"
 import {
   fadeInUp,
   staggerContainer,
@@ -128,6 +129,7 @@ export function Projects() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
+                  style={i18n.language === "ar" ? { fontSize: "1.4rem", fontWeight: "bold", padding: "0.5rem 1.5rem" } : {}}
                   className={`relative rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] transition-all duration-500 ease-out rtl:tracking-normal ${
                     isActive
                       ? "bg-[#C8A96E] text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200,169,110,0.5)]"
