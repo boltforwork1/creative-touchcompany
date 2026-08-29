@@ -192,9 +192,6 @@ html[lang="ar"] h6 {
 }
 
 /* Arabic premium typography refinements */
-html[lang="ar"] h2 {
-  font-size: 1.15em;
-}
 html[lang="ar"] h3 {
   font-weight: 700;
 }
