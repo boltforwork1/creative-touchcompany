@@ -59,6 +59,7 @@ export function About() {
               "mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
               isArabic && "text-xl font-bold rtl:tracking-normal"
             )}
+            style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
             variants={fadeInUp}
           >
             {t("aboutPage.hero.eyebrow")}
@@ -68,6 +69,7 @@ export function About() {
               "text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl",
               isArabic && "text-4xl md:text-5xl lg:text-5xl font-black leading-tight"
             )}
+            style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
             variants={fadeInUp}
           >
             {t("aboutPage.hero.title")}
@@ -149,13 +151,17 @@ export function About() {
             <span className={cn(
               "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
               isArabic && "text-xl font-bold rtl:tracking-normal"
-            )}>
+            )}
+              style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
+            >
               {t("aboutPage.promise.eyebrow")}
             </span>
             <h2 className={cn(
               "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
               isArabic && "text-4xl md:text-5xl font-black leading-tight"
-            )}>
+            )}
+              style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
+            >
               {t("aboutPage.promise.title")}
             </h2>
             <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580] rtl:leading-[1.9]">
@@ -192,6 +198,7 @@ export function About() {
                 "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
                 isArabic && "text-xl font-bold rtl:tracking-normal"
               )}
+              style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
               variants={fadeInUp}
             >
               {t("aboutPage.direction.eyebrow")}
@@ -201,6 +208,7 @@ export function About() {
                 "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
                 isArabic && "text-4xl md:text-5xl font-black leading-tight"
               )}
+              style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
               variants={fadeInUp}
             >
               {t("aboutPage.direction.title")}
@@ -270,6 +278,7 @@ export function About() {
                 "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
                 isArabic && "text-xl font-bold rtl:tracking-normal"
               )}
+              style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
               variants={fadeInUp}
             >
               {t("aboutPage.values.eyebrow")}
@@ -279,6 +288,7 @@ export function About() {
                 "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
                 isArabic && "text-4xl md:text-5xl font-black leading-tight"
               )}
+              style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
               variants={fadeInUp}
             >
               {t("aboutPage.values.title")}
