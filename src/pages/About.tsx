@@ -24,6 +24,7 @@ import {
   heroContainer,
   viewportOnce,
 } from "@/lib/animations"
+import { cn } from "@/lib/utils"
 
 const trustPillars = [
   { icon: Target, key: "process" },
@@ -54,13 +55,19 @@ export function About() {
           animate="visible"
         >
           <motion.span
-            className={`mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal ${isArabic ? "text-xl font-bold rtl:tracking-normal" : ""}`}
+            className={cn(
+              "mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
+              isArabic && "text-xl font-bold rtl:tracking-normal"
+            )}
             variants={fadeInUp}
           >
             {t("aboutPage.hero.eyebrow")}
           </motion.span>
           <motion.h1
-            className={`text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl ${isArabic ? "text-3xl md:text-4xl lg:text-6xl font-black leading-tight" : ""}`}
+            className={cn(
+              "text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl",
+              isArabic && "text-4xl md:text-5xl lg:text-5xl font-black leading-tight"
+            )}
             variants={fadeInUp}
           >
             {t("aboutPage.hero.title")}
@@ -95,7 +102,10 @@ export function About() {
                   <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Icon size={28} strokeWidth={1.5} />
                   </div>
-                  <h3 className={`text-xl font-bold tracking-tight text-[#1A1820] ${isArabic ? "text-2xl font-bold" : ""}`}>
+                  <h3 className={cn(
+                    "text-xl font-bold tracking-tight text-[#1A1820]",
+                    isArabic && "text-2xl font-bold"
+                  )}>
                     {t(`aboutPage.pillars.${pillar.key}.title`)}
                   </h3>
                   <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580] rtl:leading-[1.9]">
@@ -136,10 +146,16 @@ export function About() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <span className={`mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal ${isArabic ? "text-xl font-bold rtl:tracking-normal" : ""}`}>
+            <span className={cn(
+              "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
+              isArabic && "text-xl font-bold rtl:tracking-normal"
+            )}>
               {t("aboutPage.promise.eyebrow")}
             </span>
-            <h2 className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${isArabic ? "text-3xl md:text-4xl lg:text-6xl font-black leading-tight" : ""}`}>
+            <h2 className={cn(
+              "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
+              isArabic && "text-4xl md:text-5xl font-black leading-tight"
+            )}>
               {t("aboutPage.promise.title")}
             </h2>
             <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580] rtl:leading-[1.9]">
@@ -172,13 +188,19 @@ export function About() {
             viewport={viewportOnce}
           >
             <motion.span
-              className={`mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal ${isArabic ? "text-xl font-bold rtl:tracking-normal" : ""}`}
+              className={cn(
+                "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
+                isArabic && "text-xl font-bold rtl:tracking-normal"
+              )}
               variants={fadeInUp}
             >
               {t("aboutPage.direction.eyebrow")}
             </motion.span>
             <motion.h2
-              className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${isArabic ? "text-3xl md:text-4xl lg:text-6xl font-black leading-tight" : ""}`}
+              className={cn(
+                "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
+                isArabic && "text-4xl md:text-5xl font-black leading-tight"
+              )}
               variants={fadeInUp}
             >
               {t("aboutPage.direction.title")}
@@ -200,7 +222,10 @@ export function About() {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Eye size={28} strokeWidth={1.5} />
               </div>
-              <h3 className={`text-2xl font-bold tracking-tight text-[#1A1820] ${isArabic ? "text-3xl font-bold" : ""}`}>
+              <h3 className={cn(
+                "text-2xl font-bold tracking-tight text-[#1A1820]",
+                isArabic && "text-3xl font-bold"
+              )}>
                 {t("aboutPage.vision.title")}
               </h3>
               <p className="mt-4 text-lg font-normal leading-relaxed text-[#6B6580] rtl:leading-[1.9]">
@@ -216,7 +241,10 @@ export function About() {
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Rocket size={28} strokeWidth={1.5} />
               </div>
-              <h3 className={`text-2xl font-bold tracking-tight text-[#1A1820] ${isArabic ? "text-3xl font-bold" : ""}`}>
+              <h3 className={cn(
+                "text-2xl font-bold tracking-tight text-[#1A1820]",
+                isArabic && "text-3xl font-bold"
+              )}>
                 {t("aboutPage.mission.title")}
               </h3>
               <p className="mt-4 text-lg font-normal leading-relaxed text-[#6B6580] rtl:leading-[1.9]">
@@ -238,13 +266,19 @@ export function About() {
             viewport={viewportOnce}
           >
             <motion.span
-              className={`mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal ${isArabic ? "text-xl font-bold rtl:tracking-normal" : ""}`}
+              className={cn(
+                "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
+                isArabic && "text-xl font-bold rtl:tracking-normal"
+              )}
               variants={fadeInUp}
             >
               {t("aboutPage.values.eyebrow")}
             </motion.span>
             <motion.h2
-              className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${isArabic ? "text-3xl md:text-4xl lg:text-6xl font-black leading-tight" : ""}`}
+              className={cn(
+                "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
+                isArabic && "text-4xl md:text-5xl font-black leading-tight"
+              )}
               variants={fadeInUp}
             >
               {t("aboutPage.values.title")}
@@ -269,7 +303,10 @@ export function About() {
                   <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <h3 className={`text-lg font-bold tracking-tight text-[#1A1820] ${isArabic ? "text-xl font-bold" : ""}`}>
+                  <h3 className={cn(
+                    "text-lg font-bold tracking-tight text-[#1A1820]",
+                    isArabic && "text-xl font-bold"
+                  )}>
                     {t(`aboutPage.values.${value.key}.title`)}
                   </h3>
                   <p className="mt-2 text-sm font-normal leading-relaxed text-[#6B6580] rtl:leading-[1.9]">
@@ -292,7 +329,10 @@ export function About() {
           viewport={viewportOnce}
         >
           <motion.h2
-            className={`text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl ${isArabic ? "text-3xl md:text-4xl lg:text-6xl font-black leading-tight" : ""}`}
+            className={cn(
+              "text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl",
+              isArabic && "text-4xl md:text-5xl font-black leading-tight"
+            )}
             variants={fadeInUp}
           >
             {t("cta.title")}
