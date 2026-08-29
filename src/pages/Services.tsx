@@ -14,6 +14,7 @@ import {
   Rocket,
 } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import i18n from "@/i18n/config"
 import {
   fadeInUp,
   staggerContainer,
@@ -59,12 +60,14 @@ export function Services() {
         >
           <motion.span
             className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+            style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
             variants={fadeInUp}
           >
             {t("servicesPage.hero.eyebrow")}
           </motion.span>
           <motion.h1
             className="max-w-3xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+            style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
             variants={fadeInUp}
           >
             {t("servicesPage.hero.title")}
@@ -90,12 +93,14 @@ export function Services() {
           >
             <motion.span
               className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+              style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
               variants={fadeInUp}
             >
               {t("servicesPage.grid.eyebrow")}
             </motion.span>
             <motion.h2
               className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
+              style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
               variants={fadeInUp}
             >
               {t("servicesPage.grid.title")}
@@ -147,7 +152,9 @@ export function Services() {
 
                   {/* Content */}
                   <div className="flex flex-1 flex-col px-8 pb-8 pt-4">
-                    <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]">
+                    <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]"
+                      style={i18n.language === "ar" ? { fontSize: "1.75rem", fontWeight: "bold" } : {}}
+                    >
                       {title}
                     </h3>
                     <p className="mt-3 text-base font-normal leading-relaxed text-gray-500">
@@ -200,12 +207,14 @@ export function Services() {
           >
             <motion.span
               className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+              style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
               variants={fadeInUp}
             >
               {t("servicesPage.process.eyebrow")}
             </motion.span>
             <motion.h2
               className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
+              style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
               variants={fadeInUp}
             >
               {t("servicesPage.process.title")}
