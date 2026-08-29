@@ -87,10 +87,10 @@ export function Home() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal">
+            <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold">
               {t("about.eyebrow")}
             </span>
-            <h2 className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl">
+            <h2 className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl rtl:text-5xl lg:rtl:text-6xl rtl:font-black">
               {t("about.title")}
             </h2>
             <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580]">
@@ -99,7 +99,7 @@ export function Home() {
             <div className="mt-8">
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E] hover:text-[#1A1820] active:scale-[0.98]"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E] hover:text-[#1A1820] active:scale-[0.98] rtl:text-xl rtl:px-8 rtl:py-3"
               >
                 {t("about.cta")}
                 <ArrowRight
@@ -127,13 +127,13 @@ export function Home() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold"
               variants={fadeInUp}
             >
               {t("services.eyebrow")}
             </motion.span>
             <motion.h2
-              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
+              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl rtl:text-5xl lg:rtl:text-6xl rtl:font-black"
               variants={fadeInUp}
             >
               {t("services.title")}
@@ -211,13 +211,13 @@ export function Home() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold"
               variants={fadeInUp}
             >
               {t("projects.eyebrow")}
             </motion.span>
             <motion.h2
-              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
+              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl rtl:text-5xl lg:rtl:text-6xl rtl:font-black"
               variants={fadeInUp}
             >
               {t("projects.title")}
@@ -354,7 +354,7 @@ export function Home() {
           viewport={viewportOnce}
         >
           <motion.h2
-            className="text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl"
+            className="text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl rtl:text-5xl lg:rtl:text-6xl rtl:font-black"
             variants={fadeInUp}
           >
             {t("cta.title")}
