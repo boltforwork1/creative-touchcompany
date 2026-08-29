@@ -91,7 +91,7 @@ export function Home() {
             <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold">
               {t("about.eyebrow")}
             </span>
-            <h2 className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-4xl md:text-5xl lg:text-7xl font-black leading-tight' : ''}`}>
+            <h2 className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}>
               {t("about.title")}
             </h2>
             <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580]">
@@ -134,7 +134,7 @@ export function Home() {
               {t("services.eyebrow")}
             </motion.span>
             <motion.h2
-              className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-4xl md:text-5xl lg:text-7xl font-black leading-tight' : ''}`}
+              className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}
               variants={fadeInUp}
             >
               {t("services.title")}
@@ -218,7 +218,7 @@ export function Home() {
               {t("projects.eyebrow")}
             </motion.span>
             <motion.h2
-              className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-4xl md:text-5xl lg:text-7xl font-black leading-tight' : ''}`}
+              className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}
               variants={fadeInUp}
             >
               {t("projects.title")}
@@ -355,7 +355,7 @@ export function Home() {
           viewport={viewportOnce}
         >
           <motion.h2
-            className={`text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-4xl md:text-5xl lg:text-7xl font-black leading-tight' : ''}`}
+            className={`text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}
             variants={fadeInUp}
           >
             {t("cta.title")}
