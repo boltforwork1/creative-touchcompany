@@ -45,9 +45,9 @@ export function Header() {
               end={link.to === "/"}
               className={({ isActive }) =>
                 cn(
-                  "relative text-lg font-bold leading-relaxed transition-colors duration-200",
+                  "relative text-lg font-medium leading-relaxed transition-colors duration-200",
                   isArabic
-                    ? "tracking-normal"
+                    ? "tracking-normal font-bold"
                     : "tracking-widest uppercase",
                   "after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#C8A96E] after:transition-all after:duration-300 hover:after:w-full",
                   isActive
@@ -67,13 +67,13 @@ export function Header() {
             type="button"
             onClick={toggleLanguage}
             aria-label={t("lang.label")}
-            className="rounded-full border border-black/[0.08] px-4 py-2 text-sm font-bold transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E]/5 hover:text-[#C8A96E]"
+            className="rounded-full border border-black/[0.08] px-6 py-2.5 text-lg font-medium transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E]/5 hover:text-[#C8A96E]"
           >
             {t("lang.switch")}
           </button>
           <NavLink
             to="/contact"
-            className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-sm font-semibold text-[#1A1820] transition-all duration-200 hover:scale-105 hover:bg-[#C8A96E]/90"
+            className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-lg font-medium text-[#1A1820] transition-all duration-200 hover:scale-105 hover:bg-[#C8A96E]/90"
           >
             {t("nav.cta")}
           </NavLink>
@@ -100,8 +100,8 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={({ isActive }) =>
                   cn(
-                    "text-lg font-bold leading-relaxed transition-colors duration-200",
-                    isArabic ? "tracking-normal" : "tracking-widest uppercase",
+                    "text-lg font-medium leading-relaxed transition-colors duration-200",
+                    isArabic ? "tracking-normal font-bold" : "tracking-widest uppercase",
                     isActive ? "text-[#C8A96E]" : "text-[#1A1820] hover:text-[#C8A96E]"
                   )
                 }
@@ -112,14 +112,14 @@ export function Header() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="rounded-full border border-black/[0.08] px-4 py-2 text-left text-sm font-bold transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E]/5 hover:text-[#C8A96E]"
+              className="rounded-full border border-black/[0.08] px-6 py-2.5 text-left text-lg font-medium transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E]/5 hover:text-[#C8A96E]"
             >
               {t("lang.switch")}
             </button>
             <NavLink
               to="/contact"
               onClick={() => setMobileOpen(false)}
-              className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-center text-sm font-semibold text-[#1A1820] transition-all duration-200 hover:bg-[#C8A96E]/90"
+              className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-center text-lg font-medium text-[#1A1820] transition-all duration-200 hover:bg-[#C8A96E]/90"
             >
               {t("nav.cta")}
             </NavLink>
