@@ -170,7 +170,7 @@ export function About() {
             <div className="mt-8">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-rose-500 px-8 py-3.5 text-sm font-semibold tracking-wide text-white shadow-[0_10px_30px_-12px_rgba(244,63,94,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-rose-600 hover:shadow-[0_20px_50px_-12px_rgba(244,63,94,0.5)] active:scale-[0.98] rtl:tracking-normal"
+                className="group inline-flex items-center gap-2 rounded-full bg-pink-500 px-8 py-3.5 text-sm font-semibold tracking-wide text-white shadow-[0_10px_30px_-12px_rgba(236,72,153,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-pink-600 hover:shadow-[0_20px_50px_-12px_rgba(236,72,153,0.5)] active:scale-[0.98] rtl:tracking-normal"
               >
                 {t("aboutPage.promise.cta")}
                 <ArrowRight
@@ -350,7 +350,7 @@ export function About() {
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-rose-500 px-10 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-[0_10px_30px_-12px_rgba(244,63,94,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-rose-600 hover:shadow-[0_20px_50px_-12px_rgba(244,63,94,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
+              className="group inline-flex items-center gap-2 rounded-full bg-pink-500 px-10 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-[0_10px_30px_-12px_rgba(236,72,153,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-pink-600 hover:shadow-[0_20px_50px_-12px_rgba(236,72,153,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
               {t("cta.button")}
               <ArrowRight
