@@ -30,7 +30,7 @@ type Service = {
 }
 
 const services: Service[] = [
-  { icon: Monitor, key: "webDesign", image: "/service1.jpg" },
+  { icon: Monitor, key: "webDesign", image: "/hero-projects.jpg" },
   { icon: PenTool, key: "brandIdentity", image: "/service2.jpg" },
   { icon: Printer, key: "corporatePrinting", image: "/service3.jpg" },
   { icon: ShoppingBag, key: "ecommerce", image: "/service4.jpg" },
