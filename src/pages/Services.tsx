@@ -51,7 +51,7 @@ export function Services() {
   return (
     <main className="bg-white">
       {/* ===== 1. Page Hero ===== */}
-      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[#1A1820]">
+      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-slate-900">
         <motion.div
           className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 py-20 text-center"
           variants={heroContainer}
@@ -59,7 +59,7 @@ export function Services() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-amber-400 rtl:tracking-normal"
             style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
             variants={fadeInUp}
           >
@@ -73,7 +73,7 @@ export function Services() {
             {t("servicesPage.hero.title")}
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400"
+            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-slate-300"
             variants={fadeInUp}
           >
             {t("servicesPage.hero.subtitle")}
@@ -92,21 +92,21 @@ export function Services() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-amber-500 rtl:tracking-normal"
               style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
               variants={fadeInUp}
             >
               {t("servicesPage.grid.eyebrow")}
             </motion.span>
             <motion.h2
-              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
+              className="text-4xl font-black leading-tight tracking-tight text-slate-900 md:text-5xl lg:text-6xl"
               style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
               variants={fadeInUp}
             >
               {t("servicesPage.grid.title")}
             </motion.h2>
             <motion.p
-              className="mt-6 text-lg font-normal leading-loose text-[#6B6580]"
+              className="mt-6 text-lg font-normal leading-loose text-slate-600"
               variants={fadeInUp}
             >
               {t("servicesPage.grid.body")}
@@ -132,7 +132,7 @@ export function Services() {
                 <motion.div
                   key={service.key}
                   variants={staggerItem}
-                  className="group flex flex-col overflow-hidden rounded-2xl border border-black/[0.04] bg-[#FDFBF7] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
+                  className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200/60 bg-white transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(245,158,11,0.25)]"
                 >
                   {/* Cover image */}
                   <div className="relative h-48 w-full overflow-hidden">
@@ -145,31 +145,31 @@ export function Services() {
 
                   {/* Floating icon overlapping image and content */}
                   <div className="relative z-10 -mt-8 px-8">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white text-[#C8A96E] shadow-[0_10px_30px_-12px_rgba(26, 24, 32,0.25)] ring-1 ring-black/[0.04] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-[#C8A96E] group-hover:text-white">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white text-amber-500 shadow-[0_10px_30px_-12px_rgba(15,23,42,0.25)] ring-1 ring-slate-200/60 transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-amber-500 group-hover:text-white">
                       <Icon size={26} strokeWidth={1.5} />
                     </div>
                   </div>
 
                   {/* Content */}
                   <div className="flex flex-1 flex-col px-8 pb-8 pt-4">
-                    <h3 className="text-2xl font-bold tracking-tight text-[#1A1820]"
+                    <h3 className="text-2xl font-bold tracking-tight text-slate-900"
                       style={i18n.language === "ar" ? { fontSize: "1.75rem", fontWeight: "bold" } : {}}
                     >
                       {title}
                     </h3>
-                    <p className="mt-3 text-base font-normal leading-relaxed text-gray-500">
+                    <p className="mt-3 text-base font-normal leading-relaxed text-slate-600">
                       {description}
                     </p>
 
-                    <div className="my-6 h-px w-full bg-black/[0.06]" />
+                    <div className="my-6 h-px w-full bg-slate-200" />
 
                     <ul className="flex flex-col gap-2.5">
                       {deliverables.map((item) => (
                         <li
                           key={item}
-                          className="flex items-center gap-2.5 text-sm font-medium text-gray-500"
+                          className="flex items-center gap-2.5 text-sm font-medium text-slate-600"
                         >
-                          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#C8A96E]" />
+                          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" />
                           {item}
                         </li>
                       ))}
@@ -178,7 +178,7 @@ export function Services() {
                     <div className="mt-8 pt-2">
                       <Link
                         to="/contact"
-                        className="group/link inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-[#C8A96E] transition-colors duration-300 hover:text-[#1A1820]"
+                        className="group/link inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-pink-500 transition-colors duration-300 hover:text-pink-600"
                       >
                         {t("servicesPage.requestQuote")}
                         <ArrowRight
@@ -196,7 +196,7 @@ export function Services() {
       </section>
 
       {/* ===== 3. Our Process ===== */}
-      <section className="bg-[#F8F7FA] py-24">
+      <section className="bg-slate-50 py-24">
         <div className="mx-auto max-w-7xl px-6">
           <motion.div
             className="mx-auto mb-16 flex max-w-2xl flex-col items-center text-center"
@@ -206,14 +206,14 @@ export function Services() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-amber-500 rtl:tracking-normal"
               style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
               variants={fadeInUp}
             >
               {t("servicesPage.process.eyebrow")}
             </motion.span>
             <motion.h2
-              className="text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl"
+              className="text-4xl font-black leading-tight tracking-tight text-slate-900 md:text-5xl lg:text-6xl"
               style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
               variants={fadeInUp}
             >
@@ -237,20 +237,20 @@ export function Services() {
                 <motion.div
                   key={step.step}
                   variants={staggerItem}
-                  className="group relative flex flex-col items-start rounded-2xl border border-black/[0.04] bg-white p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
+                  className="group relative flex flex-col items-start rounded-2xl border border-slate-200/60 bg-white p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(245,158,11,0.25)]"
                 >
                   <div className="mb-6 flex w-full items-center justify-between">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-[#C8A96E] group-hover:text-white">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-amber-50 text-amber-500 transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-amber-500 group-hover:text-white">
                       <Icon size={24} strokeWidth={1.5} />
                     </div>
-                    <span className="text-4xl font-extrabold tracking-tight text-black/[0.06] transition-colors duration-500 group-hover:text-[#C8A96E]/20">
+                    <span className="text-4xl font-extrabold tracking-tight text-slate-200 transition-colors duration-500 group-hover:text-amber-400/40">
                       {step.step}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold tracking-tight text-[#1A1820]">
+                  <h3 className="text-lg font-bold tracking-tight text-slate-900">
                     {t(`servicesPage.process.steps.${step.key}.title`)}
                   </h3>
-                  <p className="mt-3 text-base font-normal leading-relaxed text-gray-500">
+                  <p className="mt-3 text-base font-normal leading-relaxed text-slate-600">
                     {t(`servicesPage.process.steps.${step.key}.description`)}
                   </p>
                 </motion.div>
@@ -261,7 +261,7 @@ export function Services() {
       </section>
 
       {/* ===== 4. Global CTA Banner ===== */}
-      <section className="bg-[#1A1820] py-20">
+      <section className="bg-slate-900 py-20">
         <motion.div
           className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 text-center"
           variants={staggerContainer}
@@ -278,7 +278,7 @@ export function Services() {
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200, 169, 110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
+              className="group inline-flex items-center gap-2 rounded-full bg-pink-500 px-10 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-[0_10px_30px_-12px_rgba(236,72,153,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-pink-400 hover:shadow-[0_20px_50px_-12px_rgba(236,72,153,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
               {t("cta.button")}
               <ArrowRight
