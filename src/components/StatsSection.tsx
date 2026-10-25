@@ -51,7 +51,7 @@ function StatItem({ stat, active, label }: { stat: Stat; active: boolean; label:
 
   return (
     <motion.div variants={staggerItem} className="flex flex-col items-center text-center">
-      <span className="text-5xl font-extrabold tracking-tight text-[#C8A96E] sm:text-6xl">
+      <span className="text-5xl font-extrabold tracking-tight text-[#e62e7a] sm:text-6xl">
         {count}
         {stat.suffix}
       </span>
@@ -88,7 +88,7 @@ export function StatsSection() {
   }, [])
 
   return (
-    <section ref={ref} className="bg-[#1A1820] py-20">
+    <section ref={ref} className="bg-[#0a182e] py-20">
       <motion.div
         className="mx-auto max-w-7xl px-6"
         variants={staggerContainer}
@@ -100,7 +100,7 @@ export function StatsSection() {
           className="mb-14 flex flex-col items-center text-center"
           variants={fadeInUp}
         >
-          <span className="text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold">
+          <span className="text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal rtl:text-2xl rtl:font-bold">
             {t("stats.eyebrow")}
           </span>
           <h2 className={`mt-4 text-4xl font-black leading-tight tracking-tight text-white md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}>
