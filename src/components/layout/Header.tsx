@@ -23,7 +23,7 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/[0.06] bg-white/95 shadow-sm backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Left: Logo */}
         <div className="flex flex-1 items-center justify-start">
@@ -49,10 +49,10 @@ export function Header() {
                   isArabic
                     ? "tracking-normal font-bold"
                     : "tracking-widest uppercase",
-                  "after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-[#C8A96E] after:transition-all after:duration-300 hover:after:w-full",
+                  "after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-amber-500 after:transition-all after:duration-300 hover:after:w-full",
                   isActive
-                    ? "text-[#C8A96E] after:w-full"
-                    : "text-[#1A1820] hover:text-[#C8A96E]"
+                    ? "text-amber-600 after:w-full"
+                    : "text-slate-800 hover:text-amber-600"
                 )
               }
             >
@@ -67,13 +67,13 @@ export function Header() {
             type="button"
             onClick={toggleLanguage}
             aria-label={t("lang.label")}
-            className="rounded-full border border-black/[0.08] px-6 py-2.5 text-lg font-medium transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E]/5 hover:text-[#C8A96E]"
+            className="rounded-full border border-slate-200 px-6 py-2.5 text-lg font-medium transition-all duration-300 hover:border-amber-500 hover:bg-amber-50 hover:text-amber-600"
           >
             {t("lang.switch")}
           </button>
           <NavLink
             to="/contact"
-            className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-lg font-medium text-[#1A1820] transition-all duration-200 hover:scale-105 hover:bg-[#C8A96E]/90"
+            className="rounded-full bg-pink-500 px-6 py-2.5 text-lg font-medium text-white transition-all duration-200 hover:scale-105 hover:bg-pink-600"
           >
             {t("nav.cta")}
           </NavLink>
@@ -81,7 +81,7 @@ export function Header() {
 
         {/* Mobile menu toggle */}
         <button
-          className="flex items-center justify-center text-[#1A1820] transition-colors hover:text-[#C8A96E] md:hidden"
+          className="flex items-center justify-center text-slate-800 transition-colors hover:text-amber-600 md:hidden"
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -90,7 +90,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-black/[0.06] bg-[#FAFAFA] px-6 py-6 md:hidden">
+        <div className="border-t border-slate-200 bg-slate-50 px-6 py-6 md:hidden">
           <nav className="flex flex-col gap-5">
             {navLinks.map((link) => (
               <NavLink
@@ -102,7 +102,7 @@ export function Header() {
                   cn(
                     "text-lg font-medium leading-relaxed transition-colors duration-200",
                     isArabic ? "tracking-normal font-bold" : "tracking-widest uppercase",
-                    isActive ? "text-[#C8A96E]" : "text-[#1A1820] hover:text-[#C8A96E]"
+                    isActive ? "text-amber-600" : "text-slate-800 hover:text-amber-600"
                   )
                 }
               >
@@ -112,14 +112,14 @@ export function Header() {
             <button
               type="button"
               onClick={toggleLanguage}
-              className="rounded-full border border-black/[0.08] px-6 py-2.5 text-left text-lg font-medium transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E]/5 hover:text-[#C8A96E]"
+              className="rounded-full border border-slate-200 px-6 py-2.5 text-left text-lg font-medium transition-all duration-300 hover:border-amber-500 hover:bg-amber-50 hover:text-amber-600"
             >
               {t("lang.switch")}
             </button>
             <NavLink
               to="/contact"
               onClick={() => setMobileOpen(false)}
-              className="rounded-full bg-[#C8A96E] px-6 py-2.5 text-center text-lg font-medium text-[#1A1820] transition-all duration-200 hover:bg-[#C8A96E]/90"
+              className="rounded-full bg-pink-500 px-6 py-2.5 text-center text-lg font-medium text-white transition-all duration-200 hover:bg-pink-600"
             >
               {t("nav.cta")}
             </NavLink>

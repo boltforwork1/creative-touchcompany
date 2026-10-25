@@ -41,7 +41,7 @@ export function Footer() {
   ] as const
 
   return (
-    <footer className="border-t border-black/[0.08] bg-[#FAFAFA]">
+    <footer className="border-t border-slate-800 bg-slate-900">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-3">
 
@@ -55,17 +55,17 @@ export function Footer() {
               />
             </NavLink>
 
-            <p className="max-w-xs text-sm leading-loose text-[#6B6580] rtl:leading-[1.9]">
+            <p className="max-w-xs text-sm leading-loose text-slate-400 rtl:leading-[1.9]">
               {t("footer.description")}
             </p>
 
             {/* Gold accent line */}
-            <div className="h-px w-12 bg-[#C8A96E]" />
+            <div className="h-px w-12 bg-amber-500" />
           </div>
 
           {/* Navigation column */}
           <div>
-            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase rtl:tracking-normal">
+            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-amber-500 uppercase rtl:tracking-normal">
               {t("footer.quickLinks")}
             </h4>
             <nav className="flex flex-col gap-3">
@@ -76,7 +76,7 @@ export function Footer() {
                   end={link.to === "/"}
                   className={({ isActive }) =>
                     `text-sm font-normal tracking-wide transition-colors duration-200 ${
-                      isActive ? "text-[#C8A96E]" : "text-[#1A1820] hover:text-[#C8A96E]"
+                      isActive ? "text-amber-400" : "text-slate-300 hover:text-amber-400"
                     }`
                   }
                 >
@@ -88,7 +88,7 @@ export function Footer() {
 
           {/* Contact column */}
           <div>
-            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase rtl:tracking-normal">
+            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-amber-500 uppercase rtl:tracking-normal">
               {t("footer.contactInfo")}
             </h4>
             <ul className="flex flex-col gap-4">
@@ -97,17 +97,17 @@ export function Footer() {
                   <Icon
                     size={14}
                     strokeWidth={1.5}
-                    className="mt-0.5 shrink-0 text-[#C8A96E]"
+                    className="mt-0.5 shrink-0 text-amber-500"
                   />
                   {href ? (
                     <a
                       href={href}
-                      className="text-sm leading-snug text-[#1A1820] transition-colors duration-200 hover:text-[#C8A96E]"
+                      className="text-sm leading-snug text-slate-300 transition-colors duration-200 hover:text-amber-400"
                     >
                       {ltr ? <span dir="ltr">{text}</span> : text}
                     </a>
                   ) : (
-                    <span className="text-sm leading-snug text-[#1A1820]">
+                    <span className="text-sm leading-snug text-slate-300">
                       {ltr ? <span dir="ltr">{text}</span> : text}
                     </span>
                   )}
@@ -118,13 +118,13 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-black/[0.08] pt-8 sm:flex-row">
-          <p className="text-xs tracking-wide text-[#6B6580]">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
+          <p className="text-xs tracking-wide text-slate-400">
             <span dir="ltr">{t("footer.rights")}</span>{" "}
             {t("footer.poweredBy")}{" "}
-            <span className="text-[#C8A96E]" dir="ltr">{t("footer.brand")}</span>
+            <span className="text-amber-400" dir="ltr">{t("footer.brand")}</span>
           </p>
-          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#C8A96E]/40 to-transparent sm:hidden" />
+          <div className="h-px w-16 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent sm:hidden" />
         </div>
       </div>
     </footer>
