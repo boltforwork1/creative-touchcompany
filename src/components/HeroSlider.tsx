@@ -59,7 +59,7 @@ export function HeroSlider() {
   }, [nextSlide, index])
 
   return (
-    <section className="relative h-[600px] w-full overflow-hidden bg-[#1A1820] sm:min-h-[80vh] lg:h-[calc(100vh-7rem)] lg:min-h-[calc(100vh-7rem)]">
+    <section className="relative h-[600px] w-full overflow-hidden bg-slate-900 sm:min-h-[80vh] lg:h-[calc(100vh-7rem)] lg:min-h-[calc(100vh-7rem)]">
       {/* Slides */}
       <AnimatePresence custom={direction} mode="popLayout">
         <motion.div
@@ -77,7 +77,7 @@ export function HeroSlider() {
         >
           {/* Ken Burns image layer */}
           <motion.div
-            className="absolute inset-0 bg-[#1A1820]"
+            className="absolute inset-0 bg-slate-900"
             initial={{ scale: 1 }}
             animate={{ scale: 1.1 }}
             transition={{ duration: 8, ease: "easeOut" }}
@@ -115,7 +115,7 @@ export function HeroSlider() {
               }}
             >
               <motion.span
-                className="mb-5 block text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
+                className="mb-5 block text-lg font-bold uppercase tracking-[0.25em] text-amber-400 rtl:tracking-normal"
                 variants={textVariants}
               >
                 {t(`${slideKey}.eyebrow`)}
@@ -136,7 +136,7 @@ export function HeroSlider() {
               <motion.div className="mt-10" variants={textVariants}>
                 <Link
                   to={slideHrefs[index]}
-                  className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200, 169, 110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.5)] active:scale-[0.98]"
+                  className="group inline-flex items-center gap-2 rounded-full bg-pink-500 px-8 py-3.5 text-sm font-semibold tracking-wide text-white shadow-[0_10px_30px_-12px_rgba(236,72,153,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-pink-600 hover:shadow-[0_20px_50px_-12px_rgba(236,72,153,0.5)] active:scale-[0.98]"
                 >
                   {t(`${slideKey}.cta`)}
                   <ArrowRight
@@ -154,14 +154,14 @@ export function HeroSlider() {
       <button
         onClick={prevSlide}
         aria-label="Previous slide"
-        className="group absolute bottom-24 left-4 top-auto z-20 flex h-11 w-11 translate-y-0 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] sm:left-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
+        className="group absolute bottom-24 left-4 top-auto z-20 flex h-11 w-11 translate-y-0 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-amber-400 hover:bg-amber-400 hover:text-slate-900 sm:left-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
       >
         <ChevronLeft size={20} strokeWidth={1.5} className="rtl:rotate-180" />
       </button>
       <button
         onClick={nextSlide}
         aria-label="Next slide"
-        className="group absolute bottom-24 right-4 top-auto z-20 flex h-11 w-11 translate-y-0 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] sm:right-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
+        className="group absolute bottom-24 right-4 top-auto z-20 flex h-11 w-11 translate-y-0 items-center justify-center rounded-full border border-white/20 bg-black/20 text-white backdrop-blur-sm transition-all duration-500 hover:border-amber-400 hover:bg-amber-400 hover:text-slate-900 sm:right-6 md:bottom-auto md:top-1/2 md:-translate-y-1/2"
       >
         <ChevronRight size={20} strokeWidth={1.5} className="rtl:rotate-180" />
       </button>
@@ -172,7 +172,7 @@ export function HeroSlider() {
         <div className="h-1 w-full bg-white/10">
           <motion.div
             key={index}
-            className="h-full bg-[#C8A96E]"
+            className="h-full bg-amber-400"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
             transition={{ duration: AUTOPLAY_MS / 1000, ease: "linear" }}
@@ -188,7 +188,7 @@ export function HeroSlider() {
               aria-label={`Go to slide ${i + 1}`}
               className={`h-2 rounded-full transition-all duration-500 ${
                 i === index
-                  ? "w-8 bg-[#C8A96E]"
+                  ? "w-8 bg-amber-400"
                   : "w-2 bg-white/30 hover:bg-white/50"
               }`}
             />
