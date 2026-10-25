@@ -88,10 +88,10 @@ export function Home() {
             whileInView="visible"
             viewport={viewportOnce}
           >
-            <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal rtl:text-2xl rtl:font-bold">
+            <span className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold">
               {t("about.eyebrow")}
             </span>
-            <h2 className={`text-4xl font-black leading-tight tracking-tight text-[#0a182e] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}>
+            <h2 className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}>
               {t("about.title")}
             </h2>
             <p className="mt-6 text-lg font-normal leading-loose text-[#6B6580]">
@@ -100,7 +100,7 @@ export function Home() {
             <div className="mt-8">
               <Link
                 to="/about"
-                className="group inline-flex items-center gap-2 rounded-full border border-[#e62e7a] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#e62e7a] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#e62e7a] hover:text-[#0a182e] active:scale-[0.98] rtl:text-xl rtl:px-8 rtl:py-3"
+                className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E] hover:text-[#1A1820] active:scale-[0.98] rtl:text-xl rtl:px-8 rtl:py-3"
               >
                 {t("about.cta")}
                 <ArrowRight
@@ -128,13 +128,13 @@ export function Home() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal rtl:text-2xl rtl:font-bold"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold"
               variants={fadeInUp}
             >
               {t("services.eyebrow")}
             </motion.span>
             <motion.h2
-              className={`text-4xl font-black leading-tight tracking-tight text-[#0a182e] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}
+              className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}
               variants={fadeInUp}
             >
               {t("services.title")}
@@ -161,13 +161,13 @@ export function Home() {
                 <motion.div
                   key={service.key}
                   variants={staggerItem}
-                  className="group rounded-2xl border border-black/[0.04] bg-white p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.15)]"
+                  className="group rounded-2xl border border-black/[0.04] bg-white p-8 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
                 >
                   {/* Icon placeholder */}
-                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#e62e7a] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-[#e62e7a] group-hover:text-white">
+                  <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#FDFBF7] text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1 group-hover:bg-[#C8A96E] group-hover:text-white">
                     <Icon size={26} strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-xl font-bold tracking-tight text-[#0a182e]">
+                  <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                     {t(`services.items.${service.key}.title`)}
                   </h3>
                   <p className="mt-3 text-base font-normal leading-relaxed text-[#6B6580]">
@@ -188,7 +188,7 @@ export function Home() {
           >
             <Link
               to="/services"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#e62e7a] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#0a182e] shadow-[0_10px_30px_-12px_rgba(230, 46, 122,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#e62e7a]/90 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.5)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200, 169, 110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.5)] active:scale-[0.98]"
             >
               {t("services.cta")}
               <ArrowRight
@@ -212,13 +212,13 @@ export function Home() {
             viewport={viewportOnce}
           >
             <motion.span
-              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal rtl:text-2xl rtl:font-bold"
+              className="mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal rtl:text-2xl rtl:font-bold"
               variants={fadeInUp}
             >
               {t("projects.eyebrow")}
             </motion.span>
             <motion.h2
-              className={`text-4xl font-black leading-tight tracking-tight text-[#0a182e] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}
+              className={`text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl ${i18n.language === 'ar' ? 'text-3xl md:text-4xl lg:text-6xl font-black leading-tight' : ''}`}
               variants={fadeInUp}
             >
               {t("projects.title")}
@@ -237,7 +237,7 @@ export function Home() {
               <motion.div
                 key={project.nameKey}
                 variants={staggerItem}
-                className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.15)]"
+                className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
               >
                 {/* Image */}
                 <div className="h-52 w-full overflow-hidden">
@@ -250,10 +250,10 @@ export function Home() {
 
                 {/* Body */}
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#f4b232] rtl:tracking-normal">
+                  <span className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal">
                     {t(project.categoryKey)}
                   </span>
-                  <h3 className="text-xl font-bold tracking-tight text-[#0a182e]">
+                  <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                     {project.nameKey}
                   </h3>
 
@@ -263,7 +263,7 @@ export function Home() {
                         href={project.liveLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/link inline-flex items-center gap-2 rounded-full border border-[#e62e7a] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#e62e7a] transition-all duration-300 hover:bg-[#e62e7a] hover:text-[#0a182e]"
+                        className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
                       >
                         {t("projects.openBrowser")}
                         <ExternalLink
@@ -275,7 +275,7 @@ export function Home() {
                       <button
                         type="button"
                         onClick={() => setSelectedImage(project.image)}
-                        className="group/link inline-flex items-center gap-2 rounded-full border border-[#e62e7a] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#e62e7a] transition-all duration-300 hover:bg-[#e62e7a] hover:text-[#0a182e]"
+                        className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
                       >
                         {t("projects.viewFullScreen")}
                         <Maximize2
@@ -300,7 +300,7 @@ export function Home() {
           >
             <Link
               to="/projects"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#e62e7a] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#e62e7a] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#e62e7a] hover:text-[#0a182e] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E] hover:text-[#1A1820] active:scale-[0.98]"
             >
               {t("projects.cta")}
               <ArrowRight
@@ -327,7 +327,7 @@ export function Home() {
               type="button"
               onClick={() => setSelectedImage(null)}
               aria-label="Close"
-              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#e62e7a] hover:bg-[#e62e7a] hover:text-[#0a182e] rtl:right-auto rtl:left-6"
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] rtl:right-auto rtl:left-6"
             >
               <X size={22} strokeWidth={1.5} />
             </button>
@@ -346,7 +346,7 @@ export function Home() {
       </AnimatePresence>
 
       {/* ===== 5. CTA Banner ===== */}
-      <section className="bg-[#0a182e] py-20">
+      <section className="bg-[#1A1820] py-20">
         <motion.div
           className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 text-center"
           variants={staggerContainer}
@@ -363,7 +363,7 @@ export function Home() {
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#e62e7a] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#0a182e] shadow-[0_10px_30px_-12px_rgba(230, 46, 122,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200, 169, 110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
               {t("cta.button")}
               <ArrowRight

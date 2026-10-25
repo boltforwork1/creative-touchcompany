@@ -60,12 +60,12 @@ export function Footer() {
             </p>
 
             {/* Gold accent line */}
-            <div className="h-px w-12 bg-[#e62e7a]" />
+            <div className="h-px w-12 bg-[#C8A96E]" />
           </div>
 
           {/* Navigation column */}
           <div>
-            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#f4b232] uppercase rtl:tracking-normal">
+            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase rtl:tracking-normal">
               {t("footer.quickLinks")}
             </h4>
             <nav className="flex flex-col gap-3">
@@ -76,7 +76,7 @@ export function Footer() {
                   end={link.to === "/"}
                   className={({ isActive }) =>
                     `text-sm font-normal tracking-wide transition-colors duration-200 ${
-                      isActive ? "text-[#e62e7a]" : "text-[#0a182e] hover:text-[#e62e7a]"
+                      isActive ? "text-[#C8A96E]" : "text-[#1A1820] hover:text-[#C8A96E]"
                     }`
                   }
                 >
@@ -88,7 +88,7 @@ export function Footer() {
 
           {/* Contact column */}
           <div>
-            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#f4b232] uppercase rtl:tracking-normal">
+            <h4 className="mb-6 text-xs font-bold tracking-[0.25em] text-[#C8A96E] uppercase rtl:tracking-normal">
               {t("footer.contactInfo")}
             </h4>
             <ul className="flex flex-col gap-4">
@@ -97,17 +97,17 @@ export function Footer() {
                   <Icon
                     size={14}
                     strokeWidth={1.5}
-                    className="mt-0.5 shrink-0 text-[#e62e7a]"
+                    className="mt-0.5 shrink-0 text-[#C8A96E]"
                   />
                   {href ? (
                     <a
                       href={href}
-                      className="text-sm leading-snug text-[#0a182e] transition-colors duration-200 hover:text-[#e62e7a]"
+                      className="text-sm leading-snug text-[#1A1820] transition-colors duration-200 hover:text-[#C8A96E]"
                     >
                       {ltr ? <span dir="ltr">{text}</span> : text}
                     </a>
                   ) : (
-                    <span className="text-sm leading-snug text-[#0a182e]">
+                    <span className="text-sm leading-snug text-[#1A1820]">
                       {ltr ? <span dir="ltr">{text}</span> : text}
                     </span>
                   )}
@@ -122,9 +122,9 @@ export function Footer() {
           <p className="text-xs tracking-wide text-[#6B6580]">
             <span dir="ltr">{t("footer.rights")}</span>{" "}
             {t("footer.poweredBy")}{" "}
-            <span className="text-[#e62e7a]" dir="ltr">{t("footer.brand")}</span>
+            <span className="text-[#C8A96E]" dir="ltr">{t("footer.brand")}</span>
           </p>
-          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#e62e7a]/40 to-transparent sm:hidden" />
+          <div className="h-px w-16 bg-gradient-to-r from-transparent via-[#C8A96E]/40 to-transparent sm:hidden" />
         </div>
       </div>
     </footer>

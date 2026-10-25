@@ -84,7 +84,7 @@ export function Projects() {
   return (
     <main className="bg-white">
       {/* ===== 1. Page Hero ===== */}
-      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[#0a182e]">
+      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[#1A1820]">
         <motion.div
           className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 py-20 text-center"
           variants={heroContainer}
@@ -92,7 +92,7 @@ export function Projects() {
           animate="visible"
         >
           <motion.span
-            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal"
+            className="mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal"
             variants={fadeInUp}
           >
             {t("projects.page.hero.eyebrow")}
@@ -104,7 +104,7 @@ export function Projects() {
             {t("projects.page.hero.title")}
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-[#a8b8cc] rtl:leading-[1.9]"
+            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400 rtl:leading-[1.9]"
             variants={fadeInUp}
           >
             {t("projects.page.hero.subtitle")}
@@ -132,8 +132,8 @@ export function Projects() {
                   style={i18n.language === "ar" ? { fontSize: "1.15rem", fontWeight: "bold", padding: "0.5rem 1.25rem" } : {}}
                   className={`relative rounded-full px-5 py-2.5 text-xs font-bold uppercase tracking-[0.15em] transition-all duration-500 ease-out rtl:tracking-normal ${
                     isActive
-                      ? "bg-[#e62e7a] text-[#0a182e] shadow-[0_10px_30px_-12px_rgba(230, 46, 122,0.5)]"
-                      : "bg-transparent text-[#6B6580] hover:text-[#0a182e]"
+                      ? "bg-[#C8A96E] text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200, 169, 110,0.5)]"
+                      : "bg-transparent text-[#6B6580] hover:text-[#1A1820]"
                   }`}
                 >
                   {t(`projects.page.filters.${cat}`)}
@@ -157,7 +157,7 @@ export function Projects() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.15)]"
+                      className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
                     >
                       {/* Image */}
                       <div className="h-52 w-full overflow-hidden">
@@ -172,11 +172,11 @@ export function Projects() {
                       <div className="flex flex-1 flex-col p-6">
                         <span
                           style={i18n.language === "ar" ? { fontSize: "1.1rem", fontWeight: "bold" } : {}}
-                          className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#f4b232] rtl:tracking-normal"
+                          className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal"
                         >
                           {t(`projects.page.filters.${project.categoryKey}`)}
                         </span>
-                        <h3 className="text-xl font-bold tracking-tight text-[#0a182e]">
+                        <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                           {project.companyName}
                         </h3>
 
@@ -184,7 +184,7 @@ export function Projects() {
                           <button
                             type="button"
                             onClick={() => setSelectedImage(project.image!)}
-                            className="group/link inline-flex items-center gap-2 rounded-full border border-[#e62e7a] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#e62e7a] transition-all duration-300 hover:bg-[#e62e7a] hover:text-[#0a182e]"
+                            className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
                           >
                             {t("projects.viewFullScreen")}
                             <Maximize2
@@ -207,7 +207,7 @@ export function Projects() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.15)]"
+                      className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-black/[0.04] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
                     >
                       {/* Image */}
                       <div className="overflow-hidden">
@@ -222,11 +222,11 @@ export function Projects() {
                       <div className="flex flex-1 flex-col p-6">
                         <span
                           style={i18n.language === "ar" ? { fontSize: "1.1rem", fontWeight: "bold" } : {}}
-                          className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#f4b232] rtl:tracking-normal"
+                          className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal"
                         >
                           {t(`projects.page.filters.${project.categoryKey}`)}
                         </span>
-                        <h3 className="text-xl font-bold tracking-tight text-[#0a182e]">
+                        <h3 className="text-xl font-bold tracking-tight text-[#1A1820]">
                           {project.companyName}
                         </h3>
 
@@ -235,7 +235,7 @@ export function Projects() {
                             href={project.liveLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group/link inline-flex items-center gap-2 rounded-full border border-[#e62e7a] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#e62e7a] transition-all duration-300 hover:bg-[#e62e7a] hover:text-[#0a182e]"
+                            className="group/link inline-flex items-center gap-2 rounded-full border border-[#C8A96E] px-6 py-2.5 text-sm font-semibold tracking-wide text-[#C8A96E] transition-all duration-300 hover:bg-[#C8A96E] hover:text-[#1A1820]"
                           >
                             {t("projects.openBrowser")}
                             <ExternalLink
@@ -259,15 +259,15 @@ export function Projects() {
                     className="group relative aspect-[4/3] overflow-hidden rounded-2xl bg-[#FDFBF7] ring-1 ring-black/[0.04]"
                   >
                     {/* Placeholder */}
-                    <div className="flex h-full w-full items-center justify-center text-[#e62e7a]/30 transition-transform duration-700 ease-out group-hover:scale-105">
+                    <div className="flex h-full w-full items-center justify-center text-[#C8A96E]/30 transition-transform duration-700 ease-out group-hover:scale-105">
                       <Icon size={48} strokeWidth={1} />
                     </div>
 
                     {/* Hover overlay */}
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#0a182e]/85 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-[#1A1820]/85 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100">
                       <ArrowUpRight
                         size={28}
-                        className="text-[#e62e7a] rtl:rotate-90"
+                        className="text-[#C8A96E] rtl:rotate-90"
                         strokeWidth={1.5}
                       />
                       <h3 className="text-xl font-bold tracking-tight text-white">
@@ -275,7 +275,7 @@ export function Projects() {
                       </h3>
                       <span
                         style={i18n.language === "ar" ? { fontSize: "1.1rem", fontWeight: "bold" } : {}}
-                        className="text-xs font-medium uppercase tracking-[0.2em] text-[#f4b232] rtl:tracking-normal"
+                        className="text-xs font-medium uppercase tracking-[0.2em] text-[#C8A96E] rtl:tracking-normal"
                       >
                         {t(`projects.page.filters.${project.categoryKey}`)}
                       </span>
@@ -303,7 +303,7 @@ export function Projects() {
               type="button"
               onClick={() => setSelectedImage(null)}
               aria-label={t("projects.page.lightbox.close")}
-              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#e62e7a] hover:bg-[#e62e7a] hover:text-[#0a182e] rtl:right-auto rtl:left-6"
+              className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:border-[#C8A96E] hover:bg-[#C8A96E] hover:text-[#1A1820] rtl:right-auto rtl:left-6"
             >
               <X size={22} strokeWidth={1.5} />
             </button>
@@ -322,7 +322,7 @@ export function Projects() {
       </AnimatePresence>
 
       {/* ===== 3. Global CTA Banner ===== */}
-      <section className="bg-[#0a182e] py-20">
+      <section className="bg-[#1A1820] py-20">
         <motion.div
           className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 text-center"
           variants={staggerContainer}
@@ -339,7 +339,7 @@ export function Projects() {
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#e62e7a] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#0a182e] shadow-[0_10px_30px_-12px_rgba(230, 46, 122,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200, 169, 110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
               {t("cta.button")}
               <ArrowRight

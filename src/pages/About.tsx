@@ -47,7 +47,7 @@ export function About() {
   return (
     <main className="bg-white">
       {/* ===== 1. Page Hero ===== */}
-      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[#0a182e]">
+      <section className="relative flex min-h-[60vh] items-center overflow-hidden bg-[#1A1820]">
         <motion.div
           className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-6 py-20 text-center"
           variants={heroContainer}
@@ -56,7 +56,7 @@ export function About() {
         >
           <motion.span
             className={cn(
-              "mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal",
+              "mb-6 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
               isArabic && "text-xl font-bold rtl:tracking-normal"
             )}
             style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
@@ -75,7 +75,7 @@ export function About() {
             {t("aboutPage.hero.title")}
           </motion.h1>
           <motion.p
-            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-[#a8b8cc] rtl:leading-[1.9]"
+            className="mt-6 max-w-2xl text-xl font-normal leading-loose text-gray-400 rtl:leading-[1.9]"
             variants={fadeInUp}
           >
             {t("aboutPage.hero.subtitle")}
@@ -99,13 +99,13 @@ export function About() {
                 <motion.div
                   key={pillar.key}
                   variants={staggerItem}
-                  className="group flex flex-col items-center rounded-2xl border border-black/[0.04] bg-[#FDFBF7] p-10 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.15)]"
+                  className="group flex flex-col items-center rounded-2xl border border-black/[0.04] bg-[#FDFBF7] p-10 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
                 >
-                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#f4b232]/10 text-[#f4b232] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
+                  <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Icon size={28} strokeWidth={1.5} />
                   </div>
                   <h3 className={cn(
-                    "text-xl font-bold tracking-tight text-[#0a182e]",
+                    "text-xl font-bold tracking-tight text-[#1A1820]",
                     isArabic && "text-2xl font-bold"
                   )}>
                     {t(`aboutPage.pillars.${pillar.key}.title`)}
@@ -149,7 +149,7 @@ export function About() {
             viewport={viewportOnce}
           >
             <span className={cn(
-              "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal",
+              "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
               isArabic && "text-xl font-bold rtl:tracking-normal"
             )}
               style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
@@ -157,7 +157,7 @@ export function About() {
               {t("aboutPage.promise.eyebrow")}
             </span>
             <h2 className={cn(
-              "text-4xl font-black leading-tight tracking-tight text-[#0a182e] md:text-5xl lg:text-6xl",
+              "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
               isArabic && "text-4xl md:text-5xl font-black leading-tight"
             )}
               style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
@@ -170,7 +170,7 @@ export function About() {
             <div className="mt-8">
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#e62e7a] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#0a182e] shadow-[0_10px_30px_-12px_rgba(230, 46, 122,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#e62e7a]/90 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.5)] active:scale-[0.98] rtl:tracking-normal"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-8 py-3.5 text-sm font-semibold tracking-wide text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200, 169, 110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-[#C8A96E]/90 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.5)] active:scale-[0.98] rtl:tracking-normal"
               >
                 {t("aboutPage.promise.cta")}
                 <ArrowRight
@@ -195,7 +195,7 @@ export function About() {
           >
             <motion.span
               className={cn(
-                "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal",
+                "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
                 isArabic && "text-xl font-bold rtl:tracking-normal"
               )}
               style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
@@ -205,7 +205,7 @@ export function About() {
             </motion.span>
             <motion.h2
               className={cn(
-                "text-4xl font-black leading-tight tracking-tight text-[#0a182e] md:text-5xl lg:text-6xl",
+                "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
                 isArabic && "text-4xl md:text-5xl font-black leading-tight"
               )}
               style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
@@ -225,13 +225,13 @@ export function About() {
             {/* Vision Card */}
             <motion.div
               variants={staggerItem}
-              className="group rounded-2xl border border-black/[0.04] bg-white p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.15)]"
+              className="group rounded-2xl border border-black/[0.04] bg-white p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
             >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#f4b232]/10 text-[#f4b232] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Eye size={28} strokeWidth={1.5} />
               </div>
               <h3 className={cn(
-                "text-2xl font-bold tracking-tight text-[#0a182e]",
+                "text-2xl font-bold tracking-tight text-[#1A1820]",
                 isArabic && "text-3xl font-bold"
               )}>
                 {t("aboutPage.vision.title")}
@@ -244,13 +244,13 @@ export function About() {
             {/* Mission Card */}
             <motion.div
               variants={staggerItem}
-              className="group rounded-2xl border border-black/[0.04] bg-white p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.15)]"
+              className="group rounded-2xl border border-black/[0.04] bg-white p-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
             >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#f4b232]/10 text-[#f4b232] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                 <Rocket size={28} strokeWidth={1.5} />
               </div>
               <h3 className={cn(
-                "text-2xl font-bold tracking-tight text-[#0a182e]",
+                "text-2xl font-bold tracking-tight text-[#1A1820]",
                 isArabic && "text-3xl font-bold"
               )}>
                 {t("aboutPage.mission.title")}
@@ -275,7 +275,7 @@ export function About() {
           >
             <motion.span
               className={cn(
-                "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#f4b232] rtl:tracking-normal",
+                "mb-5 text-lg font-bold uppercase tracking-[0.25em] text-[#C8A96E] rtl:tracking-normal",
                 isArabic && "text-xl font-bold rtl:tracking-normal"
               )}
               style={i18n.language === "ar" ? { fontSize: "1.5rem", fontWeight: "bold" } : {}}
@@ -285,7 +285,7 @@ export function About() {
             </motion.span>
             <motion.h2
               className={cn(
-                "text-4xl font-black leading-tight tracking-tight text-[#0a182e] md:text-5xl lg:text-6xl",
+                "text-4xl font-black leading-tight tracking-tight text-[#1A1820] md:text-5xl lg:text-6xl",
                 isArabic && "text-4xl md:text-5xl font-black leading-tight"
               )}
               style={i18n.language === "ar" ? { fontSize: "2.5rem", fontWeight: "900", lineHeight: "1.2" } : {}}
@@ -308,13 +308,13 @@ export function About() {
                 <motion.div
                   key={value.key}
                   variants={staggerItem}
-                  className="group flex flex-col items-center rounded-2xl border border-black/[0.04] bg-white p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.15)]"
+                  className="group flex flex-col items-center rounded-2xl border border-black/[0.04] bg-white p-8 text-center transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.15)]"
                 >
-                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#f4b232]/10 text-[#f4b232] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
+                  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#C8A96E]/10 text-[#C8A96E] transition-all duration-500 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className={cn(
-                    "text-lg font-bold tracking-tight text-[#0a182e]",
+                    "text-lg font-bold tracking-tight text-[#1A1820]",
                     isArabic && "text-xl font-bold"
                   )}>
                     {t(`aboutPage.values.${value.key}.title`)}
@@ -330,7 +330,7 @@ export function About() {
       </section>
 
       {/* ===== 6. Global CTA Banner ===== */}
-      <section className="bg-[#0a182e] py-20">
+      <section className="bg-[#1A1820] py-20">
         <motion.div
           className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 text-center"
           variants={staggerContainer}
@@ -350,7 +350,7 @@ export function About() {
           <motion.div variants={fadeInUp}>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-[#e62e7a] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#0a182e] shadow-[0_10px_30px_-12px_rgba(230, 46, 122,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(230, 46, 122,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#C8A96E] px-10 py-4 text-sm font-bold uppercase tracking-widest text-[#1A1820] shadow-[0_10px_30px_-12px_rgba(200, 169, 110,0.5)] transition-all duration-700 ease-out hover:scale-[1.02] hover:bg-white hover:shadow-[0_20px_50px_-12px_rgba(200, 169, 110,0.5)] active:scale-[0.98] rtl:normal-case rtl:tracking-normal"
             >
               {t("cta.button")}
               <ArrowRight
