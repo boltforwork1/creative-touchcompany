@@ -41,7 +41,7 @@ export function Footer() {
   ] as const
 
   return (
-    <footer className="border-t border-slate-800 bg-slate-900">
+    <footer className="border-t border-slate-200 bg-slate-50">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-3">
 
@@ -55,7 +55,7 @@ export function Footer() {
               />
             </NavLink>
 
-            <p className="max-w-xs text-sm leading-loose text-slate-400 rtl:leading-[1.9]">
+            <p className="max-w-xs text-sm leading-loose text-slate-600 rtl:leading-[1.9]">
               {t("footer.description")}
             </p>
 
@@ -76,7 +76,7 @@ export function Footer() {
                   end={link.to === "/"}
                   className={({ isActive }) =>
                     `text-sm font-normal tracking-wide transition-colors duration-200 ${
-                      isActive ? "text-amber-400" : "text-slate-300 hover:text-amber-400"
+                      isActive ? "text-amber-600" : "text-slate-900 hover:text-amber-500"
                     }`
                   }
                 >
@@ -102,12 +102,12 @@ export function Footer() {
                   {href ? (
                     <a
                       href={href}
-                      className="text-sm leading-snug text-slate-300 transition-colors duration-200 hover:text-amber-400"
+                      className="text-sm leading-snug text-slate-900 transition-colors duration-200 hover:text-amber-500"
                     >
                       {ltr ? <span dir="ltr">{text}</span> : text}
                     </a>
                   ) : (
-                    <span className="text-sm leading-snug text-slate-300">
+                    <span className="text-sm leading-snug text-slate-900">
                       {ltr ? <span dir="ltr">{text}</span> : text}
                     </span>
                   )}
@@ -118,11 +118,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
-          <p className="text-xs tracking-wide text-slate-400">
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 sm:flex-row">
+          <p className="text-xs tracking-wide text-slate-600">
             <span dir="ltr">{t("footer.rights")}</span>{" "}
             {t("footer.poweredBy")}{" "}
-            <span className="text-amber-400" dir="ltr">{t("footer.brand")}</span>
+            <span className="text-amber-600" dir="ltr">{t("footer.brand")}</span>
           </p>
           <div className="h-px w-16 bg-gradient-to-r from-transparent via-amber-500/40 to-transparent sm:hidden" />
         </div>
